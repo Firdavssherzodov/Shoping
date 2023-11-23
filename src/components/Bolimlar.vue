@@ -44,7 +44,6 @@ li:hover {
   ul {
     padding: 0%;
     width: 90%;
-    margin: auto;
     justify-content: space-around !important;
   }
   li {

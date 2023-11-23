@@ -114,7 +114,6 @@
     width: 100%;
     height: 60px !important;
     left: 0% !important;
-    bottom: 1px !important;
   }
   .Menu,
   a {
@@ -131,7 +130,6 @@
     width: 100%;
     height: 60px !important;
     left: 0%;
-    bottom: 1px !important;
   }
   .Menu,
   a {
