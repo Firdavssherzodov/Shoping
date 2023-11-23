@@ -1,6 +1,6 @@
 <template>
   <div class="diva">
-    <ul class="border border-end-0 border-start-0 border-top-0 border-primary">
+    <ul class="border border-end-0 border-start-0 border-top-0">
       <li>Shirinlik</li>
       <li>Ichimlik</li>
       <li>Uy-ro'zg'or</li>
