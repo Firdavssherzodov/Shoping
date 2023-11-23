@@ -56,6 +56,7 @@ li:hover {
   }
   li {
     font-size: 0.9rem !important;
+    border-bottom: 2px solid blue;
   }
 }
 /* Responsive 576px */

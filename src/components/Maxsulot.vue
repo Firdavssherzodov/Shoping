@@ -33,7 +33,7 @@ console.log(srt);
 const api = "https://fakestoreapi.com/products";
 
 axios.get(api).then((resp) => {
-  resp.data.slice(0, 16).forEach((element) => {
+  resp.data.slice(0, 20).forEach((element) => {
     srt.value.push(element);
   });
 });
