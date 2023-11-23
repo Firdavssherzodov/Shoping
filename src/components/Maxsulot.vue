@@ -75,7 +75,7 @@ import Rating from "primevue/rating";
     width: 100%;
     height: 15%;
 }
-.btn-success {
+.btn-primary {
   position: relative;
   top: 8%;
   left: 60%;
@@ -113,14 +113,14 @@ import Rating from "primevue/rating";
   .Rating {
     display: none;
   }
-  .btn-success {
+  .btn-primary {
     padding: 10px;
     top: 4%;
     left: 55%;
     width: 30%;
     font-size: 0.5rem;
   }
-  .btn-success i {
+  .btn-primary i {
     font-size: 0.9rem;
   }
   .Maxsulotlar {
@@ -158,14 +158,14 @@ import Rating from "primevue/rating";
   .Rating {
     display: none;
   }
-  .btn-success {
+  .btn-primary {
     padding: 10px;
     top: 4%;
     left: 55%;
     width: 30%;
     font-size: 0.5rem;
   }
-  .btn-success i {
+  .btn-primary i {
     font-size: 0.9rem;
   }
   .Maxsulotlar {
