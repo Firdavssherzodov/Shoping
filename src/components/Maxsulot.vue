@@ -105,7 +105,7 @@ import Rating from "primevue/rating";
     margin-top: 4vh !important;
     font-size: 0.75rem !important;
     width: 100%;
-    height: 20% !important;
+    height: 30px !important;
   }
   h5 {
     font-size: 1rem;
