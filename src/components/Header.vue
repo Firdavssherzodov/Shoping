@@ -33,7 +33,7 @@
   </header>
 
   <section
-    class="Menu d-none border border-info border-start-0 border-end-0 border-bottom-0"
+    class="Menu d-none border border-primary border-start-0 border-end-0 border-bottom-0"
   >
     <div>
       <a href="#" class="fa-solid fa-house fs-4" style="color: #8c8989"></a>

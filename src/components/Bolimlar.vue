@@ -54,9 +54,11 @@ li:hover {
     width: 90%;
     justify-content: space-around !important;
   }
-  li {
+  li{
     font-size: 0.9rem !important;
-    border-bottom: 2px solid blue !important;
+  }
+  li:active{
+    border-bottom: 2px solid #3B71CA !important;
   }
 }
 /* Responsive 576px */
@@ -73,8 +75,6 @@ li:hover {
   }
   li {
     font-size: 0.9rem !important;
-    border-bottom: 3px solid blue;
-
   }
 }
 </style>
