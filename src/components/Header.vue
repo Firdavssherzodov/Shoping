@@ -101,7 +101,7 @@
   justify-content: space-around;
   align-items: center;
   border-radius: 10px !important;
-  background-color: aliceblue;
+  background-color: rgb(255, 255, 255);
 }
 
 /* Responsive 385px*/

@@ -76,5 +76,8 @@ li:hover {
   li {
     font-size: 0.9rem !important;
   }
+  li:active{
+    border-bottom: 4px solid #3B71CA !important;
+  }
 }
 </style>
