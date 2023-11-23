@@ -38,7 +38,6 @@ axios.get(api).then((resp) => {
   });
 });
 
-import Rating from "primevue/rating";
 </script>
 <style scoped>
 .diva {
