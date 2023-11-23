@@ -12,7 +12,7 @@
             <p class="mt-5 mx-2" style="font-size: 0.8rem">{{ data.title }}</p>
             <h5 class="mx-2 text-dark">{{ data.price }} $</h5>
             <Rating  :cancel="false" class="ms-2 mt-3 Rating"/>
-            <button class="btn btn-primary mx-2 my-2">
+            <button class="btn btn-success mx-2 my-2">
               <i class="fa-solid fa-plus" style="color: #edeff3"></i>
             </button>
           </div>
@@ -75,7 +75,7 @@ import Rating from "primevue/rating";
     width: 100%;
     height: 15%;
 }
-.btn-primary {
+.btn-success {
   position: relative;
   top: 8%;
   left: 60%;
@@ -113,14 +113,14 @@ import Rating from "primevue/rating";
   .Rating {
     display: none;
   }
-  .btn-primary {
+  .btn-success {
     padding: 10px;
     top: 4%;
     left: 55%;
     width: 30%;
     font-size: 0.5rem;
   }
-  .btn-primary i {
+  .btn-success i {
     font-size: 0.9rem;
   }
   .Maxsulotlar {
@@ -158,14 +158,14 @@ import Rating from "primevue/rating";
   .Rating {
     display: none;
   }
-  .btn-primary {
+  .btn-success {
     padding: 10px;
     top: 4%;
     left: 55%;
     width: 30%;
     font-size: 0.5rem;
   }
-  .btn-primary i {
+  .btn-success i {
     font-size: 0.9rem;
   }
   .Maxsulotlar {

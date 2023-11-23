@@ -41,14 +41,14 @@
     <div>
       <a
         href="#"
-        class="fa-solid fa-magnifying-glass fs-4"
+        class="fa-solid fa-magnifying-glass fs-4 text-primary"
         style="color: #8c8989"
       ></a>
     </div>
     <div>
       <a
         href="#"
-        class="fa-solid fa-bag-shopping fs-4"
+        class="fa-solid fa-bag-shopping fs-4 text-success"
         style="color: #8c8989"
       ></a>
     </div>
