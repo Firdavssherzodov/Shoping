@@ -9,9 +9,9 @@
         >
           <div class="div_img">
             <img :src="data.image" alt="inkas" />
-            <p class="mt-5 mx-2" style="font-size: 0.9rem">{{ data.title }}</p>
+            <p class="mt-5 mx-2" style="font-size: 0.8rem">{{ data.title }}</p>
             <h5 class="mx-2 text-dark">{{ data.price }} $</h5>
-            <Rating v-model="value" :cancel="false" class="ms-2 mt-3 Rating" />
+            <Rating  :cancel="false" class="ms-2 mt-3 Rating"/>
             <button class="btn btn-success mx-2 my-2">
               <i class="fa-solid fa-plus" style="color: #edeff3"></i>
             </button>
@@ -33,7 +33,7 @@ console.log(srt);
 const api = "https://fakestoreapi.com/products";
 
 axios.get(api).then((resp) => {
-  resp.data.slice(0, 10).forEach((element) => {
+  resp.data.slice(0, 16).forEach((element) => {
     srt.value.push(element);
   });
 });
@@ -71,6 +71,10 @@ import Rating from "primevue/rating";
 .kard:hover img {
   padding: 2px;
 }
+.kard p{
+    width: 100%;
+    height: 15%;
+}
 .btn-success {
   position: relative;
   top: 8%;
@@ -101,6 +105,7 @@ import Rating from "primevue/rating";
     margin-top: 4vh !important;
     font-size: 0.75rem !important;
     width: 100%;
+    height: 20% !important;
   }
   h5 {
     font-size: 1rem;

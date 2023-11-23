@@ -96,7 +96,7 @@
   position: fixed;
   left: 40.5%;
   z-index: 22;
-  bottom: 5px;
+  bottom: 0px !important;
   display: flex;
   justify-content: space-around;
   align-items: center;
