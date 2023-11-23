@@ -27,12 +27,14 @@
           class="fa-regular fa-heart fs-5 text-danger"
           style="color: #838891"
         ></i>
-        <p class="px-3 my-4">Savat </p>
+        <p class="px-3 my-4">Savat</p>
       </div>
     </div>
   </header>
 
-  <section class="Menu d-none border border-info border-start-0 border-end-0 border-bottom-0">
+  <section
+    class="Menu d-none border border-info border-start-0 border-end-0 border-bottom-0"
+  >
     <div>
       <a href="#" class="fa-solid fa-house fs-4" style="color: #8c8989"></a>
     </div>
@@ -102,7 +104,6 @@
   background-color: aliceblue;
 }
 
-
 /* Responsive 385px*/
 @media (max-width: 385px) {
   .diva {
@@ -115,7 +116,8 @@
     left: 0% !important;
     bottom: 1px !important;
   }
-  .Menu,a{
+  .Menu,
+  a {
     font-size: 1.3rem !important;
   }
 }
@@ -124,14 +126,15 @@
   .diva {
     display: none;
   }
-  .Menu {   
+  .Menu {
     display: inline-flex !important;
     width: 100%;
     height: 60px !important;
     left: 0%;
     bottom: 1px !important;
   }
-  .Menu,a{
+  .Menu,
+  a {
     font-size: 1.4rem;
   }
 }
