@@ -58,6 +58,7 @@ li:hover {
     font-size: 0.9rem !important;
   }
   li:active{
+    transition: 0s !important;
     border-bottom: 3px solid #3B71CA !important;
   }
 }
