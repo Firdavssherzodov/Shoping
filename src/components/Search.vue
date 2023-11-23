@@ -46,7 +46,7 @@ input {
   form {
     margin: auto;
     width: 90%;
-    height: 65%;
+    height: 70%;
     z-index: 22 !important;
   }
 }

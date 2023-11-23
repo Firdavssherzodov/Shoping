@@ -11,7 +11,7 @@
             <img :src="data.image" alt="inkas" />
             <p class="mt-5 mx-2" style="font-size: 0.8rem">{{ data.title }}</p>
             <h5 class="mx-2 text-dark">{{ data.price }} $</h5>
-            <Rating  :cancel="false" class="ms-2 mt-3 Rating"/>
+            <Rating :cancel="false" class="ms-2 mt-3 Rating" />
             <button class="btn btn-success mx-2 my-2">
               <i class="fa-solid fa-plus" style="color: #edeff3"></i>
             </button>
@@ -71,9 +71,9 @@ import Rating from "primevue/rating";
 .kard:hover img {
   padding: 2px;
 }
-.kard p{
-    width: 100%;
-    height: 15%;
+.kard p {
+  width: 100%;
+  height: 15%;
 }
 .btn-success {
   position: relative;

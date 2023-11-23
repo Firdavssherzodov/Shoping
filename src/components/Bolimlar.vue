@@ -1,16 +1,19 @@
 <template>
   <div class="diva">
     <ul class="border border-end-0 border-start-0 border-top-0">
-      <li>Shirinlik</li>
-      <li>Ichimlik</li>
-      <li>Uy-ro'zg'or</li>
+      <li>Kiyimlar</li>
+      <li>Sumkalar</li>
+      <li>Uzuklar</li>
       <li>Mayshi</li>
       <li>Bolim</li>
     </ul>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+
+
+</script>
 
 <style scoped>
 .diva {
@@ -54,12 +57,12 @@ li:hover {
     width: 90%;
     justify-content: space-around !important;
   }
-  li{
+  li {
     font-size: 0.9rem !important;
   }
-  li:active{
+  li:active {
     transition: 0s !important;
-    border-bottom: 2px solid #3B71CA !important;
+    border-bottom: 2px solid #3b71ca !important;
   }
 }
 /* Responsive 576px */
@@ -77,8 +80,8 @@ li:hover {
   li {
     font-size: 0.9rem !important;
   }
-  li:active{
-    border-bottom: 2px solid #3B71CA !important;
+  li:active {
+    border-bottom: 2px solid #3b71ca !important;
   }
 }
 </style>
