@@ -4,7 +4,7 @@
       <div class="div">
         <div
           class="kard border rounded-5 m-2 ms-5"
-          v-for="data in srt"
+          v-for=" data in srt"
           :key="data"
         >
           <div class="div_img">
@@ -12,7 +12,7 @@
             <p class="mt-5 mx-2" style="font-size: 0.8rem">{{ data.title }}</p>
             <h5 class="mx-2 text-dark">{{ data.price }} $</h5>
             <Rating :cancel="false" class="ms-2 mt-3 Rating" />
-            <button class="btn btn-success mx-2 my-2">
+            <button class="btn btn-success mx-2 my-2" @click="AddShop">
               <i class="fa-solid fa-plus" style="color: #edeff3"></i>
             </button>
           </div>
@@ -26,6 +26,8 @@
 <script setup>
 import axios from "axios";
 import { ref } from "vue";
+import Rating from "primevue/rating";
+
 let isActive = ref(false);
 let srt = ref([]);
 console.log(srt);
@@ -38,6 +40,13 @@ axios.get(api).then((resp) => {
   });
 });
 
+const Savat = ref([]);
+
+localStorage.setItem("savat", JSON.stringify(Savat));
+
+function AddShop() {
+  Savat.value.splice(index, 0, 1);
+}
 </script>
 <style scoped>
 .diva {
