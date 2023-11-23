@@ -3,7 +3,7 @@
     <div class="diva">
       <div class="div">
         <div
-          class="kard border rounded-5 m-2 ms-5"
+          class="kard border rounded-5 m-2 ms-5 border-primary"
           v-for="data in srt"
           :key="data"
         >
