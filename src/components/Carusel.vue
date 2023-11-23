@@ -13,13 +13,13 @@
           class="active"
           aria-current="true"
           aria-label="Slide 1"
-        ></button>
+        ></button> 
         <button
           type="button"
           data-mdb-target="#carouselExampleIndicators"
           data-mdb-slide-to="1"
           aria-label="Slide 2"
-        ></button>
+        ></button> 
         <button
           type="button"
           data-mdb-target="#carouselExampleIndicators"
@@ -37,14 +37,14 @@
         </div>
         <div class="carousel-item">
           <img
-            src="https://avatars.mds.yandex.net/get-altay/1903890/2a00000169c3a0168a1348a85aa637816ee7/orig"
+            src="https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663790507_11-mykaleidoscope-ru-p-uzbekskie-frukti-yeda-oboi-11.jpg"
             class="d-block w-100"
             alt="Camera"
           />
         </div>
         <div class="carousel-item">
           <img
-            src="https://toshvilstat.uz/images/yangiliklar2022/060920228.jpg"
+            src="https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663790507_11-mykaleidoscope-ru-p-uzbekskie-frukti-yeda-oboi-11.jpg"
             class="d-block w-100"
             alt="Exotic Fruits"
           />
@@ -98,6 +98,10 @@
   }
   .carousel {
     width: 100%;
+  }
+  button{
+ 
+    display: none;
   }
 }
 /* Responsive 576px */

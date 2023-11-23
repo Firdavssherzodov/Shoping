@@ -79,6 +79,7 @@ import Rating from "primevue/rating";
 /* Responsive 385px */
 @media (max-width: 385px) {
   .div {
+    margin-top: 1vh;
     width: 95%;
     height: 100%;
     justify-content: space-around;

@@ -41,10 +41,13 @@ input {
 @media (max-width: 576px) {
   .diva {
     margin-top: 5vh;
+    z-index: 33;
   }
   form {
     margin: auto;
     width: 90%;
+    height: 65%;
+    z-index: 22 !important;
   }
 }
 </style>
