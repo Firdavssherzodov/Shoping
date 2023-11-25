@@ -52,7 +52,7 @@ function AddShop(idw) {
     .then((resp) => {
       Savat.value.push(resp.data);
 
-      console.log(Savat.value);
+      // console.log(Savat.value);
     })
     .then((el) => {
       localStorage.setItem("savat", JSON.stringify(Savat.value));

@@ -24,6 +24,13 @@
       </div>
     </div>
   </div>
+  <section class="umumiy border border-start-0 border-end-0">
+    <ul class="ul">
+      <li>Umumiy narx : {{}}</li>
+      <li>Maxsulotlar soni :</li>
+    </ul>
+    <button class="btn btn-primary p-2">Rasmiylashtirish</button>
+  </section>
 </template>
 
 <script setup>
@@ -70,7 +77,8 @@ srt.value = local;
 .kard {
   width: 25%;
   height: 25%;
-  margin-left: 2vh;
+  margin-top: 1.5vh;
+  margin-left: 8vh;
 }
 .div_img {
   width: 25%;
@@ -99,6 +107,20 @@ span::selection {
 .fa-xmark {
   cursor: pointer;
 }
+.umumiy {
+  background-color: white;
+  width: 67%;
+  height: 10vh;
+  position: fixed;
+  left: 14.5%;
+  bottom: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ul {
+  list-style: none;
+}
 /* Responnsive 385px */
 @media (max-width: 385px) {
   .diva {
@@ -109,6 +131,7 @@ span::selection {
     width: 90%;
     height: 20%;
     margin-top: 1.5vh;
+    margin-left: 2vh;
   }
   .span {
     align-items: center;
@@ -129,18 +152,31 @@ span::selection {
     width: 30px !important;
     height: 30px;
   }
-  .span input{
-    padding-left:5px  !important;
-    width: 31% !important; 
+  .span input {
+    padding-left: 5px !important;
+    width: 31% !important;
   }
   .d1 p {
     width: 90% !important;
     font-size: 0.7rem !important;
   }
-  .fa-minus{
-  margin-left: -2vh !important;
+  .fa-minus {
+    margin-left: -2vh !important;
   }
-  
+
+  .umumiy {
+    width: 100%;
+    bottom: 8vh;
+    left: 0%;
+  }
+  .ul li{
+    padding-left: 2vh;
+    font-size: 0.8rem;
+  }
+  .umumiy button{
+    padding-right: 1vh;
+    font-size: 0.5rem;
+  }
 }
 /* Responnsive 576px */
 @media (max-width: 576px) {
@@ -152,6 +188,7 @@ span::selection {
     width: 90%;
     height: 20%;
     margin-top: 1.5vh;
+    margin-left: 2vh;
   }
   .span {
     align-items: center;
@@ -172,16 +209,30 @@ span::selection {
     width: 30px !important;
     height: 30px;
   }
-  .span input{
-    padding-left:5px  !important;
-    width: 31% !important; 
+  .span input {
+    padding-left: 5px !important;
+    width: 31% !important;
   }
   .d1 p {
     width: 90% !important;
     font-size: 0.7rem !important;
   }
-  .fa-minus{
-  margin-left: -2vh !important;
+  .fa-minus {
+    margin-left: -2vh !important;
   }
+  .umumiy {
+    width: 100%;
+    bottom: 8vh;
+    left: 0%;
+  }
+  .ul li{
+    padding-left: 2vh;
+    font-size: 0.8rem;
+  }
+  .umumiy button{
+    padding-right: 1vh;
+    font-size: 0.6rem;
+  }
+
 }
 </style>
