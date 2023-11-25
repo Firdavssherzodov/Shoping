@@ -1,0 +1,193 @@
+<template>
+  <Header1 />
+  <div class="diva">
+    <div class="kard border rounded-5" v-for="(data, index) in srt">
+      <div class="d1 d-flex">
+        <img class="div_img my-4 ms-5 me-4" :src="data.image" />
+        <p class="py-4 mt-3 d-block" style="font-size: 0.8rem">
+          {{ data.title }}
+        </p>
+        <!-- <p class="mt-4">$ {{ data.price }} </p> -->
+      </div>
+      <div class="d2 d-flex mx-2">
+        <span class="span my-3 mx-2">
+          <i class="fa-solid fa-minus fs-5 px-3" @click="minus"></i>
+          <input type="text" class="px-2" style="width: 40px" v-model="count" />
+          <i class="fa-solid fa-plus fs-5 px-3" @click="plus"></i>
+        </span>
+        <h6 class="py-3 pe-3 w-25 fw-bold">$ {{ data.price }}</h6>
+        <i
+          class="fa-solid fa-xmark fs-3 px-5 py-3"
+          style="color: #e50606"
+          @click="Delete(index)"
+        ></i>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import Header1 from "../components/Header.vue";
+import { ref, onMounted } from "vue";
+let srt = ref([]);
+onMounted(() => {
+  let local = JSON.parse(localStorage.getItem("savat"));
+  srt.value = local;
+
+});
+
+
+
+
+let count = ref("1");
+
+function minus() {
+  count.value--;
+}
+
+function plus() {
+  count.value++;
+}
+
+function Delete(index) {
+  srt.value.splice(index, 1);
+}
+let local = JSON.parse(localStorage.getItem("savat"));
+srt.value = local;
+</script>
+
+<style scoped>
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+.diva {
+  width: 78%;
+  height: 900px;
+  margin: 3vh auto;
+  display: flex;
+  flex-wrap: wrap;
+
+  /* justify-content: space-around;  */
+}
+.kard {
+  width: 25%;
+  height: 25%;
+  margin-left: 2vh;
+}
+.div_img {
+  width: 25%;
+  height: 70%;
+}
+.d1 {
+  width: 100%;
+  height: 70%;
+}
+.d2 {
+  width: 100%;
+  height: 30%;
+}
+.span {
+  width: 40%;
+  height: 100%;
+  display: block;
+}
+span::selection {
+  display: none;
+}
+.span i {
+  cursor: pointer;
+}
+
+.fa-xmark {
+  cursor: pointer;
+}
+/* Responnsive 385px */
+@media (max-width: 385px) {
+  .diva {
+
+    width: 100% !important;
+    display: block !important;
+  }
+  .kard {
+    width: 90%;
+    height: 20%;
+    margin-top: 1.5vh;
+  }
+  .span {
+    align-items: center;
+    width: 40%;
+    height: 50%;
+    margin-left: 10% !important;
+  }
+
+  .d2 h6 {
+    padding-top: 2.5vh !important;
+  }
+  .fa-xmark {
+    margin-top: 2vh;
+    margin-left: 2.5vh;
+    padding: 0px !important;
+    font-size: 1.8rem !important;
+    cursor: pointer;
+    width: 30px !important;
+    height: 30px;
+  }
+  .span input{
+    padding-left:5px  !important;
+    width: 31% !important; 
+  }
+  .d1 p {
+    width: 90% !important;
+    font-size: 0.7rem !important;
+  }
+  .fa-minus{
+  margin-left: -2vh !important;
+  }
+  
+}
+/* Responnsive 576px */
+@media (max-width: 576px) {
+  .diva {
+
+    width: 90%;
+    display: block !important;
+  }
+  .kard {
+    width: 90%;
+    height: 20%;
+    margin-top: 1.5vh;
+  }
+  .span {
+    align-items: center;
+    width: 40%;
+    height: 50%;
+    margin-left: 10% !important;
+  }
+
+  .d2 h6 {
+    padding-top: 2.5vh !important;
+  }
+  .fa-xmark {
+    margin-top: 2vh;
+    margin-left: 2.5vh;
+    padding: 0px !important;
+    font-size: 1.8rem !important;
+    cursor: pointer;
+    width: 30px !important;
+    height: 30px;
+  }
+  .span input{
+    padding-left:5px  !important;
+    width: 31% !important; 
+  }
+  .d1 p {
+    width: 90% !important;
+    font-size: 0.7rem !important;
+  }
+  .fa-minus{
+  margin-left: -2vh !important;
+  }
+}
+</style>

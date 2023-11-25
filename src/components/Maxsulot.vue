@@ -4,7 +4,7 @@
       <div class="div">
         <div
           class="kard border rounded-5 m-2 ms-5"
-          v-for=" data in srt"
+          v-for="data in srt"
           :key="data"
         >
           <div class="div_img">
@@ -12,7 +12,7 @@
             <p class="mt-5 mx-2" style="font-size: 0.8rem">{{ data.title }}</p>
             <h5 class="mx-2 text-dark">{{ data.price }} $</h5>
             <Rating :cancel="false" class="ms-2 mt-3 Rating" />
-            <button class="btn btn-success mx-2 my-2" @click="AddShop">
+            <button class="btn btn-success mx-2 my-2" @click="AddShop(data.id)">
               <i class="fa-solid fa-plus" style="color: #edeff3"></i>
             </button>
           </div>
@@ -29,7 +29,9 @@ import { ref } from "vue";
 import Rating from "primevue/rating";
 
 let srt = ref([]);
-console.log(srt);
+
+let id = ref(null);
+// console.log(srt);
 
 const api = "https://fakestoreapi.com/products";
 
@@ -42,6 +44,19 @@ axios.get(api).then((resp) => {
 const Savat = ref([]);
 
 
+
+
+function AddShop(idw) {
+  axios
+    .get(`https://fakestoreapi.com/products/${idw}`)
+    .then((resp) => {
+      Savat.value.push(resp.data);
+
+      console.log(Savat.value);
+    })
+    .then((el) => {
+      localStorage.setItem("savat", JSON.stringify(Savat.value));
+    });
 }
 </script>
 <style scoped>
@@ -78,6 +93,8 @@ const Savat = ref([]);
 .kard p {
   width: 100%;
   height: 15%;
+  overflow: hidden;
+  line-clamp: 1;
 }
 .btn-success {
   position: relative;
@@ -108,8 +125,10 @@ const Savat = ref([]);
   p {
     margin-top: 4vh !important;
     font-size: 0.75rem !important;
-    width: 100%;
-    height: 30px !important;
+    width: 90% !important;
+    height: 40px;
+    overflow: hidden;
+    line-clamp: 1;
   }
   h5 {
     font-size: 1rem;
@@ -152,9 +171,12 @@ const Savat = ref([]);
     height: 50%;
   }
   p {
-    margin-top: 4vh !important;
+    margin-top: 2vh !important;
     font-size: 0.75rem !important;
-    width: 100%;
+    width: 96.5% !important;
+    height: 40px !important;
+    overflow: hidden;
+    line-clamp: 1;
   }
   h5 {
     font-size: 1rem;

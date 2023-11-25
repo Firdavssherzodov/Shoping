@@ -1,33 +1,39 @@
 <template>
   <header class="diva">
+    <router-link to="/">
     <div class="d1 d-flex">
       <img
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFjFTO5P1yacBRXCLscjrh3Z3t3GAIH7B1UwsG4Ls0rifGayh_m_RDjdVY2ZtQNs0kBcI&usqp=CAU"
         alt=""
-        class="px-5 rounded-circle my-1"
+        class="px-5 rounded-circle my-1 border"
       />
     </div>
+  </router-link>
     <div class="d2">
       <div>
         <i
           class="fa-regular fa-user fs-5 text-primary"
           style="color: #838891"
         ></i>
-        <p class="px-3 my-4">Kirish</p>
+        <p class="px-3 my-4 text-none">Kirish</p>
       </div>
+
       <div>
-        <i
-          class="fa-solid fa-bag-shopping fs-5 text-primary"
-          style="color: #838891"
-        ></i>
-        <p class="px-3 my-4">Saralangan</p>
+        <router-link to="/korzinka">
+          <i
+            class="fa-solid fa-bag-shopping fs-5 text-primary"
+            style="color: #838891"
+          ></i>
+        </router-link>
+        <p class="px-3 my-4">Savat</p>
       </div>
+
       <div>
         <i
           class="fa-regular fa-heart fs-5 text-danger"
           style="color: #838891"
         ></i>
-        <p class="px-3 my-4">Savat</p>
+        <p class="px-3 my-4">Saralangan</p>
       </div>
     </div>
   </header>
@@ -35,9 +41,11 @@
   <section
     class="Menu d-none border border-start-0 border-end-0 border-bottom-0"
   >
-    <div>
-      <a href="#" class="fa-solid fa-house fs-4" style="color: #8c8989"></a>
-    </div>
+    <router-link to="/">
+      <div>
+        <a href="#" class="fa-solid fa-house fs-4" style="color: #8c8989"></a>
+      </div>
+    </router-link>
     <div>
       <a
         href="#"
@@ -45,13 +53,15 @@
         style="color: #8c8989"
       ></a>
     </div>
-    <div>
-      <a
-        href="#"
-        class="fa-solid fa-bag-shopping fs-4 "
-        style="color: #8c8989"
-      ></a>
-    </div>
+    <router-link to="/korzinka">
+      <div>
+        <a
+          href="#"
+          class="fa-solid fa-bag-shopping fs-4"
+          style="color: #8c8989"
+        ></a>
+      </div>
+    </router-link>
     <div>
       <a href="#" class="fa-regular fa-heart fs-4" style="color: #8c8989"></a>
     </div>
@@ -61,7 +71,9 @@
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+
+</script>
 
 <style scoped>
 .diva {

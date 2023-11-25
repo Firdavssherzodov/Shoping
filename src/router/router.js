@@ -9,7 +9,11 @@ const router = createRouter({
       name: "home",
       component: HomeView1,
     },
-   
+    {
+      path: "/korzinka",
+      name: "savat",
+      component: () => import("../Korzinka/Korzinka.vue"),
+    },
   ],
 });
 
