@@ -28,7 +28,6 @@ import axios from "axios";
 import { ref } from "vue";
 import Rating from "primevue/rating";
 
-let isActive = ref(false);
 let srt = ref([]);
 console.log(srt);
 
@@ -42,10 +41,7 @@ axios.get(api).then((resp) => {
 
 const Savat = ref([]);
 
-localStorage.setItem("savat", JSON.stringify(Savat));
 
-function AddShop() {
-  Savat.value.splice(index, 0, 1);
 }
 </script>
 <style scoped>
