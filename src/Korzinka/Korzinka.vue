@@ -33,11 +33,7 @@ let srt = ref([]);
 onMounted(() => {
   let local = JSON.parse(localStorage.getItem("savat"));
   srt.value = local;
-
 });
-
-
-
 
 let count = ref("1");
 
@@ -106,7 +102,6 @@ span::selection {
 /* Responnsive 385px */
 @media (max-width: 385px) {
   .diva {
-
     width: 100% !important;
     display: block !important;
   }
@@ -150,7 +145,6 @@ span::selection {
 /* Responnsive 576px */
 @media (max-width: 576px) {
   .diva {
-
     width: 90%;
     display: block !important;
   }
