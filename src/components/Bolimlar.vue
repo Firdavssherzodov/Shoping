@@ -39,8 +39,9 @@ ul li {
 }
 li:hover {
   cursor: pointer;
-  transition: 1s;
-  border-bottom: 1px solid blue;
+  transition: 0.9s;
+  border-bottom: 1px solid #3B71CA;
+  color: #3B71CA;
 }
 /* Responsive 385px */
 @media (max-width: 385px) {
