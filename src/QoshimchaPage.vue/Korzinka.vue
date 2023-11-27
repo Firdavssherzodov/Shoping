@@ -5,7 +5,7 @@
   </h6> -->
 
   <div class="diva">
-    <div class="kard border rounded-5" v-for="(data, index) in srt">
+    <div class="kard border rounded-5" v-for="(data,index) in srt" :key="data">
       <div class="d1 d-flex">
         <img class="div_img my-4 ms-5 me-4" :src="data.image" />
         <p class="py-4 mt-3 d-block" style="font-size: 0.8rem">
@@ -30,7 +30,7 @@
   </div>
   <section class="umumiy border border-start-0 border-end-0">
     <ul class="ul">
-      <li>Umumiy narx : {{}}</li>
+      <li>Umumiy narx : {{ price }}</li>
       <li>Maxsulotlar soni : {{ srt.length }}</li>
     </ul>
     <button class="btn btn-primary p-2">Rasmiylashtirish</button>
@@ -40,27 +40,42 @@
 <script setup>
 import Header1 from "../components/Header.vue";
 import { ref, onMounted } from "vue";
-let count = ref("1");
+
+let count = "1";
 
 let srt = ref([]);
 
 onMounted(() => {
-  let local = JSON.parse(localStorage.getItem("savat"));
-  srt.value = local;
+  srt.value = JSON.parse(localStorage.getItem("savat")) || [];
 });
 
 function minus(index) {
-  count.value--;
+  if (srt.value[index].count > 1) {
+    srt.value[index].count=-1;
+  }
 }
 function plus(index) {
-  count.value++;
+  srt.value[index].count++;
+  console.log(srt.value[index].count=+1);
 }
 
 function Delete(index) {
   srt.value.splice(index, 1);
-
+  localStorage.setItem("savat", JSON.stringify(srt));
 }
 
+// Savatdagi barcha mahsulotlarning umumiy narxini hisoblash
+function calculateTotalPrice(total1) {
+  let total = total1;
+  for (let item of srt.value) {
+    console.log();
+    total += item.price * item.count;
+  }
+  return total;
+}
+
+let price = calculateTotalPrice(0);
+console.log(price);
 </script>
 
 <style scoped>

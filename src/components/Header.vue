@@ -36,7 +36,7 @@
             height: 20px;
           "
         >
-          {{ countet.length }}
+          {{ countet?.length }}
         </button>
           <p class="px-3 my-4" style="color: var(--mdb-body-color)">Savat</p>
         </div>
@@ -156,17 +156,17 @@
 
 <script setup>
 import { ref,onMounted } from "vue";
-
+import product_list from "../user/store/userStore";
 let countet = ref([]);
 
+countet.value =  JSON.parse(localStorage.getItem("savat"));
 
 
 
 
-setInterval(()=>{
-  let local = JSON.parse(localStorage.getItem("savat"));
-countet.value = local;
-},100)
+  // setInterval(()=>{
+  //   countet.value =  JSON.parse(localStorage.getItem("savat"));
+  // },1000)
 
 
 

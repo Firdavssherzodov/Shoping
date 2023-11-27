@@ -27,6 +27,7 @@
 import axios from "axios";
 import { ref } from "vue";
 import Rating from "primevue/rating";
+import product_list from "../user/store/userStore";
 
 let srt = ref([]);
 
@@ -44,17 +45,17 @@ axios.get(api).then((resp) => {
 const Savat = ref([]);
 
 function AddShop(idw) {
-  axios
-    .get(`https://fakestoreapi.com/products/${idw}`)
-    .then((resp) => {
-      Savat.value.push(resp.data);
+  axios.get(`https://fakestoreapi.com/products/${idw}`).then((resp) => {
+    Savat.value.push(resp.data);
 
-      // console.log(Savat.value);
-    })
-    .then((el) => { 
-      localStorage.clear()
-      localStorage.setItem("savat", JSON.stringify(Savat.value));
-    });
+    product_list.value.push(resp.data);
+
+    localStorage.setItem("savat", JSON.stringify(product_list.value));
+
+
+   
+  });
+  
 }
 </script>
 <style scoped>
