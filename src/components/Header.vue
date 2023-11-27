@@ -132,7 +132,7 @@
 }
 
  img {
-  width: 200px;
+  width: 180px;
   height: 100%;
 }
 .Menu {
