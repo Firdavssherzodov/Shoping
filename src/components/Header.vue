@@ -26,7 +26,18 @@
             class="fa-solid fa-bag-shopping fs-5 text-primary"
             style="color: #838891"
           ></i>
+          <button
+          class="btn btn-primary btn-floating fa-bounce mb-4 mx-2 counter2"
+          style="
 
+            border-radius: 50px;
+            font-size: 0.7rem;
+            width: 20px;
+            height: 20px;
+          "
+        >
+          {{ countet.length }}
+        </button>
           <p class="px-3 my-4" style="color: var(--mdb-body-color)">Savat</p>
         </div>
       </router-link>
@@ -48,6 +59,7 @@
         <a href="#" class="fa-solid fa-house fs-4" style="color: #8c8989"></a>
       </div>
     </router-link>
+    <router-link to="/search">
     <div>
       <a
         href="#"
@@ -55,6 +67,7 @@
         style="color: #8c8989"
       ></a>
     </div>
+  </router-link>
     <router-link to="/korzinka">
       <div>
         <a
@@ -214,6 +227,9 @@ img {
 .counter {
   bottom: 55%;
   margin-left: 4%;
+  position: absolute;
+}
+.counter2{
   position: absolute;
 }
 /* Responsive 385px*/

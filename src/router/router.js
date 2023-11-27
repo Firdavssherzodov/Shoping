@@ -12,13 +12,18 @@ const router = createRouter({
     {
       path: "/korzinka",
       name: "savat",
-      component: () => import("../Korzinka/Korzinka.vue"),
+      component: () => import("../QoshimchaPage.vue/Korzinka.vue"),
     },
     {
       path: "/user",
       name: 'user',
       component: () => import("../user/User.vue"),
     },
+    {
+      path:'/search',
+      name:'seach',
+      component:()=>import('../QoshimchaPage.vue/Qidiruv.vue')
+    }
   ],
 });
 

@@ -1,5 +1,9 @@
 <template>
   <Header1 />
+  <h6 class="text-center py-5 erorre">
+    Hali hech qanday maxsulot olganingiz yuq!
+  </h6>
+
   <div class="diva">
     <div class="kard border rounded-5" v-for="(data, index) in srt">
       <div class="d1 d-flex">
@@ -10,7 +14,7 @@
         <!-- <p class="mt-4">$ {{ data.price }} </p> -->
       </div>
       <div class="d2 d-flex mx-2">
-        <span class="span my-3 mx-2"  >
+        <span class="span my-3 mx-2">
           <i class="fa-solid fa-minus fs-5 px-3" @click="minus(index)"></i>
           <input type="text" class="px-1" style="width: 40px" v-model="count" />
           <i class="fa-solid fa-plus fs-5 px-3" @click="plus(index)"></i>
@@ -26,7 +30,7 @@
   </div>
   <section class="umumiy border border-start-0 border-end-0">
     <ul class="ul">
-      <li>Umumiy narx : {{ }}</li>
+      <li>Umumiy narx : {{}}</li>
       <li>Maxsulotlar soni : {{ srt.length }}</li>
     </ul>
     <button class="btn btn-primary p-2">Rasmiylashtirish</button>
@@ -36,6 +40,8 @@
 <script setup>
 import Header1 from "../components/Header.vue";
 import { ref, onMounted } from "vue";
+let count = ref("1");
+
 let srt = ref([]);
 
 onMounted(() => {
@@ -43,34 +49,24 @@ onMounted(() => {
   srt.value = local;
 });
 
-let count = ref("1");
- 
- 
 
-  function minus(index) {
- count.value--;
+function minus(index) {
+  count.value--;
 }
 function plus(index) {
-    count.value++;
+  count.value++;
 }
 
 function Delete(index) {
- 
- 
+  let srt2 = srt.value
+  srt.value.splice(index, 1);
 
-let srt2 = srt.value
- 
- let yangiSavat = srt.value.splice(index, 1);
- 
- localStorage.setItem("savat", JSON.stringify(srt2));
- 
+  localStorage.setItem("savat", JSON.stringify(srt2));
 }
 // localStorage.getItem(localStorage.setItem("savat", JSON.stringify(yangiSavat));)
 
-
 let local = JSON.parse(localStorage.getItem("savat"));
 srt.value = local;
-
 </script>
 
 <style scoped>
@@ -116,8 +112,6 @@ span::selection {
 }
 .span i {
   cursor: pointer;
- 
-  
 }
 
 .fa-xmark {
@@ -186,11 +180,11 @@ span::selection {
     bottom: 7.5vh;
     left: 0%;
   }
-  .ul li{
+  .ul li {
     padding-left: 2vh;
     font-size: 0.8rem;
   }
-  .umumiy button{
+  .umumiy button {
     margin-right: 3vh;
     font-size: 0.5rem;
   }
@@ -242,14 +236,13 @@ span::selection {
     bottom: 7.7vh;
     left: 0%;
   }
-  .ul li{
+  .ul li {
     padding-left: 2vh;
     font-size: 0.8rem;
   }
-  .umumiy button{
+  .umumiy button {
     margin-right: 2.5vh;
     font-size: 0.6rem;
   }
-
 }
 </style>
