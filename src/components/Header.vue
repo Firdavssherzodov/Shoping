@@ -1,33 +1,34 @@
 <template>
   <header class="diva">
     <router-link to="/">
-    <div class="d1 d-flex">
+    <div class="d1 ">
       <img
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFjFTO5P1yacBRXCLscjrh3Z3t3GAIH7B1UwsG4Ls0rifGayh_m_RDjdVY2ZtQNs0kBcI&usqp=CAU"
         alt=""
-        class="px-5 rounded-circle my-1 border"
+        class="px-5 rounded-circle my-1  my-2"
       />
     </div>
   </router-link>
     <div class="d2">
-      <div>
+      
+      <div data-mdb-toggle="modal" data-mdb-target="#exampleModal">
         <i
           class="fa-regular fa-user fs-5 text-primary"
           style="color: #838891"
         ></i>
-        <p class="px-3 my-4 text-none">Kirish</p>
+        <p class="px-3 my-4 text-none" style="color: var(--mdb-body-color);">Kirish</p>
       </div>
-
+   
+    <router-link to="/korzinka">
       <div>
-        <router-link to="/korzinka">
           <i
             class="fa-solid fa-bag-shopping fs-5 text-primary"
             style="color: #838891"
           ></i>
-        </router-link>
-        <p class="px-3 my-4">Savat</p>
+      
+        <p class="px-3 my-4" style="color: var(--mdb-body-color);">Savat</p>
       </div>
-
+    </router-link>
       <div>
         <i
           class="fa-regular fa-heart fs-5 text-danger"
@@ -65,14 +66,43 @@
     <div>
       <a href="#" class="fa-regular fa-heart fs-4" style="color: #8c8989"></a>
     </div>
+    <router-link to="/user">
     <div>
       <a href="#" class="fa-regular fa-user fs-4" style="color: #8c8989"></a>
     </div>
+  </router-link>
   </section>
+<!--  -->
+<!-- Modal -->
+<div class="modal top fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="static" data-mdb-keyboard="true">
+  <div class="modal-dialog   modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header my-2">
+        <h5 class="modal-title" id="exampleModalLabel" style="margin-left: 12.3vh;">Telefon raqamini kiriting</h5> 
+ 
+        <!-- <p class="d-block"  style="font-size: 0.9rem;">Tasdiqlash kodini SMS orqali yuboramiz</p> -->
+  
+        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body my-2">
+ 
+        <input type="text" class=" rounded-5 border-1 px-3" style="margin-left: 12vh; width: 60%; height: 50px; font-size: 1.1rem;" placeholder="+998 00 000-00-00" v-model="number">
+  
+      
+      </div>
+      <div class="modal-footer my-2">
+        
+        <button type="button" class="btn btn-primary rounded-4" style="margin-right: 8vh; width: 60%; height: 40px;">Kodni olish</button>
+      </div>
+    </div>
+  </div>
+</div>
 </template>
 
 <script setup>
+ 
 
+ 
 </script>
 
 <style scoped>
@@ -83,8 +113,10 @@
   justify-content: space-around;
 }
 .d1 {
+ 
   width: 30%;
   height: 100%;
+ 
 }
 .d2 {
   width: 22%;
@@ -96,11 +128,12 @@
 .d2 div {
   display: flex;
   align-items: center !important;
+  cursor: pointer;
 }
 
-.d1 img {
-  width: 30%;
-  height: 90%;
+ img {
+  width: 200px;
+  height: 100%;
 }
 .Menu {
   width: 350px;

@@ -10,10 +10,10 @@
         <!-- <p class="mt-4">$ {{ data.price }} </p> -->
       </div>
       <div class="d2 d-flex mx-2">
-        <span class="span my-3 mx-2">
-          <i class="fa-solid fa-minus fs-5 px-3" @click="minus"></i>
-          <input type="text" class="px-2" style="width: 40px" v-model="count" />
-          <i class="fa-solid fa-plus fs-5 px-3" @click="plus"></i>
+        <span class="span my-3 mx-2"  >
+          <i class="fa-solid fa-minus fs-5 px-3" @click="minus(index)"></i>
+          <input type="text" class="px-1" style="width: 40px" v-model="count" />
+          <i class="fa-solid fa-plus fs-5 px-3" @click="plus(index)"></i>
         </span>
         <h6 class="py-3 pe-3 w-25 fw-bold">$ {{ data.price }}</h6>
         <i
@@ -43,13 +43,14 @@ onMounted(() => {
 });
 
 let count = ref("1");
+ 
+ 
 
-function minus() {
-  count.value--;
+  function minus(index) {
+ count.value--;
 }
-
-function plus() {
-  count.value++;
+function plus(index) {
+    count.value++;
 }
 
 function Delete(index) {
@@ -102,6 +103,8 @@ span::selection {
 }
 .span i {
   cursor: pointer;
+ 
+  
 }
 
 .fa-xmark {
@@ -174,7 +177,7 @@ span::selection {
     font-size: 0.8rem;
   }
   .umumiy button{
-    padding-right: 1vh;
+    margin-right: 3vh;
     font-size: 0.5rem;
   }
 }
@@ -230,7 +233,7 @@ span::selection {
     font-size: 0.8rem;
   }
   .umumiy button{
-    padding-right: 1vh;
+    margin-right: 2.5vh;
     font-size: 0.6rem;
   }
 

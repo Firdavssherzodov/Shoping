@@ -14,6 +14,11 @@ const router = createRouter({
       name: "savat",
       component: () => import("../Korzinka/Korzinka.vue"),
     },
+    {
+      path: "/user",
+      name: name,
+      component: () => import("../user/User.vue"),
+    },
   ],
 });
 
