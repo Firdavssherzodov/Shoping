@@ -10,6 +10,7 @@
           placeholder="+998 00 000-00-00"
           style="height: 50px; font-size: 1.1rem"
           class="form-control mx-4"
+          v-model="number"
         />
         <br />
       </form>
@@ -22,6 +23,8 @@
 
 <script setup>
 import heder from "../components/Header.vue";
+import { ref } from "vue";
+let number =ref('+988')
 </script>
 
 <style scoped>
