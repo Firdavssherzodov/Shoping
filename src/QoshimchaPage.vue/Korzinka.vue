@@ -1,8 +1,8 @@
 <template>
   <Header1 />
-  <h6 class="text-center py-5 erorre">
+  <!-- <h6 class="text-center py-5 erorre">
     Hali hech qanday maxsulot olganingiz yuq!
-  </h6>
+  </h6> -->
 
   <div class="diva">
     <div class="kard border rounded-5" v-for="(data, index) in srt">
