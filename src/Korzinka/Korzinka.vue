@@ -56,6 +56,8 @@ function plus(index) {
 
 function Delete(index) {
  
+ 
+
 let srt2 = srt.value
  
  let yangiSavat = srt.value.splice(index, 1);

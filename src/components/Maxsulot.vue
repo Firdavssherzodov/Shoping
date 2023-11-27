@@ -30,7 +30,7 @@ import Rating from "primevue/rating";
 
 let srt = ref([]);
 
-let id = ref(null);
+// let id = ref(null);
 // console.log(srt);
 
 const api = "https://fakestoreapi.com/products";
@@ -51,7 +51,8 @@ function AddShop(idw) {
 
       // console.log(Savat.value);
     })
-    .then((el) => {
+    .then((el) => { 
+      localStorage.clear()
       localStorage.setItem("savat", JSON.stringify(Savat.value));
     });
 }

@@ -142,14 +142,25 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { ref,onMounted } from "vue";
+
+let countet = ref([]);
+
 
 
 let local = JSON.parse(localStorage.getItem("savat"));
-countet = local;
+countet.value = local;
 
-onMounted(() => {
-  if (countet.length > 0) {
+
+setInterval(()=>{
+  let local = JSON.parse(localStorage.getItem("savat"));
+countet.value = local;
+},100)
+
+
+
+  onMounted(() => {
+    if (countet.value.length > 0) {
     let count = document.querySelector(".counter");
     count.style.display = "block";
   } else {
