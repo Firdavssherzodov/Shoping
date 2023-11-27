@@ -64,6 +64,7 @@ import heder from "../components/Header.vue";
   .div {
     margin-top: 20vh !important;
     width: 95%;
+    text-align: center;
   }
   .form {
     margin-left: 2vh;

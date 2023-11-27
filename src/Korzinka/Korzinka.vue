@@ -56,9 +56,12 @@ function plus(index) {
 
 function Delete(index) {
  
+let srt2 = srt.value
+ 
+
  let yangiSavat = srt.value.splice(index, 1);
  
- localStorage.setItem("savat", JSON.stringify(srt.value));
+ localStorage.setItem("savat", JSON.stringify(srt2));
  
 }
 // localStorage.getItem(localStorage.setItem("savat", JSON.stringify(yangiSavat));)
