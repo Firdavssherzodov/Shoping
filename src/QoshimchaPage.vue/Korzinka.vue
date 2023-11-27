@@ -49,7 +49,6 @@ onMounted(() => {
   srt.value = local;
 });
 
-
 function minus(index) {
   count.value--;
 }
@@ -58,15 +57,10 @@ function plus(index) {
 }
 
 function Delete(index) {
-  let srt2 = srt.value
   srt.value.splice(index, 1);
 
-  localStorage.setItem("savat", JSON.stringify(srt2));
 }
-// localStorage.getItem(localStorage.setItem("savat", JSON.stringify(yangiSavat));)
 
-let local = JSON.parse(localStorage.getItem("savat"));
-srt.value = local;
 </script>
 
 <style scoped>

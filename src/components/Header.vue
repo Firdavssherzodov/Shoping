@@ -161,8 +161,6 @@ let countet = ref([]);
 
 
 
-let local = JSON.parse(localStorage.getItem("savat"));
-countet.value = local;
 
 
 setInterval(()=>{
