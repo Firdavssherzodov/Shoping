@@ -58,10 +58,7 @@ function Delete(index) {
  
  let yangiSavat = srt.value.splice(index, 1);
  
- 
- 
  localStorage.setItem("savat", JSON.stringify(srt.value));
- 
 }
 // localStorage.getItem(localStorage.setItem("savat", JSON.stringify(yangiSavat));)
 
