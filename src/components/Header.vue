@@ -144,7 +144,6 @@
 <script setup>
 import { onMounted } from "vue";
 
-let countet = [];
 
 let local = JSON.parse(localStorage.getItem("savat"));
 countet = local;

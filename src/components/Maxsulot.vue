@@ -43,9 +43,6 @@ axios.get(api).then((resp) => {
 
 const Savat = ref([]);
 
- 
-
-
 function AddShop(idw) {
   axios
     .get(`https://fakestoreapi.com/products/${idw}`)
