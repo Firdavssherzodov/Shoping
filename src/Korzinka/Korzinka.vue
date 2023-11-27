@@ -37,6 +37,7 @@
 import Header1 from "../components/Header.vue";
 import { ref, onMounted } from "vue";
 let srt = ref([]);
+
 onMounted(() => {
   let local = JSON.parse(localStorage.getItem("savat"));
   srt.value = local;
@@ -54,10 +55,20 @@ function plus(index) {
 }
 
 function Delete(index) {
-  srt.value.splice(index, 1);
+ 
+ let yangiSavat = srt.value.splice(index, 1);
+ 
+ 
+ 
+ localStorage.setItem("savat", JSON.stringify(srt.value));
+ 
 }
+// localStorage.getItem(localStorage.setItem("savat", JSON.stringify(yangiSavat));)
+
+
 let local = JSON.parse(localStorage.getItem("savat"));
 srt.value = local;
+
 </script>
 
 <style scoped>
@@ -118,6 +129,7 @@ span::selection {
   left: 14.5%;
   bottom: 1px;
   display: flex;
+  border-radius: 10px !important;
   justify-content: space-between;
   align-items: center;
 }
@@ -169,7 +181,7 @@ span::selection {
 
   .umumiy {
     width: 100%;
-    bottom: 8vh;
+    bottom: 7.5vh;
     left: 0%;
   }
   .ul li{
@@ -225,7 +237,7 @@ span::selection {
   }
   .umumiy {
     width: 100%;
-    bottom: 8vh;
+    bottom: 7.7vh;
     left: 0%;
   }
   .ul li{

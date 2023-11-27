@@ -86,7 +86,7 @@
       </div>
       <div class="modal-body my-2">
  
-        <input type="text" class=" rounded-5 border-1 px-3" style="margin-left: 12vh; width: 60%; height: 50px; font-size: 1.1rem;" placeholder="+998 00 000-00-00" v-model="number">
+        <input type="text" class=" rounded-5 border-1 px-3" style="margin-left: 12vh; width: 60%; height: 50px; font-size: 1.1rem;" placeholder="+998 00 000-00-00" >
   
       
       </div>
@@ -100,7 +100,6 @@
 </template>
 
 <script setup>
- 
 
  
 </script>
