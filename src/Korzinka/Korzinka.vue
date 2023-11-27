@@ -26,8 +26,8 @@
   </div>
   <section class="umumiy border border-start-0 border-end-0">
     <ul class="ul">
-      <li>Umumiy narx : {{}}</li>
-      <li>Maxsulotlar soni :</li>
+      <li>Umumiy narx : {{ }}</li>
+      <li>Maxsulotlar soni : {{ srt.length }}</li>
     </ul>
     <button class="btn btn-primary p-2">Rasmiylashtirish</button>
   </section>
@@ -59,6 +59,7 @@ function Delete(index) {
  let yangiSavat = srt.value.splice(index, 1);
  
  localStorage.setItem("savat", JSON.stringify(srt.value));
+ 
 }
 // localStorage.getItem(localStorage.setItem("savat", JSON.stringify(yangiSavat));)
 
