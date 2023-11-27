@@ -24,7 +24,7 @@
 <script setup>
 import heder from "../components/Header.vue";
 import { ref } from "vue";
-let number =ref('+988')
+let number = ref("+988");
 </script>
 
 <style scoped>
