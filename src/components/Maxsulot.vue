@@ -32,9 +32,7 @@ import product_list from "../user/store/userStore";
 let srt = ref([]);
 
 // let id = ref(null);
-// console.log(srt);
 
-const api = "https://fakestoreapi.com/products";
 
 axios.get(api).then((resp) => {
   resp.data.slice(0, 20).forEach((element) => {
@@ -51,11 +49,7 @@ function AddShop(idw) {
     product_list.value.push(resp.data);
 
     localStorage.setItem("savat", JSON.stringify(product_list.value));
-
-
-   
   });
-  
 }
 </script>
 <style scoped>

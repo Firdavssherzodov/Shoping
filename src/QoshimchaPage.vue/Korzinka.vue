@@ -56,14 +56,12 @@ function minus(index) {
 }
 function plus(index) {
   srt.value[index].count++;
-  console.log(srt.value[index].count=+1);
 }
 
 function Delete(index) {
   srt.value.splice(index, 1);
   localStorage.setItem("savat", JSON.stringify(srt));
 }
-
 // Savatdagi barcha mahsulotlarning umumiy narxini hisoblash
 function calculateTotalPrice(total1) {
   let total = total1;
