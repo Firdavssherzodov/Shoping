@@ -19,7 +19,6 @@
         </div>
       </div>
     </div>
-    <!-- <button class="btn btn-primary my-5" style="position: relative; left: 80%;">yana</button> -->
   </section>
 </template>
 
@@ -32,10 +31,8 @@ import product_list from "../user/store/userStore";
 let srt = ref([]);
 
 // let id = ref(null);
-// console.log(srt);
 
 const api = "https://fakestoreapi.com/products";
-
 
 axios.get(api).then((resp) => {
   resp.data.slice(0, 20).forEach((element) => {
@@ -43,20 +40,14 @@ axios.get(api).then((resp) => {
   });
 });
 
-const Savat = ref([]);
 
 function AddShop(idw) {
   axios.get(`https://fakestoreapi.com/products/${idw}`).then((resp) => {
-    Savat.value.push(resp.data);
 
     product_list.value.push(resp.data);
 
     localStorage.setItem("savat", JSON.stringify(product_list.value));
-
-
-   
   });
-  
 }
 </script>
 <style scoped>
