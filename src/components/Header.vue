@@ -27,17 +27,16 @@
             style="color: #838891"
           ></i>
           <button
-          class="btn btn-primary btn-floating fa-bounce mb-4 mx-2 counter2"
-          style="
-
-            border-radius: 50px;
-            font-size: 0.7rem;
-            width: 20px;
-            height: 20px;
-          "
-        >
-          {{ countet?.length }}
-        </button>
+            class="btn btn-primary btn-floating fa-bounce mb-4 mx-2 counter2"
+            style="
+              border-radius: 50px;
+              font-size: 0.7rem;
+              width: 20px;
+              height: 20px;
+            "
+          >
+            {{ countet?.length }}
+          </button>
           <p class="px-3 my-4" style="color: var(--mdb-body-color)">Savat</p>
         </div>
       </router-link>
@@ -60,14 +59,14 @@
       </div>
     </router-link>
     <router-link to="/search">
-    <div>
-      <a
-        href="#"
-        class="fa-solid fa-magnifying-glass fs-4"
-        style="color: #8c8989"
-      ></a>
-    </div>
-  </router-link>
+      <div>
+        <a
+          href="#"
+          class="fa-solid fa-magnifying-glass fs-4"
+          style="color: #8c8989"
+        ></a>
+      </div>
+    </router-link>
     <router-link to="/korzinka">
       <div>
         <a
@@ -119,7 +118,6 @@
             Telefon raqamini kiriting
           </h5>
 
-        
           <button
             type="button"
             class="btn-close"
@@ -155,23 +153,18 @@
 </template>
 
 <script setup>
-import { ref,onMounted } from "vue";
+import { ref, onMounted } from "vue";
 import product_list from "../user/store/userStore";
 let countet = ref([]);
 
-countet.value =  JSON.parse(localStorage.getItem("savat"));
+countet.value = JSON.parse(localStorage.getItem("savat")) || [];
 
+// setInterval(()=>{
+//   countet.value =  JSON.parse(localStorage.getItem("savat"));
+// },1000)
 
-
-
-  // setInterval(()=>{
-  //   countet.value =  JSON.parse(localStorage.getItem("savat"));
-  // },1000)
-
-
-
-  onMounted(() => {
-    if (countet.value.length > 0) {
+onMounted(() => {
+  if (countet.value.length > 0) {
     let count = document.querySelector(".counter");
     count.style.display = "block";
   } else {
@@ -222,12 +215,15 @@ img {
   border-radius: 10px !important;
   background-color: rgb(255, 255, 255);
 }
+.Menu div >a:hover {
+  color: #3b71ca !important;
+}
 .counter {
   bottom: 55%;
   margin-left: 4%;
   position: absolute;
 }
-.counter2{
+.counter2 {
   position: absolute;
 }
 /* Responsive 385px*/
@@ -262,9 +258,9 @@ img {
     font-size: 1.4rem;
   }
   .counter {
-  bottom: 55%;
-  margin-left: 4%;
-  position: absolute;
-}
+    bottom: 55%;
+    margin-left: 4%;
+    position: absolute;
+  }
 }
 </style>

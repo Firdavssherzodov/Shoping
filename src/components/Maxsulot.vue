@@ -3,7 +3,7 @@
     <div class="diva">
       <div class="div">
         <div
-          class="kard border rounded-5 m-2 ms-5"
+          class="kard border rounded-5 m-2 ms-5"  
           v-for="data in srt"
           :key="data"
         >
@@ -11,9 +11,9 @@
             <img :src="data.image" alt="inkas" />
             <p class="mt-5 mx-2" style="font-size: 0.8rem">{{ data.title }}</p>
             <h5 class="mx-2 text-dark">{{ data.price }} $</h5>
-            <Rating :cancel="false" class="ms-2 mt-3 Rating" />
-            <button class="btn btn-success mx-2 my-2" @click="AddShop(data.id)">
-              <i class="fa-solid fa-plus" style="color: #edeff3"></i>
+            <Rating :cancel="false" v-model="value" :percentage="data.rating" class="ms-2 mt-3  Rating" />
+            <button class="btn btn-success btn btn-outline-success ripple-surface-dark mx-2 my-2" data-mdb-ripple-init data-mdb-ripple-color="dark" @click="AddShop(data.id)">
+              <i class="fa-solid fa-cart-shopping text-seccess" style="color: #14A44D"></i>
             </button>
           </div>
         </div>
@@ -32,6 +32,9 @@ import product_list from "../user/store/userStore";
 let srt = ref([]);
 
 // let id = ref(null);
+// console.log(srt);
+
+const api = "https://fakestoreapi.com/products";
 
 
 axios.get(api).then((resp) => {
@@ -49,7 +52,11 @@ function AddShop(idw) {
     product_list.value.push(resp.data);
 
     localStorage.setItem("savat", JSON.stringify(product_list.value));
+
+
+   
   });
+  
 }
 </script>
 <style scoped>

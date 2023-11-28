@@ -5,7 +5,7 @@
   </h6> -->
 
   <div class="diva">
-    <div class="kard border rounded-5" v-for="(data,index) in srt" :key="data">
+    <div class="kard border rounded-5" v-for="(data, index) of srt" :key="data">
       <div class="d1 d-flex">
         <img class="div_img my-4 ms-5 me-4" :src="data.image" />
         <p class="py-4 mt-3 d-block" style="font-size: 0.8rem">
@@ -16,7 +16,7 @@
       <div class="d2 d-flex mx-2">
         <span class="span my-3 mx-2">
           <i class="fa-solid fa-minus fs-5 px-3" @click="minus(index)"></i>
-          <input type="text" class="px-1" style="width: 40px" v-model="count" />
+          <input type="text" class="px-1" style="width: 40px" v-model="counter" />
           <i class="fa-solid fa-plus fs-5 px-3" @click="plus(index)"></i>
         </span>
         <h6 class="py-3 pe-3 w-25 fw-bold">$ {{ data.price }}</h6>
@@ -41,7 +41,7 @@
 import Header1 from "../components/Header.vue";
 import { ref, onMounted } from "vue";
 
-let count = "1";
+let counter = 1;
 
 let srt = ref([]);
 
@@ -49,31 +49,45 @@ onMounted(() => {
   srt.value = JSON.parse(localStorage.getItem("savat")) || [];
 });
 
+function Delete(index) {
+
+console.log(srt.value.splice(index, 1));
+srt.value.splice(index,1);
+
+localStorage.setItem("savat", JSON.stringify(srt));
+}
+
 function minus(index) {
-  if (srt.value[index].count > 1) {
-    srt.value[index].count=-1;
+
+  if (srt.value[index].counter > 1) {
+    srt.value[index].counter--;
   }
 }
 function plus(index) {
-  srt.value[index].count++;
+
+  console.log(srt.value[index]);
+  if (srt.value[index]) {
+    srt.value[index].counter += 1;
+    counter = srt.value[index].counter;
+  }
 }
 
-function Delete(index) {
-  srt.value.splice(index, 1);
-  localStorage.setItem("savat", JSON.stringify(srt));
-}
+
 // Savatdagi barcha mahsulotlarning umumiy narxini hisoblash
-function calculateTotalPrice(total1) {
-  let total = total1;
-  for (let item of srt.value) {
-    console.log();
-    total += item.price * item.count;
+function calculateTotalPrice() {
+
+  for (let item1 of srt.value) {
+    console.log(item1);
+    total += item1.price * item1.counter;
   }
+  let total = 0;
+
   return total;
 }
 
-let price = calculateTotalPrice(0);
-console.log(price);
+const price = calculateTotalPrice();
+
+
 </script>
 
 <style scoped>

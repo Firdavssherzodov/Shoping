@@ -33,8 +33,13 @@ input {
     margin-top: 5vh;
   }
   form {
+    position:fixed;
+    height: 40px !important;
     margin: auto;
+    left: 5%;
+    bottom: 87.5%;
     width: 90%;
+    border: 2px solid blue;
   }
 }
 /* Responsive 576px*/
