@@ -215,7 +215,7 @@ img {
   border-radius: 10px !important;
   background-color: rgb(255, 255, 255);
 }
-.Menu div >a:hover {
+.Menu div:hover {
   color: #3b71ca !important;
 }
 .counter {
