@@ -14,8 +14,8 @@
         <!-- <p class="mt-4">$ {{ data.price }} </p> -->
       </div>
       <div class="d2 d-flex mx-2">
-        <span class="span my-3 mx-2">
-          <i class="fa-solid fa-minus fs-5 px-3 ps-2" @click="minus(index)"></i>
+        <span class="span my-3 mx-2 px-2">
+          <i class="fa-solid fa-minus fs-5 px-3 ps-1" @click="minus(index)"></i>
           <input type="text" class="px-1" style="width: 40px" v-model="counter" />
           <i class="fa-solid fa-plus fs-5 px-3" @click="plus(index)"></i>
         </span>
@@ -242,7 +242,7 @@ span::selection {
   }
   .span input {
     padding-left: 5px !important;
-    width: 30% !important;
+    width: 31% !important;
   }
   .d1 p {
     width: 90% !important;
