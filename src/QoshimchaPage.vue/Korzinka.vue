@@ -68,10 +68,6 @@ function minus(index) {
 }
 function plus(index) {
 
-  if (srt.value[index]) {
-    srt.value[index].counter += 1;
-    counter = srt.value[index].counter;
-  }
 }
 
 
@@ -82,7 +78,6 @@ function calculateTotalPrice() {
     total += item1.price * item1.counter;
   }
 
-  return total;
 }
 
 const price = calculateTotalPrice();
