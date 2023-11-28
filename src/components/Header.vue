@@ -174,7 +174,7 @@ onMounted(() => {
 });
 </script>
 
-<style scoped>
+<style scoped> 
 .diva {
   width: 100%;
   height: 8vh;

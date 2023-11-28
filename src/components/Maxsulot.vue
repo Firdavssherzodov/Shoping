@@ -8,10 +8,10 @@
           :key="data"
         >
           <div class="div_img">
-            <img :src="data.image" alt="inkas" />
+            <img :src="data.images" alt="inkas" />
             <p class="mt-5 mx-2" style="font-size: 0.8rem">{{ data.title }}</p>
             <h5 class="mx-2 text-dark">{{ data.price }} $</h5>
-            <Rating :cancel="false" v-model="value" class="ms-2 mt-3 Rating" />
+            <Rating :cancel="false" class="ms-2 mt-3 Rating" />
             <button
               class="btn btn-success btn btn-outline-success ripple-surface-dark mx-2 my-2"
               @click="AddShop(data.id)"
@@ -38,7 +38,7 @@ let srt = ref([]);
 
 // let id = ref(null);
 
-const api = "https://fakestoreapi.com/products";
+const api = "https://api.escuelajs.co/api/v1/products";
 
 axios.get(api).then((resp) => {
   resp.data.slice(0, 20).forEach((element) => {
@@ -48,7 +48,7 @@ axios.get(api).then((resp) => {
 
 
 function AddShop(idw) {
-  axios.get(`https://fakestoreapi.com/products/${idw}`).then((resp) => {
+  axios.get(`https://api.escuelajs.co/api/v1/products/${idw}`).then((resp) => {
 
     product_list.value.push(resp.data);
 

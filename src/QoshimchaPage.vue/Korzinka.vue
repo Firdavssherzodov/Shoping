@@ -7,7 +7,7 @@
   <div class="diva">
     <div class="kard border rounded-5" v-for="(data, index) of srt" :key="data">
       <div class="d1 d-flex">
-        <img class="div_img my-4 ms-5 me-4" :src="data.image" />
+        <img class="div_img my-4 ms-5 me-4" :src="data.images" />
         <p class="py-4 mt-3 d-block" style="font-size: 0.8rem">
           {{ data.title }}
         </p>
@@ -15,7 +15,7 @@
       </div>
       <div class="d2 d-flex mx-2">
         <span class="span my-3 mx-2">
-          <i class="fa-solid fa-minus fs-5 px-3" @click="minus(index)"></i>
+          <i class="fa-solid fa-minus fs-5 px-3 ps-2" @click="minus(index)"></i>
           <input type="text" class="px-1" style="width: 40px" v-model="counter" />
           <i class="fa-solid fa-plus fs-5 px-3" @click="plus(index)"></i>
         </span>
@@ -57,19 +57,19 @@ srt.value.splice(index,1);
 localStorage.setItem("savat", JSON.stringify(srt));
 }
 
-function minus(index) {
+// function minus(index) {
 
-  if (srt.value[index].counter > 1) {
-    srt.value[index].counter--;
-  }
-}
-function plus(index) {
+//   if (srt.value[index].counter > 1) {
+//     srt.value[index].counter--;
+//   }
+// }
+// function plus(index) {
 
-  if (srt.value[index]) {
-    srt.value[index].counter += 1;
-    counter = srt.value[index].counter;
-  }
-}
+//   if (srt.value[index]) {
+//     srt.value[index].counter += 1;
+//     counter = srt.value[index].counter;
+//   }
+// }
 
 
 // Savatdagi barcha mahsulotlarning umumiy narxini hisoblash
@@ -242,7 +242,7 @@ span::selection {
   }
   .span input {
     padding-left: 5px !important;
-    width: 31% !important;
+    width: 30% !important;
   }
   .d1 p {
     width: 90% !important;
