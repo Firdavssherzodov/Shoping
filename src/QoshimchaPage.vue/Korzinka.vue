@@ -46,7 +46,10 @@ let srt = ref([]);
 
 onMounted(() => {
   srt.value = JSON.parse(localStorage.getItem("savat"));
+
+  
 });
+
 
 function Delete(index) {
 srt.value.splice(index,1);
