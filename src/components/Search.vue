@@ -1,7 +1,7 @@
 <template>
   <div class="diva">
     <form class="m-auto my-3 square border border-primary rounded-5">
-      <input type="text" class="rounded-5 px-3" placeholder="Qidiruv" />
+      <input type="text" class="rounded-5 px-3" placeholder="Qidiruv"/>
       <button class="btn btn-primary">
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
@@ -9,7 +9,27 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+
+// import { ref} from 'vue';
+// let homeInput =ref("")
+// let product = ref([]);
+// const api = "https://api.escuelajs.co/api/v1/products";
+// axios.get(api).then((resp) => {
+//   resp.data.forEach((element) => {
+//     srt.value.push(element);
+//   });
+// });
+
+ 
+ 
+//  let findInfo = product.value.filter((list) => {
+//    return list.title.toUpperCase().includes(homeInput.value.toUpperCase());
+//  });
+ 
+
+// console.log(findInfo);
+</script>
 
 <style scoped>
 .diva {

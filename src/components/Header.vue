@@ -167,9 +167,13 @@ onMounted(() => {
   if (countet.value.length > 0) {
     let count = document.querySelector(".counter");
     count.style.display = "block";
+    let count2 = document.querySelector(".counter2");
+    count2.style.display = "block";
   } else {
     let count = document.querySelector(".counter");
     count.style.display = "none";
+    let count2 = document.querySelector(".counter2");
+    count2.style.display = "none";
   }
 });
 </script>
@@ -224,6 +228,8 @@ img {
   position: absolute;
 }
 .counter2 {
+  display: none;
+  margin-left: 14px !important;
   position: absolute;
 }
 /* Responsive 385px*/

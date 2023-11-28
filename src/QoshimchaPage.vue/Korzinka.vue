@@ -28,8 +28,8 @@
   </div>
   <section class="umumiy border border-start-0 border-end-0">
     <ul class="ul">
-      <li>Umumiy narx : {{ }}</li>
-      <li>Maxsulotlar soni : </li>
+      <li>Umumiy narx : {{ price }}</li>
+      <li>Maxsulotlar soni : {{ srt?.length }}</li>
     </ul>
     <button class="btn btn-primary p-2">Rasmiylashtirish</button>
   </section>
@@ -37,7 +37,7 @@
 
 <script setup>
 import Header1 from "../components/Header.vue";
-import { ref, onMounted } from "vue";
+import { ref, onMounted,watchEffect } from "vue";
 
 let count = ref(1);
 
@@ -67,8 +67,8 @@ function minus(index) {
     srt.value[index].count--;
   }
 }
-function plus(index) {
-  srt.value[index].count++
+function plus(index1) {
+ srt.value[index1].count++;
 }
 
 
@@ -76,7 +76,7 @@ function plus(index) {
 function calculateTotalPrice() {
   let total = 0;
   for (let item of srt.value) {
-    total += item.price * item.count;
+    total += item.price;
   }
 
   return total;
