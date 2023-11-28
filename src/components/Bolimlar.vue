@@ -50,7 +50,7 @@ li:hover {
     margin-top: 0;
     background-color: rgb(255, 255, 255);
     position: sticky;
-    top: 0px;
+    top: -1px;
     z-index: 33;
   }
   ul {
@@ -70,7 +70,7 @@ li:hover {
 @media (max-width: 576px) {
   .diva {
     width: 100%;
-    margin-top: 0;
+    top: -1px;
   }
   ul {
     padding: 0%;

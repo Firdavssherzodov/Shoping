@@ -38,13 +38,15 @@ let srt = ref([]);
 
 // let id = ref(null);
 
+// axios one
 const api = "https://api.escuelajs.co/api/v1/products";
-
 axios.get(api).then((resp) => {
   resp.data.slice(0, 20).forEach((element) => {
     srt.value.push(element);
   });
 });
+
+
 
 function AddShop(idw) {
   axios.get(`https://api.escuelajs.co/api/v1/products/${idw}`).then((resp) => {

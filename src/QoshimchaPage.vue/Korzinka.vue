@@ -1,8 +1,9 @@
 <template>
   <Header1 />
-  <!-- <h6 class="text-center py-5 erorre">
+  <p class="text-center py-5 erorre d-none">
     Hali hech qanday maxsulot olganingiz yuq!
-  </h6> -->
+
+  </p>
 
   <div class="diva">
     <div class="kard border rounded-5" v-for="(data, index) of srt" :key="data">
@@ -30,7 +31,7 @@
   </div>
   <section class="umumiy border border-start-0 border-end-0">
     <ul class="ul">
-      <li>Umumiy narx : {{ price }}</li>
+      <li>Umumiy narx : {{ counter }}</li>
       <li>Maxsulotlar soni : {{ srt.length }}</li>
     </ul>
     <button class="btn btn-primary p-2">Rasmiylashtirish</button>
@@ -46,33 +47,37 @@ let counter = 1;
 let srt = ref([]);
 
 onMounted(() => {
-  srt.value = JSON.parse(localStorage.getItem("savat")) || [];
+  srt.value = JSON.parse(localStorage.getItem("savat"));
 });
 
 function Delete(index) {
 srt.value.splice(index,1);
-
-localStorage.setItem("savat", JSON.stringify(srt));
+if (srt.value.length == 0) {
+  localStorage.clear()
+}else{
+  localStorage.setItem("savat", JSON.stringify(srt));
 }
 
-// function minus(index) {
+}
 
-//   if (srt.value[index].counter > 1) {
-//     srt.value[index].counter--;
-//   }
-// }
-// function plus(index) {
+function minus(index) {
 
-//   if (srt.value[index]) {
-//     srt.value[index].counter += 1;
-//     counter = srt.value[index].counter;
-//   }
-// }
+  if (srt.value[index].counter > 1) {
+    srt.value[index].counter--;
+  }
+}
+function plus(index) {
+
+  if (srt.value[index]) {
+    srt.value[index].counter += 1;
+    counter = srt.value[index].counter;
+  }
+}
 
 
 // Savatdagi barcha mahsulotlarning umumiy narxini hisoblash
 function calculateTotalPrice() {
-
+  let total = 0;
   for (let item1 of srt.value) {
     total += item1.price * item1.counter;
   }
@@ -81,6 +86,10 @@ function calculateTotalPrice() {
 }
 
 const price = calculateTotalPrice();
+console.log(price);
+
+
+
 
 
 </script>
