@@ -65,7 +65,6 @@ function minus(index) {
 }
 function plus(index) {
 
-  console.log(srt.value[index]);
   if (srt.value[index]) {
     srt.value[index].counter += 1;
     counter = srt.value[index].counter;
