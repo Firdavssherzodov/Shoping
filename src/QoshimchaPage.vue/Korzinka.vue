@@ -50,8 +50,6 @@ onMounted(() => {
 });
 
 function Delete(index) {
-
-console.log(srt.value.splice(index, 1));
 srt.value.splice(index,1);
 
 localStorage.setItem("savat", JSON.stringify(srt));
@@ -76,10 +74,8 @@ localStorage.setItem("savat", JSON.stringify(srt));
 function calculateTotalPrice() {
 
   for (let item1 of srt.value) {
-    console.log(item1);
     total += item1.price * item1.counter;
   }
-  let total = 0;
 
   return total;
 }

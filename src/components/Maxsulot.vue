@@ -46,10 +46,8 @@ axios.get(api).then((resp) => {
   });
 });
 
-
 function AddShop(idw) {
   axios.get(`https://api.escuelajs.co/api/v1/products/${idw}`).then((resp) => {
-
     product_list.value.push(resp.data);
 
     localStorage.setItem("savat", JSON.stringify(product_list.value));
