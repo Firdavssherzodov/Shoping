@@ -1,9 +1,6 @@
 <template>
   <Header1 />
-  <p class="text-center py-5 erorre d-none">
-    Hali hech qanday maxsulot olganingiz yuq!
-
-  </p>
+  
 
   <div class="diva">
     <div class="kard border rounded-5" v-for="(data, index) of srt" :key="data">
@@ -17,7 +14,7 @@
       <div class="d2 d-flex mx-2">
         <span class="span my-3 mx-2 px-2">
           <i class="fa-solid fa-minus fs-5 px-3 ps-1" @click="minus(index)"></i>
-          <input type="text" class="px-1" style="width: 40px" v-model="counter" />
+          <input type="text" class="px-1" style="width: 40px" v-model="count" />
           <i class="fa-solid fa-plus fs-5 px-3" @click="plus(index)"></i>
         </span>
         <h6 class="py-3 pe-3 w-25 fw-bold">$ {{ data.price }}</h6>
@@ -31,8 +28,8 @@
   </div>
   <section class="umumiy border border-start-0 border-end-0">
     <ul class="ul">
-      <li>Umumiy narx : {{ counter }}</li>
-      <li>Maxsulotlar soni : {{ srt.length }}</li>
+      <li>Umumiy narx : {{ }}</li>
+      <li>Maxsulotlar soni : </li>
     </ul>
     <button class="btn btn-primary p-2">Rasmiylashtirish</button>
   </section>
@@ -42,9 +39,10 @@
 import Header1 from "../components/Header.vue";
 import { ref, onMounted } from "vue";
 
-let counter = 1;
+let count = ref(1);
 
 let srt = ref([]);
+
 
 onMounted(() => {
   srt.value = JSON.parse(localStorage.getItem("savat"));
@@ -62,22 +60,23 @@ if (srt.value.length == 0) {
 
 function minus(index) {
 
-  if (srt.value[index].counter > 1) {
-    srt.value[index].counter--;
+  if (srt.value[index].count > 1) {
+    srt.value[index].count--;
   }
 }
 function plus(index) {
-
+  srt.value[index].count++
 }
 
 
 // Savatdagi barcha mahsulotlarning umumiy narxini hisoblash
 function calculateTotalPrice() {
   let total = 0;
-  for (let item1 of srt.value) {
-    total += item1.price * item1.counter;
+  for (let item of srt.value) {
+    total += item.price * item.count;
   }
 
+  return total;
 }
 
 const price = calculateTotalPrice();
