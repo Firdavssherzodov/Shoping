@@ -38,7 +38,6 @@
 import Header1 from "../components/Header.vue";
 import { ref, onMounted, watchEffect } from "vue";
 
-let count = ref(1);
 
 let srt = ref([]);
 const ff = ref([]);
@@ -72,23 +71,17 @@ function minus(data) {
     return;
   }
   data.count--;
-  localStorage.setItem("savat", JSON.stringify(srt.value));
 
 }
 function plus(data) {
-
   data.count++;
-  localStorage.setItem("savat", JSON.stringify(ff.value));
 }
 
 // Savatdagi barcha mahsulotlarning umumiy narxini hisoblash
-function calculateTotalPrice() {
-  let price = JSON.parse(JSON.stringify(srt.value));
   let total = 0;
 
   for (let item of price) {
     total += item.price * item.count;
-  }
   return total;
 }
 
