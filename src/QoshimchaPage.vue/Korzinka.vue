@@ -1,9 +1,8 @@
 <template>
   <Header1 />
-  
 
   <div class="diva">
-    <div class="kard border rounded-5" v-for="(data, index) of srt" :key="data">
+    <div class="kard border rounded-5" v-for="(data, index) of ff" :key="data">
       <div class="d1 d-flex">
         <img class="div_img my-4 ms-5 me-4" :src="data.images" />
         <p class="py-4 mt-3 d-block" style="font-size: 0.8rem">
@@ -13,9 +12,9 @@
       </div>
       <div class="d2 d-flex mx-2">
         <span class="span my-3 mx-2 px-2">
-          <i class="fa-solid fa-minus fs-5 px-3 ps-1" @click="minus(index)"></i>
-          <input type="text" class="px-1" style="width: 40px" v-model="count" />
-          <i class="fa-solid fa-plus fs-5 px-3" @click="plus(index)"></i>
+          <i class="fa-solid fa-minus fs-5 px-3 ps-2" @click="minus(data)"></i>
+          <span class="px-2">{{ data.count }}</span>
+          <i class="fa-solid fa-plus fs-5 px-3" @click="plus(data)"></i>
         </span>
         <h6 class="py-3 pe-3 w-25 fw-bold">$ {{ data.price }}</h6>
         <i
@@ -37,56 +36,64 @@
 
 <script setup>
 import Header1 from "../components/Header.vue";
-import { ref, onMounted,watchEffect } from "vue";
+import { ref, onMounted, watchEffect } from "vue";
 
 let count = ref(1);
 
 let srt = ref([]);
-
+const ff = ref([]);
 
 onMounted(() => {
   srt.value = JSON.parse(localStorage.getItem("savat"));
 
-  
+  srt.value.forEach((el) => {
+    ff.value.push({
+      count: 1,
+      id: el.id,
+      title: el.title,
+      description: el.description,
+      price: el.price,
+      images: el.images,
+    });
+  }); 
 });
 
-
 function Delete(index) {
-srt.value.splice(index,1);
-if (srt.value.length == 0) {
-  localStorage.clear()
-}else{
-  localStorage.setItem("savat", JSON.stringify(srt));
-}
-
-}
-
-function minus(index) {
-
-  if (srt.value[index].count > 1) {
-    srt.value[index].count--;
+  srt.value.splice(index, 1);
+  if (srt.value.length == 0) {
+    localStorage.clear();
+  } else {
+    localStorage.setItem("savat", JSON.stringify(srt));
   }
 }
-function plus(index1) {
- srt.value[index1].count++;
+
+function minus(data) {
+  if (data.count == 1) {
+    return;
+  }
+  data.count--;
+  localStorage.setItem("savat", JSON.stringify(srt.value));
+
+}
+function plus(data) {
+
+  data.count++;
+  localStorage.setItem("savat", JSON.stringify(ff.value));
 }
 
 // Savatdagi barcha mahsulotlarning umumiy narxini hisoblash
 function calculateTotalPrice() {
+  let price = JSON.parse(JSON.stringify(srt.value));
   let total = 0;
-  for (let item of srt.value) {
-    total += item.price;
+
+  for (let item of price) {
+    total += item.price * item.count;
   }
   return total;
 }
 
 const price = calculateTotalPrice();
 console.log(price);
-
-
-
-
-
 </script>
 
 <style scoped>
@@ -157,6 +164,8 @@ span::selection {
   .diva {
     width: 100% !important;
     display: block !important;
+    height: 100%;
+    padding-bottom: 16vh;
   }
   .kard {
     width: 90%;
@@ -214,6 +223,8 @@ span::selection {
   .diva {
     width: 90%;
     display: block !important;
+    height: 100%;
+    padding-bottom: 16vh;
   }
   .kard {
     width: 90%;
