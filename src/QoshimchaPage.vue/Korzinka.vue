@@ -77,7 +77,7 @@ function minus(data) {
   if (data.count == 1) {
     return;
   }
-  data.count--;
+  data.count--;F
   for (let item of ff.value) {
     let price1 = (total += item.price * item.count);
     total = price1;
@@ -103,8 +103,6 @@ function Canculator() {
     total = price3;
   }
 }
-
-// console.log(price);/
 </script>
 
 <style scoped>
@@ -186,7 +184,7 @@ span::selection {
     align-items: center;
     width: 40%;
     height: 50%;
-    margin-left:8% !important;
+    margin-left: 8% !important;
   }
 
   .d2 h6 {
@@ -232,7 +230,6 @@ span::selection {
   .diva {
     width: 90%;
     display: block !important;
-
   }
   .kard {
     width: 90%;
