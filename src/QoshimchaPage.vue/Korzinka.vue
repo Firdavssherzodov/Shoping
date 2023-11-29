@@ -71,14 +71,12 @@ function plus(index1) {
  srt.value[index1].count++;
 }
 
-
 // Savatdagi barcha mahsulotlarning umumiy narxini hisoblash
 function calculateTotalPrice() {
   let total = 0;
   for (let item of srt.value) {
     total += item.price;
   }
-
   return total;
 }
 
