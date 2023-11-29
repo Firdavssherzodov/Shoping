@@ -154,10 +154,7 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import product_list from "../user/store/userStore";
 let countet = ref([]);
-
-countet.value = JSON.parse(localStorage.getItem("savat")) || [];
 
 // setInterval(()=>{
 //   countet.value =  JSON.parse(localStorage.getItem("savat"));

@@ -70,7 +70,6 @@ let srt = ref([]);
 
 // let id = ref(null);
 
-// axios one
 const api = "https://fakestoreapi.com/products";
 axios.get(api).then((resp) => {
   resp.data.slice(0, 20).forEach((element) => {
