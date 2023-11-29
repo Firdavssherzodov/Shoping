@@ -4,7 +4,7 @@
   <div class="diva">
     <div class="kard border rounded-5" v-for="(data, index) of ff" :key="data">
       <div class="d1 d-flex">
-        <img class="div_img my-4 ms-5 me-4" :src="data.images" />
+        <img class="div_img my-4 ms-5 me-4" :src="data.image" />
         <p class="py-4 mt-3 d-block" style="font-size: 0.8rem">
           {{ data.title }}
         </p>
@@ -41,24 +41,23 @@ import { ref, onMounted, watchEffect } from "vue";
 let srt = ref([]);
 const ff = ref([]);
 
-
 console.log(ff.value);
 
 onMounted(() => {
   srt.value = JSON.parse(localStorage.getItem("savat"));
-function Data() {
-  srt.value.forEach((el) => {
-    ff.value.push({
-      count: 1,
-      id: el.id,
-      title: el.title,
-      description: el.description,
-      price: el.price,
-      images: el.images,
+  function Data() {
+    srt.value.forEach((el) => {
+      ff.value.push({
+        count: 1,
+        id: el.id,
+        title: el.title,
+        description: el.description,
+        price: el.price,
+        image: el.image,
+      });
     });
-  });
-}
-Data();
+  }
+  Data();
   // Canculator
 
   Canculator();
@@ -72,7 +71,7 @@ function Delete(index) {
     localStorage.setItem("savat", JSON.stringify(ff.value));
   }
 }
-let total =  0;
+let total = 0;
 
 function minus(data) {
   if (data.count == 1) {
@@ -80,8 +79,8 @@ function minus(data) {
   }
   data.count--;
   for (let item of ff.value) {
-   let price1 = total += item.price * item.count;
-   total = price1;
+    let price1 = (total += item.price * item.count);
+    total = price1;
   }
 }
 
@@ -90,8 +89,8 @@ function plus(data) {
   localStorage.setItem("savat", JSON.stringify(data));
 
   for (let item of ff.value) {
-   let price2 = total += item.price * item.count;
-   total = price2
+    let price2 = (total += item.price * item.count);
+    total = price2;
   }
 }
 
@@ -176,8 +175,6 @@ span::selection {
   .diva {
     width: 100% !important;
     display: block !important;
-    height: 100%;
-    padding-bottom: 16vh;
   }
   .kard {
     width: 90%;
@@ -189,7 +186,7 @@ span::selection {
     align-items: center;
     width: 40%;
     height: 50%;
-    margin-left: 10% !important;
+    margin-left:8% !important;
   }
 
   .d2 h6 {
@@ -235,8 +232,7 @@ span::selection {
   .diva {
     width: 90%;
     display: block !important;
-    height: 100%;
-    padding-bottom: 16vh;
+
   }
   .kard {
     width: 90%;
@@ -248,7 +244,7 @@ span::selection {
     align-items: center;
     width: 40%;
     height: 50%;
-    margin-left: 10% !important;
+    margin-left: 8% !important;
   }
 
   .d2 h6 {

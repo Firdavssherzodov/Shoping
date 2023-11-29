@@ -8,7 +8,7 @@
           :key="data"
         >
           <div class="div_img">
-            <img :src="data.images" alt="inkas" />
+            <img :src="data.image" alt="inkas" />
             <p class="mt-5 mx-2" style="font-size: 0.8rem">{{ data.title }}</p>
             <h5 class="mx-2 text-dark">{{ data.price }} $</h5>
             <Rating :cancel="false" class="ms-2 mt-3 Rating" />
@@ -71,7 +71,7 @@ let srt = ref([]);
 // let id = ref(null);
 
 // axios one
-const api = "https://api.escuelajs.co/api/v1/products";
+const api = "https://fakestoreapi.com/products";
 axios.get(api).then((resp) => {
   resp.data.slice(0, 20).forEach((element) => {
     srt.value.push(element);
@@ -82,7 +82,7 @@ axios.get(api).then((resp) => {
 
 
 function AddShop(idw) {
-  axios.get(`https://api.escuelajs.co/api/v1/products/${idw}`).then((resp) => {
+  axios.get(`https://fakestoreapi.com/products/${idw}`).then((resp) => {
     product_list.value.push(resp.data);
 
     localStorage.setItem("savat", JSON.stringify(product_list.value));
