@@ -77,7 +77,7 @@ function minus(data) {
   if (data.count == 1) {
     return;
   }
-  data.count--;F
+  data.count--;
   for (let item of ff.value) {
     let price1 = (total += item.price * item.count);
     total = price1;
