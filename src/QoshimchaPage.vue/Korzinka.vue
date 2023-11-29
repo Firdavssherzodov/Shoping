@@ -27,8 +27,8 @@
   </div>
   <section class="umumiy border border-start-0 border-end-0">
     <ul class="ul">
-      <li>Umumiy narx : {{ price }}</li>
-      <li>Maxsulotlar soni : {{ srt?.length }}</li>
+      <li>Umumiy narx : $ {{ total }}</li>
+      <li>Maxsulotlar soni : {{ ff?.length }}</li>
     </ul>
     <button class="btn btn-primary p-2">Rasmiylashtirish</button>
   </section>
@@ -38,13 +38,15 @@
 import Header1 from "../components/Header.vue";
 import { ref, onMounted, watchEffect } from "vue";
 
-
 let srt = ref([]);
 const ff = ref([]);
 
+
+console.log(ff.value);
+
 onMounted(() => {
   srt.value = JSON.parse(localStorage.getItem("savat"));
-
+function Data() {
   srt.value.forEach((el) => {
     ff.value.push({
       count: 1,
@@ -54,39 +56,56 @@ onMounted(() => {
       price: el.price,
       images: el.images,
     });
-  }); 
+  });
+}
+Data();
+  // Canculator
+
+  Canculator();
 });
 
 function Delete(index) {
-  srt.value.splice(index, 1);
-  if (srt.value.length == 0) {
+  ff.value.splice(index, 1);
+  if (ff.value.length == 0) {
     localStorage.clear();
   } else {
-    localStorage.setItem("savat", JSON.stringify(srt));
+    localStorage.setItem("savat", JSON.stringify(ff.value));
   }
 }
+let total =  0;
 
 function minus(data) {
   if (data.count == 1) {
     return;
   }
   data.count--;
-
+  for (let item of ff.value) {
+   let price1 = total += item.price * item.count;
+   total = price1;
+  }
 }
+
 function plus(data) {
   data.count++;
+  localStorage.setItem("savat", JSON.stringify(data));
+
+  for (let item of ff.value) {
+   let price2 = total += item.price * item.count;
+   total = price2
+  }
 }
 
 // Savatdagi barcha mahsulotlarning umumiy narxini hisoblash
-  let total = 0;
 
-  for (let item of price) {
-    total += item.price * item.count;
-  return total;
+function Canculator() {
+  for (let item of ff.value) {
+    let price3 = (total += item.price * item.count);
+
+    total = price3;
+  }
 }
 
-const price = calculateTotalPrice();
-console.log(price);
+// console.log(price);/
 </script>
 
 <style scoped>
