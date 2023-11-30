@@ -5,6 +5,8 @@
     <Search />
     <Bolim />
     <Maxsulot />
+  
+
   </div>
 </template>
 

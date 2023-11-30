@@ -48,7 +48,7 @@ input {
 /* Responsive 385px*/
 @media (max-width: 385px) {
   .diva {
-    margin-top: 5vh;
+    margin-top: 4vh !important;
   }
   form {
     margin: auto;
@@ -59,7 +59,7 @@ input {
 /* Responsive 576px*/
 @media (max-width: 576px) {
   .diva {
-    margin-top: 5vh;
+    margin-top: 4vh;
     z-index: 33;
   }
   form {
