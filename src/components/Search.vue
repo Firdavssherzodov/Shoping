@@ -10,7 +10,6 @@
 </template>
 
 <script setup>
-
 // import { ref} from 'vue';
 // let homeInput =ref("")
 // let product = ref([]);
@@ -20,11 +19,6 @@
 //     srt.value.push(element);
 //   });
 // });
-
- 
- 
-
- 
 
 // console.log(findInfo);
 </script>

@@ -56,9 +56,7 @@ function NarxiP() {
   width: 100%;
   height: 8vh;
   margin-top: 2vh;
-  position: sticky;
   background-color: white;
-  top: 0px;
   z-index: 33;
 }
 ul {
