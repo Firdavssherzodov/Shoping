@@ -28,12 +28,14 @@
   width: 100%;
   height: 8vh;
   margin-top: 6.5vh;
+  position: relative;
 }
 form {
   width: 50%;
   height: 60%;
   border: 1px solid;
   display: flex;
+  z-index: 2233;
 }
 input {
   padding-top: 30vh;

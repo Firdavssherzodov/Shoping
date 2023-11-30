@@ -253,6 +253,7 @@ svg rect {
     height: 37%;
   }
   .div_img img {
+    vertical-align: none !important;
     width: 50%;
     height: 55%;
     margin: 20% 23%;
