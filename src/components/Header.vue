@@ -78,7 +78,7 @@
           class="fa-solid fa-bag-shopping fs-4"
           style="color: #8c8989"
         ></a>
-        <p style="font-size: 0.7rem; position: absolute ;"> Savat</p>
+        <p style="font-size: 0.7rem; position: absolute ;margin-left: -0.8vh;"> Savat</p>
         <button
           class="btn btn-primary btn-floating fa-bounce counter"
           style=" 
@@ -102,7 +102,7 @@
     <router-link to="/user">
       <div>
         <a href="#" class="fa-regular fa-user fs-4" style="color: #8c8989"></a>
-        <p style="font-size: 0.7rem; position: absolute ;"> Kabinet</p>
+        <p style="font-size: 0.7rem; position: absolute ; margin-left: -1.3vh;" > Kabinet</p>
 
       </div>
     </router-link>
