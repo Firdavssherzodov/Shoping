@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="mt-4">
     <Header1 />
-    <Search />
     <Carusel />
+    <Search />
     <Bolim />
     <Maxsulot />
   </div>
