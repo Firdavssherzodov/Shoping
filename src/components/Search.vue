@@ -28,7 +28,6 @@
   width: 100%;
   height: 8vh;
   margin-top: 6.5vh;
-  position: relative !important;
 }
 form {
   width: 50%;
