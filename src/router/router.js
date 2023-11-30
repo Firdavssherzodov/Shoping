@@ -16,15 +16,17 @@ const router = createRouter({
     },
     {
       path: "/user",
-      name: 'user',
+      name: "user",
       component: () => import("../user/User.vue"),
     },
     {
-      path:'/search',
-      name:'seach',
-      component:()=>import('../QoshimchaPage.vue/Qidiruv.vue')
-    }
+      path: "/search",
+      name: "seach",
+      component: () => import("../QoshimchaPage.vue/Qidiruv.vue"),
+    },
   ],
 });
+
+ 
 
 export default router;

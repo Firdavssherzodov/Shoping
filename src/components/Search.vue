@@ -1,7 +1,7 @@
-<template >
-  <div class="diva ">
+<template>
+  <div class="diva">
     <form class="m-auto my-3 square border border-primary rounded-5">
-      <input type="text" class="rounded-5 px-3 py-3" placeholder="Qidiruv"/>
+      <input type="text" class="rounded-5 px-3 py-3" placeholder="Qidiruv" />
       <button class="btn btn-primary">
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
@@ -28,6 +28,7 @@
   width: 100%;
   height: 8vh;
   margin-top: 6.5vh;
+  position: relative !important;
 }
 form {
   width: 50%;
@@ -41,7 +42,7 @@ input {
   height: 100%;
   border: none;
 }
-button{
+button {
   height: 100%;
 }
 /* Responsive 385px*/
@@ -54,9 +55,9 @@ button{
     width: 90%;
     border: 1px solid blue;
   }
-  button{
-  height: 100% !important;
-}
+  button {
+    height: 100% !important;
+  }
 }
 /* Responsive 576px*/
 @media (max-width: 576px) {
