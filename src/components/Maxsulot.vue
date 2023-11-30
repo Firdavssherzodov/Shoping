@@ -78,8 +78,6 @@ axios.get(api).then((resp) => {
   });
 });
 
-
-
 function AddShop(idw) {
   axios.get(`https://fakestoreapi.com/products/${idw}`).then((resp) => {
     product_list.value.push(resp.data);

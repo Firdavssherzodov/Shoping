@@ -41,7 +41,6 @@ import { ref, onMounted, watchEffect } from "vue";
 let srt = ref([]);
 const ff = ref([]);
 
-console.log(ff.value);
 
 onMounted(() => {
   srt.value = JSON.parse(localStorage.getItem("savat"));
@@ -58,7 +57,6 @@ onMounted(() => {
     });
   }
   Data();
-  // Canculator
 
   Canculator();
 });
