@@ -47,6 +47,9 @@ input {
   height: 100%;
   border: none;
 }
+button{
+  height: 100%;
+}
 /* Responsive 385px*/
 @media (max-width: 385px) {
   .diva {
@@ -57,6 +60,9 @@ input {
     width: 90%;
     border: 1px solid blue;
   }
+  button{
+  height: 100% !important;
+}
 }
 /* Responsive 576px*/
 @media (max-width: 576px) {
