@@ -1,6 +1,7 @@
 <template>
-  <div class="mt-4">
+  <div class="mt-5">
     <Header1 />
+    <Search />
     <Carusel />
     <Bolim />
     <Maxsulot />

@@ -77,7 +77,7 @@
 <style scoped>
 .slide {
   height: 3% !important;
-  margin:4vh auto;
+  margin:2vh auto;
   width: 85%;
 }
 .div_carusel {

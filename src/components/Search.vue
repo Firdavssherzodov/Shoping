@@ -1,7 +1,7 @@
-<template>
-  <div class="diva">
+<template >
+  <div class="diva ">
     <form class="m-auto my-3 square border border-primary rounded-5">
-      <input type="text" class="rounded-5 px-3" placeholder="Qidiruv"/>
+      <input type="text" class="rounded-5 px-3 py-3" placeholder="Qidiruv"/>
       <button class="btn btn-primary">
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
@@ -42,6 +42,7 @@ form {
   display: flex;
 }
 input {
+  padding-top: 30vh;
   width: 100%;
   height: 100%;
   border: none;
@@ -61,7 +62,7 @@ input {
 @media (max-width: 576px) {
   .diva {
     margin-top: 4vh;
-    z-index: 33;
+    z-index: 33 !important  ;
   }
   form {
     margin: auto;
