@@ -253,7 +253,7 @@ svg rect {
     height: 37%;
   }
   .div_img img {
-    width: 50%;
+    width: 100px;
     height: 55%;
     margin: 20% 23%;
   }
@@ -285,7 +285,7 @@ svg rect {
     font-size: 0.9rem;
   }
   .Maxsulotlar {
-    height: 1850px !important;
+    height: 1900px !important;
   }
 }
 </style>

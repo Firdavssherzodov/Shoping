@@ -33,6 +33,7 @@
 .diva {
   width: 100%;
   height: 8vh;
+  margin-top: 7vh;
 }
 form {
   width: 50%;

@@ -56,6 +56,8 @@
     <router-link to="/">
       <div>
         <a href="#" class="fa-solid fa-house fs-4" style="color: #8c8989"></a>
+        <p style="font-size: 0.7rem; position: absolute ; margin-left: -2vh;" > Bosh sahifa</p>
+
       </div>
     </router-link>
     <router-link to="/search">
@@ -65,6 +67,8 @@
           class="fa-solid fa-magnifying-glass fs-4"
           style="color: #8c8989"
         ></a>
+        <p style="font-size: 0.7rem; position: absolute ;"> Katalog</p>
+
       </div>
     </router-link>
     <router-link to="/korzinka">
@@ -74,9 +78,10 @@
           class="fa-solid fa-bag-shopping fs-4"
           style="color: #8c8989"
         ></a>
+        <p style="font-size: 0.7rem; position: absolute ;"> Savat</p>
         <button
           class="btn btn-primary btn-floating fa-bounce counter"
-          style="
+          style=" 
             border-radius: 50px;
             font-size: 0.7rem;
             width: 20px;
@@ -87,12 +92,18 @@
         </button>
       </div>
     </router-link>
+    <router-link to="">
     <div>
       <a href="#" class="fa-regular fa-heart fs-4" style="color: #8c8989"></a>
+      <p style="font-size: 0.7rem; position: absolute ; margin-left: -2vh;" > Saralangan</p>
+
     </div>
+  </router-link>
     <router-link to="/user">
       <div>
         <a href="#" class="fa-regular fa-user fs-4" style="color: #8c8989"></a>
+        <p style="font-size: 0.7rem; position: absolute ;"> Kabinet</p>
+
       </div>
     </router-link>
   </section>
@@ -239,9 +250,14 @@ img {
   .Menu {
     display: block;
     width: 100%;
-    height: 60px !important;
+    height: 65px !important;
     left: 0% !important;
+    padding-bottom: 1vh;
   }
+  .Menu p{
+    margin-left: -0.8vh;
+  }
+ 
   .Menu,
   a {
     font-size: 1.3rem !important;
@@ -257,6 +273,7 @@ img {
     width: 100%;
     height: 60px !important;
     left: 0%;
+    padding-bottom: 1vh;
   }
   .Menu,
   a {
