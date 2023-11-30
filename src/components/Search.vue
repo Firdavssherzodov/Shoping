@@ -49,10 +49,17 @@ button {
   .diva {
     margin-top: 4vh !important;
   }
+  .diva:focus {
+    position: relative !important;
+  }
   form {
     margin: auto;
     width: 90%;
     border: 1px solid blue;
+  }
+
+  form:focus {
+    position: relative !important;
   }
   button {
     height: 100% !important;
