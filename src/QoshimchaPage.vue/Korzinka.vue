@@ -41,22 +41,22 @@ import { ref, onMounted } from "vue";
 let srt = ref([]);
 const ff = ref([]);
 
-
-
-onMounted( () => {
+onMounted(() => {
   srt.value = JSON.parse(localStorage.getItem("savat"));
   // function Data() {
-   
-    srt.value.forEach((el) => {
-      ff.value.push({
-        count: 1,
-        id: el.id,
-        title: el.title,
-        description: el.description,
-        price: el.price,
-        image: el.image,
-      },);
+    console.log('hhuiyuy');
+console.log(srt.value);
+if(!!srt.value)
+  srt.value.forEach((el) => {
+    ff.value.push({
+      count: 1,
+      id: el.id,
+      title: el.title,
+      description: el.description,
+      price: el.price,
+      image: el.image,
     });
+  });
   // }
   // Data();
 
