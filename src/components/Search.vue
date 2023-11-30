@@ -61,8 +61,7 @@ button {
   }
 
   form:focus {
-    position: relative !important;
-  }
+z-index: 33334;  }
   button {
     height: 100% !important;
   }
