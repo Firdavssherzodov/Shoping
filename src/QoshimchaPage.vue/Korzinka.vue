@@ -70,8 +70,6 @@ function Delete(index) {
   } else {
     localStorage.setItem("savat", JSON.stringify(ff.value));
   }
-
-
 }
 let total = 0;
 
