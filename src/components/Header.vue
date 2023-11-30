@@ -256,6 +256,8 @@ img {
   }
   .Menu p{
     margin-left: -0.8vh;
+    position: absolute !important;
+    max-height: 10px;
   }
  
   .Menu,
