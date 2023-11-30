@@ -1,18 +1,55 @@
 <template>
   <div class="diva">
     <ul class="border border-end-0 border-start-0 border-top-0">
-      <li>Kiyimlar</li>
-      <li>Sumkalar</li>
-      <li>Uzuklar</li>
-      <li>Mayshi</li>
-      <li>Bolim</li>
+      <li @click="Kiyim">Kiyimlar</li>
+      <li @click="Sumkalar">Sumkalar</li>
+      <li @click="Elektronika">Elektronika</li>
+      <li @click="NarxiB">Narxi B</li>
+      <li @click="NarxiP">Narxi P</li>
     </ul>
   </div>
 </template>
 
 <script setup>
-        
+import srt from "../user/store/userStore";
+// for (let a of srt.value) console.log(a);
+// console.log(srt.value);  
 
+function Kiyim() {
+  srt.value.sort((first, second) => {
+    if (first.category > second.category) return -1;
+    if (first.category < second.category) return 1;
+    return 0;
+  });
+}
+function Elektronika() {
+  srt.value.sort((first, second) => {
+    if (first.category < second.category) return -1;
+    if (first.category > second.category) return 1;
+    return 0;
+  });
+}
+function Sumkalar() {
+  srt.value.sort((first, second) => {
+    if (first.description <= second.description) return -1;
+    if (first.description >= second.description) return 1;
+    return 0;
+  });
+}
+function NarxiB() {
+  srt.value.sort((first, second) => {
+    if (first.price > second.price) return -1;
+    if (first.price < second.price) return 1;
+    return 0;
+  });
+}
+function NarxiP() {
+  srt.value.sort((first, second) => {
+    if (first.price < second.price) return -1;
+    if (first.price > second.price) return 1;
+    return 0;
+  });
+}
 </script>
 
 <style scoped>
@@ -40,8 +77,8 @@ ul li {
 li:hover {
   cursor: pointer;
   transition: 0.9s;
-  border-bottom: 1px solid #3B71CA;
-  color: #3B71CA;
+  border-bottom: 1px solid #3b71ca;
+  color: #3b71ca;
 }
 /* Responsive 385px */
 @media (max-width: 385px) {

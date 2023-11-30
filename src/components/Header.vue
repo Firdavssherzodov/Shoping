@@ -160,8 +160,10 @@ let countet = ref([]);
 //   countet.value =  JSON.parse(localStorage.getItem("savat"));
 // },1000)
 
-onMounted(() => {
-  if (countet.value.length > 0) {
+ onMounted( async () => {
+  countet.value = await JSON.parse(localStorage.getItem("savat")) || [];
+
+   if (countet.value.length > 0)  {
     let count = document.querySelector(".counter");
     count.style.display = "block";
     let count2 = document.querySelector(".counter2");
@@ -175,7 +177,7 @@ onMounted(() => {
 });
 </script>
 
-<style scoped> 
+<style scoped>
 .diva {
   width: 100%;
   height: 8vh;

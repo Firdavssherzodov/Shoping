@@ -23,9 +23,7 @@
 
  
  
-//  let findInfo = product.value.filter((list) => {
-//    return list.title.toUpperCase().includes(homeInput.value.toUpperCase());
-//  });
+
  
 
 // console.log(findInfo);

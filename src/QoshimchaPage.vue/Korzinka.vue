@@ -36,15 +36,17 @@
 
 <script setup>
 import Header1 from "../components/Header.vue";
-import { ref, onMounted, watchEffect } from "vue";
+import { ref, onMounted } from "vue";
 
 let srt = ref([]);
 const ff = ref([]);
 
 
-onMounted(() => {
+
+onMounted( () => {
   srt.value = JSON.parse(localStorage.getItem("savat"));
-  function Data() {
+  // function Data() {
+   
     srt.value.forEach((el) => {
       ff.value.push({
         count: 1,
@@ -53,10 +55,10 @@ onMounted(() => {
         description: el.description,
         price: el.price,
         image: el.image,
-      });
+      },);
     });
-  }
-  Data();
+  // }
+  // Data();
 
   Canculator();
 });
@@ -68,6 +70,8 @@ function Delete(index) {
   } else {
     localStorage.setItem("savat", JSON.stringify(ff.value));
   }
+
+
 }
 let total = 0;
 
@@ -77,7 +81,7 @@ function minus(data) {
   }
   data.count--;
   for (let item of ff.value) {
-    let price1 = (total += item.price * item.count);
+    let price1 = (total - item.price) / item.price;
     total = price1;
   }
 }
