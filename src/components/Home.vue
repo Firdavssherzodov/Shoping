@@ -2,11 +2,8 @@
   <div class="mt-4">
     <Header1 />
     <Carusel />
-    <Search />
     <Bolim />
     <Maxsulot />
-  
-
   </div>
 </template>
 
