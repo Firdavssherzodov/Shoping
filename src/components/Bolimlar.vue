@@ -12,8 +12,7 @@
 
 <script setup>
 import srt from "../user/store/userStore";
-// for (let a of srt.value) console.log(a);
-// console.log(srt.value);  
+
 
 function Kiyim() {
   srt.value.sort((first, second) => {
