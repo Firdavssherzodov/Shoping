@@ -1,4 +1,4 @@
-<template >
+<template>
   <div class="diva">
     <ul class="border border-end-0 border-start-0 border-top-0">
       <li @click="Kiyim">Kiyimlar</li>
@@ -12,9 +12,8 @@
 
 <script setup>
 import srt from "../user/store/userStore";
- 
 
-  function Kiyim() {
+function Kiyim() {
   srt.value.sort((first, second) => {
     if (first.category > second.category) return -1;
     if (first.category < second.category) return 1;
@@ -49,12 +48,6 @@ function NarxiP() {
     return 0;
   });
 }
- 
- 
- 
-
- 
-
 </script>
 
 <style scoped>
@@ -68,10 +61,9 @@ function NarxiP() {
   top: 0px;
 }
 
-.divascroll{
+.divascroll {
   position: sticky;
   top: 0px;
-
 }
 ul {
   width: 77%;

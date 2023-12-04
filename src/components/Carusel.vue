@@ -13,13 +13,13 @@
           class="active"
           aria-current="true"
           aria-label="Slide 1"
-        ></button> 
+        ></button>
         <button
           type="button"
           data-mdb-target="#carouselExampleIndicators"
           data-mdb-slide-to="1"
           aria-label="Slide 2"
-        ></button> 
+        ></button>
         <button
           type="button"
           data-mdb-target="#carouselExampleIndicators"
@@ -77,7 +77,7 @@
 <style scoped>
 .slide {
   height: 3% !important;
-  margin:2vh auto;
+  margin: 2vh auto;
   width: 85%;
 }
 .div_carusel {
@@ -99,8 +99,7 @@
   .carousel {
     width: 100%;
   }
-  button{
- 
+  button {
     display: none;
   }
 }

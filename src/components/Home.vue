@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-5">
+  <div>
     <Header1 />
     <Search />
     <Carusel />
