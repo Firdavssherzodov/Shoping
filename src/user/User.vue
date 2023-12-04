@@ -22,12 +22,6 @@
 
 <script setup>
 import heder from "../components/Header.vue";
-
-
-
-
-
-
 </script>
 
 <style scoped>
