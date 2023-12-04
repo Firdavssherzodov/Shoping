@@ -1,7 +1,7 @@
 <template>
   <Header1 />
 
-  <div class="diva">
+  <div class="diva" >
     <div class="kard border rounded-5" v-for="(data, index) of ff" :key="data">
       <div class="d1 d-flex">
         <img class="div_img my-4 ms-5 me-4" :src="data.image" />

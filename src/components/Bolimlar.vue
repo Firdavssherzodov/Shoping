@@ -14,39 +14,44 @@
 import srt from "../user/store/userStore";
 
 function Kiyim() {
-  srt.value.sort((first, second) => {
+  let Kiyim = srt.value.sort((first, second) => {
     if (first.category > second.category) return -1;
     if (first.category < second.category) return 1;
     return 0;
   });
+  srt.value = Kiyim;
 }
 function Elektronika() {
-  srt.value.sort((first, second) => {
+  let Elektronika = srt.value.sort((first, second) => {
     if (first.category < second.category) return -1;
     if (first.category > second.category) return 1;
     return 0;
   });
+  srt.value = Elektronika;
 }
 function Sumkalar() {
-  srt.value.sort((first, second) => {
+  let Sumkalar = srt.value.sort((first, second) => {
     if (first.description <= second.description) return -1;
     if (first.description >= second.description) return 1;
     return 0;
   });
+  srt.value = Sumkalar;
 }
 function NarxiB() {
-  srt.value.sort((first, second) => {
+  let NarxiB = srt.value.sort((first, second) => {
     if (first.price > second.price) return -1;
     if (first.price < second.price) return 1;
     return 0;
   });
+  srt.value = NarxiB;
 }
 function NarxiP() {
-  srt.value.sort((first, second) => {
+  let NarxiP = srt.value.sort((first, second) => {
     if (first.price < second.price) return -1;
     if (first.price > second.price) return 1;
     return 0;
   });
+  srt.value = NarxiP;
 }
 </script>
 

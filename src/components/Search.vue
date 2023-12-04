@@ -1,7 +1,12 @@
 <template>
   <div class="diva">
     <form class="m-auto my-3 square border border-primary rounded-5">
-      <input type="text" class="rounded-5 px-3 py-3" placeholder="Qidiruv" />
+      <input
+        type="text"
+        class="rounded-5 px-3 py-3"
+        placeholder="Qidiruv"
+        v-model="search"
+      />
       <button class="btn btn-primary">
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
@@ -10,7 +15,27 @@
 </template>
 
 <script setup>
+import { srt } from "../user/store/userStore";
+import { onMounted,ref } from 'vue'
+ let search = ref('')
 
+ onMounted(()=>{
+  // 
+  srt.value.filter((rect) => {
+
+    console.log(rect.title);
+ let Qidiruv = search.value.toUpperCase()
+console.log(Qidiruv);
+    
+
+ 
+    });
+    // 
+ })
+ 
+
+ 
+ 
 </script>
 
 <style scoped>
