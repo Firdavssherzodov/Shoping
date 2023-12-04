@@ -10,17 +10,7 @@
 </template>
 
 <script setup>
-// import { ref} from 'vue';
-// let homeInput =ref("")
-// let product = ref([]);
-// const api = "https://api.escuelajs.co/api/v1/products";
-// axios.get(api).then((resp) => {
-//   resp.data.forEach((element) => {
-//     srt.value.push(element);
-//   });
-// });
 
-// console.log(findInfo);
 </script>
 
 <style scoped>

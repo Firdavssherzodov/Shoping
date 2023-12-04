@@ -44,8 +44,6 @@ const ff = ref([]);
 
 onMounted(() => {
   srt.value = JSON.parse(localStorage.getItem("savat"));
-  // function Data() {
-  console.log(srt.value);
   if (!!srt.value)
     srt.value.forEach((el) => {
       ff.value.push({
