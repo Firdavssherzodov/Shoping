@@ -114,7 +114,7 @@ let Data1 = srt.value;
 
 const api = "https://fakestoreapi.com/products";
 axios.get(api).then((resp) => {
-  resp.data.slice(0, 20).forEach((element) => {
+  resp.data.forEach((element) => {
     srt.value.push(element);
     // console.log(element);
   });
@@ -122,7 +122,7 @@ axios.get(api).then((resp) => {
 
 function AddShop(idw) {
   axios.get(`https://fakestoreapi.com/products/${idw}`).then((resp) => {
-    product_list.value.push(resp.data);
+    product_list.value.unshift(resp.data);
 
     localStorage.setItem("savat", JSON.stringify(product_list.value));
   });

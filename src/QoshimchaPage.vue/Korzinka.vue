@@ -41,10 +41,10 @@ import { ref, onMounted } from "vue";
 let srt = ref([]);
 const ff = ref([]);
 
+
 onMounted(() => {
   srt.value = JSON.parse(localStorage.getItem("savat"));
   // function Data() {
-  console.log("hhuiyuy");
   console.log(srt.value);
   if (!!srt.value)
     srt.value.forEach((el) => {
