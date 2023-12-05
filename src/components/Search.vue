@@ -1,5 +1,5 @@
 <template>
-  <div class="diva">
+  <div class="diva ">
     <form class="m-auto my-3 square border border-primary rounded-5">
       <input
         type="text"
@@ -7,26 +7,30 @@
         placeholder="Qidiruv"
         v-model="search"
       />
-      <button class="btn btn-primary">
+    </form>
+    <button class="btn btn-primary">
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
-    </form>
   </div>
 </template>
 
 <script setup>
-import { srt } from "../user/store/userStore";
-import { onMounted,ref } from 'vue'
- let search = ref('')
+import srt from "../user/store/userStore";
+import { onMounted, ref, watchEffect } from "vue";
+let search = ref("");
 
-  // 
- 
-    // 
- })
- 
 
- 
- 
+onMounted(() => {
+
+  watchEffect(() => {
+    let data2 = JSON.parse(JSON.stringify(srt.value));
+
+    let Data1 = data2.filter((list) => {
+      return list.title.toUpperCase().includes(search.value.toUpperCase());
+    });
+
+  });
+});
 </script>
 
 <style scoped>
@@ -35,6 +39,8 @@ import { onMounted,ref } from 'vue'
   height: 8vh;
   margin-top: 6.5vh;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 form {
   width: 50%;
@@ -50,7 +56,10 @@ input {
   border: none;
 }
 button {
-  height: 100%;
+  position: absolute;
+  left: 74%;
+  height: 60%;
+  z-index: 3223;
 }
 /* Responsive 385px*/
 @media (max-width: 385px) {
@@ -61,8 +70,8 @@ button {
     position: relative !important;
   }
   form {
-    margin: auto;
-    width: 90%;
+margin-left: 3.5vh !important;
+    width: 80%;
     border: 1px solid blue;
   }
 
@@ -70,7 +79,8 @@ button {
     z-index: 33334;
   }
   button {
-    height: 100% !important;
+    left: 76% !important;
+    height:70% !important;
   }
 }
 /* Responsive 576px*/
@@ -80,10 +90,14 @@ button {
     z-index: 33 !important  ;
   }
   form {
-    margin: auto;
-    width: 90%;
+    margin-left: 3vh !important;
+    width: 80%;
     height: 70%;
     z-index: 22 !important;
+  }
+  button {
+    left: 80% ;
+    height:70% !important;
   }
 }
 </style>

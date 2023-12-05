@@ -4,13 +4,13 @@
       <div class="div">
         <div
           class="kard border rounded-5 m-2 ms-5"
-          v-for="data in Data1"
-          :key="data"
+          v-for="data in srt"
+          :key="data.id"
         >
           <div class="div_img">
             <img :src="data.image" alt="inkas" />
             <p class="mt-5 mx-2" style="font-size: 0.8rem">{{ data.title }}</p>
-            <h5 class="mx-2 text-dark">{{ data.price }} $</h5>
+            <h5 class="mx-2 text-dark fw-bold">{{ data.price }} $</h5>
             <Rating :cancel="false" class="ms-2 mt-3 Rating" />
             <button
               class="btn btn-success btn btn-outline-success ripple-surface-dark mx-2 my-2"
@@ -122,7 +122,7 @@ function AddShop(idw) {
   axios.get(`https://fakestoreapi.com/products/${idw}`).then((resp) => {
     console.log(resp.data);
 
-    product_list.push(resp.data);
+    product_list.value.push(resp.data);
     localStorage.setItem("savat", JSON.stringify(product_list.value));
   });
 }
