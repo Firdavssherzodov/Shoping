@@ -37,7 +37,13 @@
           >
             {{ countet?.length }}
           </button>
-          <p class="px-3 my-4" style="color: var(--mdb-body-color)">Savat</p>
+          <p
+            class="px-3 my-4"
+            style="color: var(--mdb-body-color)"
+            @click="handleStart()"
+          >
+            Savat
+          </p>
         </div>
       </router-link>
       <div>
@@ -56,8 +62,9 @@
     <router-link to="/">
       <div>
         <a href="#" class="fa-solid fa-house fs-4" style="color: #8c8989"></a>
-        <p style="font-size: 0.7rem; position: absolute ; margin-left: -2vh;" > Bosh sahifa</p>
-
+        <p style="font-size: 0.7rem; position: absolute; margin-left: -2vh">
+          Bosh sahifa
+        </p>
       </div>
     </router-link>
     <router-link to="/search">
@@ -67,8 +74,7 @@
           class="fa-solid fa-magnifying-glass fs-4"
           style="color: #8c8989"
         ></a>
-        <p style="font-size: 0.7rem; position: absolute ;"> Katalog</p>
-
+        <p style="font-size: 0.7rem; position: absolute">Katalog</p>
       </div>
     </router-link>
     <router-link to="/korzinka">
@@ -78,10 +84,12 @@
           class="fa-solid fa-cart-shopping text-seccess fs-4"
           style="color: #8c8989"
         ></a>
-        <p style="font-size: 0.7rem; position: absolute ;margin-left: -0.2vh;"> Savat</p>
+        <p style="font-size: 0.7rem; position: absolute; margin-left: -0.2vh">
+          Savat
+        </p>
         <button
           class="btn btn-primary btn-floating fa-bounce counter"
-          style=" 
+          style="
             border-radius: 50px;
             font-size: 0.7rem;
             width: 20px;
@@ -93,17 +101,19 @@
       </div>
     </router-link>
     <router-link to="">
-    <div>
-      <a href="#" class="fa-regular fa-heart fs-4" style="color: #8c8989"></a>
-      <p style="font-size: 0.7rem; position: absolute ; margin-left: -2vh;" > Saralangan</p>
-
-    </div>
-  </router-link>
+      <div>
+        <a href="#" class="fa-regular fa-heart fs-4" style="color: #8c8989"></a>
+        <p style="font-size: 0.7rem; position: absolute; margin-left: -2vh">
+          Saralangan
+        </p>
+      </div>
+    </router-link>
     <router-link to="/user">
       <div>
         <a href="#" class="fa-regular fa-user fs-4" style="color: #8c8989"></a>
-        <p style="font-size: 0.7rem; position: absolute ; margin-left: -1.3vh;" > Kabinet</p>
-
+        <p style="font-size: 0.7rem; position: absolute; margin-left: -1.3vh">
+          Kabinet
+        </p>
       </div>
     </router-link>
   </section>
@@ -171,10 +181,10 @@ let countet = ref([]);
 //   countet.value =  JSON.parse(localStorage.getItem("savat"));
 // },1000)
 
- onMounted( async () => {
-  countet.value = await JSON.parse(localStorage.getItem("savat")) || [];
+onMounted(async () => {
+  countet.value = (await JSON.parse(localStorage.getItem("savat"))) || [];
 
-   if (countet.value.length > 0)  {
+  if (countet.value.length > 0) {
     let count = document.querySelector(".counter");
     count.style.display = "block";
     let count2 = document.querySelector(".counter2");
@@ -254,12 +264,12 @@ img {
     left: 0% !important;
     padding-bottom: 1vh;
   }
-  .Menu p{
+  .Menu p {
     margin-left: -0.8vh;
     position: absolute !important;
     max-height: 10px;
   }
- 
+
   .Menu,
   a {
     font-size: 1.3rem !important;

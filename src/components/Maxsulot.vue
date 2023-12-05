@@ -112,7 +112,14 @@ import srt from "../user/store/userStore";
 
 axios.get("https://fakestoreapi.com/products").then((resp) => {
   resp.data.forEach((element) => {
-    srt.value.push(element);
+    if (resp.status === 200) {
+    srt.value.push(element); 
+    let loader = document.querySelector('.loader')
+      loader.classList.add('loading')
+    }else{
+      let loader = document.querySelector('.loader')
+      loader.classList.remove('loading')
+    }
     // console.log(element);
   });
 });
@@ -137,6 +144,9 @@ function AddShop(idw) {
   margin: 0 auto 1em;
   display: inline-block;
   vertical-align: top;
+}
+.loading{
+  display: none;
 }
 
 /*
