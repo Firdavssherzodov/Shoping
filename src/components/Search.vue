@@ -19,13 +19,13 @@ import srt from "../user/store/userStore";
 import { onMounted, ref, watchEffect } from "vue";
 let search = ref("");
 
-  let data2 = JSON.parse(JSON.stringify(srt.value));
+let data2 = JSON.parse(JSON.stringify(srt.value));
 
-  watchEffect(() => {
-    let Data1 = data2.filter((list) => {
-      return list.title.toUpperCase().includes(search.value.toUpperCase());
-    });
-setInterval(() => {
+watchEffect(() => {
+  let Data1 = data2.filter((list) => {
+    return list.title.toUpperCase().includes(search.value.toUpperCase());
+  });
+  setInterval(() => {
     srt.value = [...Data1];
   }, 1000);
 });
