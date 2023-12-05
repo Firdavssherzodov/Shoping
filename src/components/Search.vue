@@ -79,7 +79,7 @@ margin-left: 3.5vh !important;
     z-index: 33334;
   }
   button {
-    left: 76% !important;
+    left: 77% !important;
     height:70% !important;
   }
 }
