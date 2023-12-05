@@ -8,7 +8,7 @@
         v-model="search"
       />
     </div>
-    <button class="btn btn-primary rounded-5">
+    <button class="btn btn-primary rounded-5" @click="Search()">
       <i class="fa-solid fa-magnifying-glass"></i>
     </button>
   </div>
@@ -18,22 +18,28 @@
 import srt from "../user/store/userStore";
 import { onMounted, ref, watchEffect } from "vue";
 let search = ref("");
-onMounted(()=>{
+let data2 = JSON.parse(JSON.stringify(srt.value));
 
+function Search() {
+  watchEffect(() => {
+    let Data1 = data2.filter((list) => {
+      return list.title.toUpperCase().includes(search.value.toUpperCase());
+    });
+
+    srt.value = [...Data1];
+  });
+}
+onMounted(() => {
   let data2 = JSON.parse(JSON.stringify(srt.value));
 
-watchEffect(() => {
-  let Data1 = data2.filter((list) => {
-    return list.title.toUpperCase().includes(search.value.toUpperCase());
+  watchEffect(() => {
+    let Data1 = data2.filter((list) => {
+      return list.title.toUpperCase().includes(search.value.toUpperCase());
+    });
+
+    srt.value = [...Data1];
   });
-
-  srt.value = [...Data1];
 });
-
-
-})
-
-
 </script>
 
 <style scoped>
