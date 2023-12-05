@@ -108,7 +108,6 @@ import Rating from "primevue/rating";
 import product_list from "../user/store/userStore";
 import srt from "../user/store/userStore";
 
-
 // let id = ref(null);
 
 axios.get("https://fakestoreapi.com/products").then((resp) => {
