@@ -8,7 +8,7 @@
         v-model="search"
       />
     </form>
-    <button class="btn btn-primary" @click="findInfo()">
+    <button class="btn btn-primary rounded-5" @click="findInfo()">
       <i class="fa-solid fa-magnifying-glass"></i>
     </button>
   </div>
