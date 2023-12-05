@@ -15,10 +15,13 @@
 </template>
 
 <script setup>
-import srt from "../user/store/userStore";
+import { products } from "../user/store/userStore";
 import { onMounted, ref, watchEffect } from "vue";
+
+const product_list = products();
+
 let search = ref("");
-let data2 = JSON.parse(JSON.stringify(srt.value));
+let data2 = JSON.parse(JSON.stringify(product_list.srt));
 
 function Search() {
   watchEffect(() => {
@@ -26,18 +29,18 @@ function Search() {
       return list.title.toUpperCase().includes(search.value.toUpperCase());
     });
 
-    srt.value = [...Data1];
+    product_list.srt = [...Data1];
   });
 }
 onMounted(() => {
-  let data2 = JSON.parse(JSON.stringify(srt.value));
+  let data2 = JSON.parse(JSON.stringify(product_list.srt));
 
   watchEffect(() => {
     let Data1 = data2.filter((list) => {
       return list.title.toUpperCase().includes(search.value.toUpperCase());
     });
 
-    srt.value = [...Data1];
+    product_list.srt = [...Data1];
   });
 });
 </script>

@@ -1,6 +1,9 @@
 import { ref } from "vue";
-const product_list = ref([]);
-let srt = ref([]);
+import { defineStore } from "pinia";
 
-export { srt };
-export default product_list;
+export const products = defineStore("product", () => {
+  const product_list = ref([]);
+  const srt = ref([]);
+
+  return { product_list, srt };
+});

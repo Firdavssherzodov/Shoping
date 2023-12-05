@@ -4,7 +4,7 @@
       <div class="div">
         <div
           class="kard border rounded-5 m-2 ms-5"
-          v-for="data in srt"
+          v-for="data in listProducts.srt"
           :key="data.id"
         >
           <div class="div_img">
@@ -105,15 +105,22 @@
 import axios from "axios";
 import { ref, onMounted } from "vue";
 import Rating from "primevue/rating";
-import product_list from "../user/store/userStore";
-import srt from "../user/store/userStore";
+import {products} from '../user/store/userStore'
+
+
+const listProducts = products()
 
 // let id = ref(null);
+onMounted(()=>{
 
-axios.get("https://fakestoreapi.com/products").then((resp) => {
-  resp.data.forEach((element) => {
-    if (resp.status === 200) {
-    srt.value.push(element); 
+
+  axios.get("https://fakestoreapi.com/products").then((resp) => {
+    console.log(resp.data);
+    if (resp.data) {
+      resp.data.forEach((element) => {
+    
+    if (resp.data) {
+      listProducts.srt.push(element); 
     let loader = document.querySelector('.loader')
       loader.classList.add('loading')
     }else{
@@ -122,14 +129,21 @@ axios.get("https://fakestoreapi.com/products").then((resp) => {
     }
     // console.log(element);
   });
+    }
+  
 });
+
+})
+
 
 function AddShop(idw) {
   axios.get(`https://fakestoreapi.com/products/${idw}`).then((resp) => {
     console.log(resp.data);
 
-    product_list.value.push(resp.data);
-    localStorage.setItem("savat", JSON.stringify(product_list.value));
+    listProducts.product_list.push(resp.data)
+
+    console.log(listProducts.product_list);
+    localStorage.setItem("savat", JSON.stringify(listProducts.product_list));
   });
 }
 </script>

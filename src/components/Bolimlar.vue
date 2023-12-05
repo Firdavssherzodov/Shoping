@@ -1,7 +1,7 @@
 <template>
   <div class="diva">
     <ul class="border border-end-0 border-start-0 border-top-0">
-      <li @click="Kiyim">Kiyimlar</li>
+      <li @click="Kiyim('kiyim')">Kiyimlar</li>
       <li @click="Sumkalar">Sumkalar</li>
       <li @click="Elektronika">Elektronika</li>
       <li @click="NarxiB">Narxi B</li>
@@ -11,10 +11,15 @@
 </template>
 
 <script setup>
-import srt from "../user/store/userStore";
+import { products } from "../user/store/userStore";
 
-function Kiyim() {
-  let Kiyim = srt.value.sort((first, second) => {
+const ProductsList = products()
+
+function Kiyim(value) {
+  // if ( value == 'kiyim') {
+
+  // }
+  let Kiyim = ProductsList.srt.sort((first, second) => {
     if (first.category > second.category) return -1;
     if (first.category < second.category) return 1;
     return 0;
@@ -22,7 +27,7 @@ function Kiyim() {
   srt.value = Kiyim;
 }
 function Elektronika() {
-  let Elektronika = srt.value.sort((first, second) => {
+  let Elektronika = ProductsList.srt.sort((first, second) => {
     if (first.category < second.category) return -1;
     if (first.category > second.category) return 1;
     return 0;
@@ -30,7 +35,7 @@ function Elektronika() {
   srt.value = Elektronika;
 }
 function Sumkalar() {
-  let Sumkalar = srt.value.sort((first, second) => {
+  let Sumkalar = ProductsList.srt.sort((first, second) => {
     if (first.description <= second.description) return -1;
     if (first.description >= second.description) return 1;
     return 0;
@@ -38,7 +43,7 @@ function Sumkalar() {
   srt.value = Sumkalar;
 }
 function NarxiB() {
-  let NarxiB = srt.value.sort((first, second) => {
+  let NarxiB = ProductsList.srt.sort((first, second) => {
     if (first.price > second.price) return -1;
     if (first.price < second.price) return 1;
     return 0;
@@ -46,7 +51,8 @@ function NarxiB() {
   srt.value = NarxiB;
 }
 function NarxiP() {
-  let NarxiP = srt.value.sort((first, second) => {
+  srt.value;
+  let NarxiP = ProductsList.srt.sort((first, second) => {
     if (first.price < second.price) return -1;
     if (first.price > second.price) return 1;
     return 0;

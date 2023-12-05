@@ -1,7 +1,7 @@
 <template>
   <Header1 />
 
-  <div class="diva" >
+  <div class="diva">
     <div class="kard border rounded-5" v-for="(data, index) of ff" :key="data">
       <div class="d1 d-flex">
         <img class="div_img my-4 ms-5 me-4" :src="data.image" />
@@ -37,6 +37,8 @@
 <script setup>
 import Header1 from "../components/Header.vue";
 import { ref, onMounted } from "vue";
+// import {products} from '../user/store/userStore'
+// const listProducts = products()
 
 let srt = ref([]);
 const ff = ref([]);
@@ -74,6 +76,7 @@ function minus(data) {
   if (data.count == 1) {
     return;
   }
+
   data.count--;
   for (let item of ff.value) {
     let price1 = (total - item.price) / item.price;
