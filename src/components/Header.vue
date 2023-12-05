@@ -23,7 +23,7 @@
       <router-link to="/korzinka">
         <div>
           <i
-            class="fa-solid fa-bag-shopping fs-5 text-primary"
+            class="fa-solid fa-cart-shopping text-seccess fs-5 text-primary"
             style="color: #838891"
           ></i>
           <button
@@ -75,10 +75,10 @@
       <div>
         <a
           href="#"
-          class="fa-solid fa-bag-shopping fs-4"
+          class="fa-solid fa-cart-shopping text-seccess fs-4"
           style="color: #8c8989"
         ></a>
-        <p style="font-size: 0.7rem; position: absolute ;margin-left: -0.8vh;"> Savat</p>
+        <p style="font-size: 0.7rem; position: absolute ;margin-left: -0.2vh;"> Savat</p>
         <button
           class="btn btn-primary btn-floating fa-bounce counter"
           style=" 

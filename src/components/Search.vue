@@ -1,5 +1,5 @@
 <template>
-  <div class="diva ">
+  <div class="diva">
     <form class="m-auto my-3 square border border-primary rounded-5">
       <input
         type="text"
@@ -8,9 +8,9 @@
         v-model="search"
       />
     </form>
-    <button class="btn btn-primary">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
+    <button class="btn btn-primary" @click="findInfo()">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
   </div>
 </template>
 
@@ -20,12 +20,19 @@ import { onMounted, ref, watchEffect } from "vue";
 let search = ref("");
 
 onMounted(() => {
+  let data2 = JSON.parse(JSON.stringify(srt.value));
+
+  let findInfo = function () {
+    return data2.filter((list) => {
+      return list.title.toUpperCase().includes(search.value.toUpperCase());
+    });
+  };
 
   watchEffect(() => {
     let Data1 = data2.filter((list) => {
       return list.title.toUpperCase().includes(search.value.toUpperCase());
     });
-
+    Data1;
   });
 });
 </script>
@@ -67,7 +74,7 @@ button {
     position: relative !important;
   }
   form {
-margin-left: 3.5vh !important;
+    margin-left: 3.5vh !important;
     width: 80%;
     border: 1px solid blue;
   }
@@ -76,8 +83,8 @@ margin-left: 3.5vh !important;
     z-index: 33334;
   }
   button {
-    left: 77a% !important;
-    height:70% !important;
+    left: 77% !important;
+    height: 70% !important;
   }
 }
 /* Responsive 576px*/
@@ -93,8 +100,8 @@ margin-left: 3.5vh !important;
     z-index: 22 !important;
   }
   button {
-    left: 80% ;
-    height:70% !important;
+    left: 80%;
+    height: 70% !important;
   }
 }
 </style>
