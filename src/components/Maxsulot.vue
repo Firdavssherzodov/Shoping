@@ -108,7 +108,6 @@ import Rating from "primevue/rating";
 import product_list from "../user/store/userStore";
 import srt from "../user/store/userStore";
 
-let Data1 = srt.value;
 
 // let id = ref(null);
 
