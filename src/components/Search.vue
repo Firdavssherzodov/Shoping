@@ -1,13 +1,13 @@
 <template>
   <div class="diva">
-    <form class="m-auto my-3 square border border-primary rounded-5">
+    <div class="form m-auto my-3 square border border-primary rounded-5">
       <input
         type="text"
         class="rounded-5 px-3 py-3"
         placeholder="Qidiruv"
         v-model="search"
       />
-    </form>
+    </div>
     <button class="btn btn-primary rounded-5">
       <i class="fa-solid fa-magnifying-glass"></i>
     </button>
@@ -18,15 +18,22 @@
 import srt from "../user/store/userStore";
 import { onMounted, ref, watchEffect } from "vue";
 let search = ref("");
+onMounted(()=>{
 
-let data2 = JSON.parse(JSON.stringify(srt.value));
+  let data2 = JSON.parse(JSON.stringify(srt.value));
 
 watchEffect(() => {
   let Data1 = data2.filter((list) => {
     return list.title.toUpperCase().includes(search.value.toUpperCase());
   });
-    srt.value = [...Data1];
+
+  srt.value = [...Data1];
 });
+
+
+})
+
+
 </script>
 
 <style scoped>
@@ -38,7 +45,7 @@ watchEffect(() => {
   display: flex;
   align-items: center;
 }
-form {
+.form {
   width: 50%;
   height: 60%;
   border: 1px solid;
@@ -65,7 +72,7 @@ button {
   .diva:focus {
     position: relative !important;
   }
-  form {
+  .form {
     margin-left: 3.5vh !important;
     width: 80%;
     border: 1px solid blue;
@@ -86,7 +93,7 @@ button {
     margin-top: 4vh;
     z-index: 33 !important  ;
   }
-  form {
+  .form {
     margin-left: 3vh !important;
     width: 80%;
     height: 70%;
