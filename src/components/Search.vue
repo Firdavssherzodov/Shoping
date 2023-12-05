@@ -8,7 +8,7 @@
         v-model="search"
       />
     </form>
-    <button class="btn btn-primary rounded-5" @click="findInfo()">
+    <button class="btn btn-primary rounded-5">
       <i class="fa-solid fa-magnifying-glass"></i>
     </button>
   </div>
@@ -25,8 +25,22 @@ let search = ref("");
     let Data1 = data2.filter((list) => {
       return list.title.toUpperCase().includes(search.value.toUpperCase());
     });
+setInterval(() => {
+  srt.value = [...Data1]
+  
+}, 1000);
+
+    
+
+    
   });
-});
+
+
+// let findInfo = function () {
+//   return data2.filter((list) => {
+//     return list.title.toUpperCase().includes(search.value.toUpperCase());
+//   });
+// };
 </script>
 
 <style scoped>
@@ -43,7 +57,7 @@ form {
   height: 60%;
   border: 1px solid;
   display: flex;
-  z-index: 2233;
+  /* z-index: 2233; */
 }
 input {
   padding-top: 30vh;
@@ -69,6 +83,7 @@ button {
     margin-left: 3.5vh !important;
     width: 80%;
     border: 1px solid blue;
+    z-index: 3333;
   }
 
   form:focus {

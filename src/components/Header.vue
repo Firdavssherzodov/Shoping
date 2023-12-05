@@ -3,7 +3,7 @@
     <router-link to="/">
       <div class="d1">
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFjFTO5P1yacBRXCLscjrh3Z3t3GAIH7B1UwsG4Ls0rifGayh_m_RDjdVY2ZtQNs0kBcI&usqp=CAU"
+          src="../../images/header.icons.png"
           alt=""
           class="px-5 rounded-circle my-1 my-2"
         />

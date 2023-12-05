@@ -103,7 +103,7 @@
 
 <script setup>
 import axios from "axios";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import Rating from "primevue/rating";
 import product_list from "../user/store/userStore";
 import srt from "../user/store/userStore";
