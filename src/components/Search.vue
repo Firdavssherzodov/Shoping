@@ -25,16 +25,8 @@ watchEffect(() => {
   let Data1 = data2.filter((list) => {
     return list.title.toUpperCase().includes(search.value.toUpperCase());
   });
-  setInterval(() => {
     srt.value = [...Data1];
-  }, 1000);
 });
-
-// let findInfo = function () {
-//   return data2.filter((list) => {
-//     return list.title.toUpperCase().includes(search.value.toUpperCase());
-//   });
-// };
 </script>
 
 <style scoped>
