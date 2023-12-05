@@ -26,15 +26,9 @@ let search = ref("");
       return list.title.toUpperCase().includes(search.value.toUpperCase());
     });
 setInterval(() => {
-  srt.value = [...Data1]
-  
-}, 1000);
-
-    
-
-    
-  });
-
+    srt.value = [...Data1];
+  }, 1000);
+});
 
 // let findInfo = function () {
 //   return data2.filter((list) => {
