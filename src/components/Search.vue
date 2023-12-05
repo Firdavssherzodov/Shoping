@@ -19,17 +19,8 @@ import { srt } from "../user/store/userStore";
 import { onMounted,ref } from 'vue'
  let search = ref('')
 
- onMounted(()=>{
   // 
-  srt.value.filter((rect) => {
-
-    console.log(rect.title);
- let Qidiruv = search.value.toUpperCase()
-console.log(Qidiruv);
-    
-
  
-    });
     // 
  })
  
