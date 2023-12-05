@@ -22,12 +22,6 @@ let search = ref("");
 onMounted(() => {
   let data2 = JSON.parse(JSON.stringify(srt.value));
 
-  let findInfo = function () {
-    return data2.filter((list) => {
-      return list.title.toUpperCase().includes(search.value.toUpperCase());
-    });
-  };
-
   watchEffect(() => {
     let Data1 = data2.filter((list) => {
       return list.title.toUpperCase().includes(search.value.toUpperCase());
