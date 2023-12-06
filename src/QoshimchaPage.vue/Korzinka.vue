@@ -5,7 +5,7 @@
   <div class="diva card">
 <div class="text1 text-center" >
     <p class="text-center mt-5 ">
-      Hali hech qanday maxsulot olganingiz yuq! &#128512
+      Hali hech qanday maxsulot olganingiz yuq! <p>&#128512;</p>
     </p>
     <router-link to="/">
     <button class="btn btn-primary p-2 my-4">
