@@ -2,7 +2,7 @@
     <Toast position="top-center"
     group='pt'
     :pt="{
-      container:{ style:'margin-top:8.7vh;'}
+      container:{ style:'margin-top:8.8vh;'}
     }"/>
 
   <section class="Maxsulotlar">
@@ -25,7 +25,7 @@
               @click="AddShop(data.id)"
             >
               <i
-                class="fa-solid fa-cart-shopping text-seccess"
+                class="fa-solid fa-cart-shopping text-seccess "
                 style="color: #14a44d"
               ></i>
             </button>
@@ -142,11 +142,11 @@ onMounted(() => {
 
 function AddShop(idw) {
   axios.get(`https://fakestoreapi.com/products/${idw}`).then((resp) => {
-    console.log(resp.data);
+    // console.log(resp.data);
 
     listProducts.product_list.push(resp.data);
 
-    console.log(listProducts.product_list);
+    // console.log(listProducts.product_list);
     localStorage.setItem("savat", JSON.stringify(listProducts.product_list));
   });
   toast.add({
@@ -157,6 +157,9 @@ function AddShop(idw) {
     life: 1500,
   });
 }
+
+
+
 </script>
 <style scoped>
 .loader {

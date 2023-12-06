@@ -36,7 +36,7 @@
       <li>Umumiy narx : $ {{ total }}</li>
       <li>Maxsulotlar soni : {{ ff?.length }}</li>
     </ul>
-    <button class="btn btn-primary p-2"  @click="showInfo">Rasmiylashtirish</button>
+    <button class="btn btn-primary p-2"  @click="sendtelegram">Rasmiylashtirish</button>
   </section>
 </template>
 
@@ -47,11 +47,13 @@ import { ref, onMounted } from "vue";
 import Toast from 'primevue/toast';
 import { useToast } from "primevue/usetoast";
 const toast = useToast();
-// import {products} from '../user/store/userStore'
-// const listProducts = products()
-const showInfo = () => {
+import {products} from '../user/store/userStore'
+const listProducts = products()
+
+    
+const sendtelegram = ()=>{
     toast.add({ severity: 'success', summary: 'Xaridingiz uchun raxmat', detail: `Maxsulotlar yig'lmoqda`, life: 4000 });
-};
+}
 
 
 
@@ -144,7 +146,7 @@ function Canculator() {
   width: 78%;
   height: 900px;
   margin: 3vh auto;
-  display: flex;
+  display: flex !important;
   flex-wrap: wrap;
   /* justify-content: space-around;  */
 }
