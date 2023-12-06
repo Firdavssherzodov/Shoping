@@ -77,12 +77,12 @@ function Sort(value) {
   }
   // Elektronika
   if (value == "Elektronika") {
-    let Elektronika = ProductsList.srt.sort((first, second) => {
+    let elektronika = ProductsList.srt.sort((first, second) => {
       if (first.category < second.category) return -1;
       if (first.category > second.category) return 1;
       return 0;
     });
-    ProductsList.srt = [...Elektronika];
+    ProductsList.srt = [...elektronika];
   }
   // Sumkalar
   if (value == "Sumkalar") {

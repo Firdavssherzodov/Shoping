@@ -126,7 +126,7 @@ onMounted(() => {
     // console.log(resp.data);
     if (resp.data) {
       resp.data.forEach((element) => {
-        if (resp.data) {
+        if (!!resp.data) {
           listProducts.srt.push(element);
           let loader = document.querySelector(".loader");
           loader.classList.add("loading");
