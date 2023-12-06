@@ -1,9 +1,11 @@
 <template>
-    <Toast position="top-center"
-    group='pt'
+  <Toast
+    position="top-center"
+    group="pt"
     :pt="{
-      container:{ style:'margin-top:8.8vh;'}
-    }"/>
+      container: { style: 'margin-top:8.8vh;' },
+    }"
+  />
 
   <section class="Maxsulotlar">
     <div class="diva">
@@ -23,7 +25,7 @@
               @click="AddShop(data.id)"
             >
               <i
-                class="fa-solid fa-cart-shopping text-seccess "
+                class="fa-solid fa-cart-shopping text-seccess"
                 style="color: #14a44d"
               ></i>
             </button>
@@ -151,13 +153,10 @@ function AddShop(idw) {
     severity: "success",
     summary: "Maxsulot savatda",
     detail: "",
-    group: 'pt',
+    group: "pt",
     life: 1500,
   });
 }
-
-
-
 </script>
 <style scoped>
 .loader {

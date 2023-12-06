@@ -3,11 +3,16 @@
 
   <Header1 />
   <div class="diva card">
-
-    <p class="text-center mt-5 text1">
+<div class="text1 text-center" >
+    <p class="text-center mt-5 ">
       Hali hech qanday maxsulot olganingiz yuq! &#128512
     </p>
-
+    <router-link to="/">
+    <button class="btn btn-primary p-2 my-4">
+      <i class="fa-solid fa-arrow-left pe-2" style="color: #f5f5f5;"></i>
+      Bosh Sahifaga qaytish</button>
+    </router-link>
+  </div>
     <div class="kard border rounded-5" v-for="(data, index) of ff" :key="data">
       <div class="d1 d-flex">
         <img class="div_img my-4 ms-5 me-4" :src="data.image" />
