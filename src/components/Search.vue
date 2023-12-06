@@ -50,7 +50,7 @@ onMounted(() => {
   width: 100%;
   height: 8vh;
   margin-top: 6.5vh;
-  position: relative;
+  position: relative !important;
   display: flex;
   align-items: center;
 }
@@ -85,11 +85,11 @@ button {
     margin-left: 3.5vh !important;
     width: 80%;
     border: 1px solid blue;
-    z-index: 3333;
+    z-index: 333232244;
   }
 
   form:focus {
-    z-index: 33334;
+    z-index: 3333422;
   }
   button {
     left: 77% !important;
@@ -100,7 +100,7 @@ button {
 @media (max-width: 576px) {
   .diva {
     margin-top: 4vh;
-    z-index: 33 !important  ;
+    z-index: 333222 !important  ;
   }
   .form {
     margin-left: 3vh !important;

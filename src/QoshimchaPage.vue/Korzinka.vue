@@ -2,6 +2,10 @@
   <Header1 />
 
   <div class="diva">
+    <p class="text-center mt-5 text1">
+      Hali hech qanday maxsulot olganingiz yuq! &#128512
+    </p>
+
     <div class="kard border rounded-5" v-for="(data, index) of ff" :key="data">
       <div class="d1 d-flex">
         <img class="div_img my-4 ms-5 me-4" :src="data.image" />
@@ -57,6 +61,15 @@ onMounted(() => {
       });
     });
   // }
+
+  if (ff.value.length == 0) {
+    let text = document.querySelector(".text1");
+    text.classList.add("text2");
+  } else {
+    let text = document.querySelector(".text1");
+    text.classList.add("text3");
+  }
+
   // Data();
 
   Canculator();
@@ -119,6 +132,12 @@ function Canculator() {
   flex-wrap: wrap;
 
   /* justify-content: space-around;  */
+}
+.text2 {
+  display: block;
+}
+.text3 {
+  display: none;
 }
 .kard {
   width: 25%;

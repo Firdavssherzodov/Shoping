@@ -115,7 +115,7 @@ onMounted(()=>{
 
 
   axios.get("https://fakestoreapi.com/products").then((resp) => {
-    console.log(resp.data);
+    // console.log(resp.data);
     if (resp.data) {
       resp.data.forEach((element) => {
     
