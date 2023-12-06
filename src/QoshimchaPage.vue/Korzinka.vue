@@ -124,7 +124,6 @@ function plus(data) {
 }
 
 // Savatdagi barcha mahsulotlarning umumiy narxini hisoblash
-
 function Canculator() {
   for (let item of ff.value) {
     let price3 = (total += item.price * item.count);
