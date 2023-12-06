@@ -1,5 +1,9 @@
 <template>
-    <Toast position="bottom-center"></Toast>
+    <Toast position="top-center"
+    group='pt'
+    :pt="{
+      container:{ style:'margin-top:8.7vh;'}
+    }"/>
 
   <section class="Maxsulotlar">
     <div class="diva">
@@ -149,7 +153,8 @@ function AddShop(idw) {
     severity: "success",
     summary: "Maxsulot savatda",
     detail: "",
-    life: 2000,
+    group: 'pt',
+    life: 1500,
   });
 }
 </script>

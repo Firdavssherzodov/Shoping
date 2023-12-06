@@ -36,7 +36,7 @@
       <li>Umumiy narx : $ {{ total }}</li>
       <li>Maxsulotlar soni : {{ ff?.length }}</li>
     </ul>
-    <button class="btn btn-primary p-2"  @click="showInfo" >Rasmiylashtirish</button>
+    <button class="btn btn-primary p-2"  @click="showInfo">Rasmiylashtirish</button>
   </section>
 </template>
 
