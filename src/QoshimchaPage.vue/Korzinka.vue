@@ -1,6 +1,5 @@
 <template>
   <Header1 />
-
   <div class="diva">
     <p class="text-center mt-5 text1">
       Hali hech qanday maxsulot olganingiz yuq! &#128512
