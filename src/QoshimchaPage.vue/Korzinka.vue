@@ -1,6 +1,9 @@
 <template>
+<Toast/>
+
   <Header1 />
-  <div class="diva">
+  <div class="diva card">
+
     <p class="text-center mt-5 text1">
       Hali hech qanday maxsulot olganingiz yuq! &#128512
     </p>
@@ -33,16 +36,28 @@
       <li>Umumiy narx : $ {{ total }}</li>
       <li>Maxsulotlar soni : {{ ff?.length }}</li>
     </ul>
-    <button class="btn btn-primary p-2">Rasmiylashtirish</button>
+    <button class="btn btn-primary p-2"  @click="showInfo" >Rasmiylashtirish</button>
   </section>
 </template>
 
 <script setup>
 import Header1 from "../components/Header.vue";
 import { ref, onMounted } from "vue";
+
+import Toast from 'primevue/toast';
+import { useToast } from "primevue/usetoast";
+const toast = useToast();
 // import {products} from '../user/store/userStore'
 // const listProducts = products()
+const showInfo = () => {
+    toast.add({ severity: 'success', summary: 'Xaridingiz uchun raxmat', detail: `Maxsulotlar yig'lmoqda`, life: 3000 });
+};
 
+
+
+
+
+//  // // // //
 let srt = ref([]);
 const ff = ref([]);
 
@@ -115,6 +130,8 @@ function Canculator() {
     total = price3;
   }
 }
+
+
 </script>
 
 <style scoped>

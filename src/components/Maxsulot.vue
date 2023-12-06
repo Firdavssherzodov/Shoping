@@ -1,6 +1,11 @@
 <template>
   <section class="Maxsulotlar">
     <div class="diva">
+      <div class="toas" style="z-index: 99; position: absolute; margin: auto;">
+        <Toast />
+
+      </div>
+
       <div class="div">
         <div
           class="kard border rounded-5 m-2 ms-5"
@@ -105,46 +110,47 @@
 import axios from "axios";
 import { ref, onMounted } from "vue";
 import Rating from "primevue/rating";
-import {products} from '../user/store/userStore'
+import { products } from "../user/store/userStore";
+import Toast from "primevue/toast";
+import { useToast } from "primevue/usetoast";
+const toast = useToast();
 
-
-const listProducts = products()
+const listProducts = products();
 
 // let id = ref(null);
-onMounted(()=>{
-
-
+onMounted(() => {
   axios.get("https://fakestoreapi.com/products").then((resp) => {
     // console.log(resp.data);
     if (resp.data) {
       resp.data.forEach((element) => {
-    
-    if (resp.data) {
-      listProducts.srt.push(element); 
-    let loader = document.querySelector('.loader')
-      loader.classList.add('loading')
-    }else{
-      let loader = document.querySelector('.loader')
-      loader.classList.remove('loading')
+        if (resp.data) {
+          listProducts.srt.push(element);
+          let loader = document.querySelector(".loader");
+          loader.classList.add("loading");
+        } else {
+          let loader = document.querySelector(".loader");
+          loader.classList.remove("loading");
+        }
+        // console.log(element);
+      });
     }
-    // console.log(element);
   });
-    }
-  
 });
-
-})
-
-
 
 function AddShop(idw) {
   axios.get(`https://fakestoreapi.com/products/${idw}`).then((resp) => {
     console.log(resp.data);
 
-    listProducts.product_list.push(resp.data)
+    listProducts.product_list.push(resp.data);
 
     console.log(listProducts.product_list);
     localStorage.setItem("savat", JSON.stringify(listProducts.product_list));
+  });
+  toast.add({
+    // severity: "success",
+    summary: "Maxsulot savatda",
+    detail: "",
+    life: 2000,
   });
 }
 </script>
@@ -160,7 +166,7 @@ function AddShop(idw) {
   display: inline-block;
   vertical-align: top;
 }
-.loading{
+.loading {
   display: none;
 }
 
