@@ -15,55 +15,55 @@ import { products } from "../user/store/userStore";
 import { onMounted } from "vue";
 const ProductsList = products();
 
-onMounted(() => {
-  function Sort(value) {
-    // Kiyimlar
-    if (value == "kiyim") {
-      let Kiyim = ProductsList.srt.sort((first, second) => {
-        if (first.category > second.category) return -1;
-        if (first.category < second.category) return 1;
-        return 0;
-      });
-      ProductsList.srt = Kiyim;
-    }
-    // Elektronika
-    if (value == "Elektronika") {
-      let Elektronika = ProductsList.srt.sort((first, second) => {
-        if (first.category < second.category) return -1;
-        if (first.category > second.category) return 1;
-        return 0;
-      });
-      ProductsList.srt = Elektronika;
-    }
-    // Sumkalar
-    if (value == "Sumkalar") {
-      let Sumkalar = ProductsList.srt.sort((first, second) => {
-        if (first.description <= second.description) return -1;
-        if (first.description >= second.description) return 1;
-        return 0;
-      });
-      ProductsList.srt = Sumkalar;
-    }
-    // NarxiB
-    if (value == "NarxiB") {
-      let NarxiB = ProductsList.srt.sort((first, second) => {
-        if (first.price > second.price) return -1;
-        if (first.price < second.price) return 1;
-        return 0;
-      });
-      ProductsList.srt = NarxiB;
-    }
-    // NarxiP
-    if (value == "NarxiP") {
-      let NarxiP = ProductsList.srt.sort((first, second) => {
-        if (first.price < second.price) return -1;
-        if (first.price > second.price) return 1;
-        return 0;
-      });
-      ProductsList.srt = NarxiP;
-    }
-  }
-});
+// onMounted(() => {
+//   function Sort(value) {
+//     // Kiyimlar
+//     if (value == "kiyim") {
+//       let Kiyim = ProductsList.srt.sort((first, second) => {
+//         if (first.category > second.category) return -1;
+//         if (first.category < second.category) return 1;
+//         return 0;
+//       });
+//       ProductsList.srt = Kiyim;
+//     }
+//     // Elektronika
+//     if (value == "Elektronika") {
+//       let Elektronika = ProductsList.srt.sort((first, second) => {
+//         if (first.category < second.category) return -1;
+//         if (first.category > second.category) return 1;
+//         return 0;
+//       });
+//       ProductsList.srt = Elektronika;
+//     }
+//     // Sumkalar
+//     if (value == "Sumkalar") {
+//       let Sumkalar = ProductsList.srt.sort((first, second) => {
+//         if (first.description <= second.description) return -1;
+//         if (first.description >= second.description) return 1;
+//         return 0;
+//       });
+//       ProductsList.srt = Sumkalar;
+//     }
+//     // NarxiB
+//     if (value == "NarxiB") {
+//       let NarxiB = ProductsList.srt.sort((first, second) => {
+//         if (first.price > second.price) return -1;
+//         if (first.price < second.price) return 1;
+//         return 0;
+//       });
+//       ProductsList.srt = NarxiB;
+//     }
+//     // NarxiP
+//     if (value == "NarxiP") {
+//       let NarxiP = ProductsList.srt.sort((first, second) => {
+//         if (first.price < second.price) return -1;
+//         if (first.price > second.price) return 1;
+//         return 0;
+//       });
+//       ProductsList.srt = NarxiP;
+//     }
+//   }
+// });
 // onMOUNTED
 function Sort(value) {
   // Kiyimlar
