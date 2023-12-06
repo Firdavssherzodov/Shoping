@@ -16,6 +16,7 @@
 
 <script setup>
 import { products } from "../user/store/userStore";
+
 import { onMounted, ref, watchEffect } from "vue";
 
 const product_list = products();
@@ -32,6 +33,7 @@ function Search() {
     product_list.srt = [...Data1];
   });
 }
+
 onMounted(() => {
   let data2 = JSON.parse(JSON.stringify(product_list.srt));
 
@@ -43,6 +45,7 @@ onMounted(() => {
     product_list.srt = [...Data1];
   });
 });
+
 </script>
 
 <style scoped>

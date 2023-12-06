@@ -136,6 +136,7 @@ onMounted(()=>{
 })
 
 
+
 function AddShop(idw) {
   axios.get(`https://fakestoreapi.com/products/${idw}`).then((resp) => {
     console.log(resp.data);
@@ -219,7 +220,6 @@ svg rect {
     margin-top: 1vh;
     width: 95%;
     height: 100%;
-    justify-content: space-around;
   }
   .kard {
     margin: 1vh !important;
@@ -267,10 +267,10 @@ svg rect {
   .div {
     width: 95%;
     height: 100%;
-    justify-content: space-around;
   }
   .kard {
     margin: 1vh !important;
+    margin-top: 0vh !important;
     width: 45%;
     height: 37%;
   }
