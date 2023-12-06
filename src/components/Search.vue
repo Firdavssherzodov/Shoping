@@ -16,7 +16,6 @@
 
 <script setup>
 import { products } from "../user/store/userStore";
-
 import { onMounted, ref, watchEffect } from "vue";
 
 const product_list = products();
