@@ -35,6 +35,7 @@ let search = ref("");
 // }
 
 // onMounted(() => {
+  
 let data2 = JSON.parse(JSON.stringify(product_list.srt));
 
 watchEffect(() => {
