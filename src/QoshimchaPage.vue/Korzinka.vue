@@ -146,7 +146,6 @@ function Canculator() {
   margin: 3vh auto;
   display: flex;
   flex-wrap: wrap;
-
   /* justify-content: space-around;  */
 }
 .text2 {
