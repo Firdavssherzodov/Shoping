@@ -159,6 +159,9 @@ ul li {
   list-style: none;
   font-size: 1.2rem;
 }
+li::selection{
+  display: none;
+}
 li:hover {
   cursor: pointer;
   transition: 0.9s;
