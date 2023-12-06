@@ -7,9 +7,10 @@ import router from "./router/router";
 import PrimeVue from "primevue/config";
 import { createPinia } from "pinia";
 import ToastService from "primevue/toastservice";
+import Tailwind from 'primevue/passthrough/tailwind';
 const app = createApp(App);
 const pinia = createPinia();
-
+app.use(Tailwind)
 app.use(pinia);
 app.use(router);
 app.use(PrimeVue);

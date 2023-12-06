@@ -43,7 +43,11 @@ onMounted(() => {
 
     product_list.srt = [...Data1];
   });
+
+
+
 });
+
 </script>
 
 <style scoped>

@@ -1,5 +1,5 @@
 <template>
-<Toast/>
+<Toast position="top-center"/>
 
   <Header1 />
   <div class="diva card">
@@ -50,7 +50,7 @@ const toast = useToast();
 // import {products} from '../user/store/userStore'
 // const listProducts = products()
 const showInfo = () => {
-    toast.add({ severity: 'success', summary: 'Xaridingiz uchun raxmat', detail: `Maxsulotlar yig'lmoqda`, life: 3000 });
+    toast.add({ severity: 'success', summary: 'Xaridingiz uchun raxmat', detail: `Maxsulotlar yig'lmoqda`, life: 4000 });
 };
 
 

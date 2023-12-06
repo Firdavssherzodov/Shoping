@@ -1,10 +1,9 @@
 <template>
+    <Toast position="bottom-center"></Toast>
+
   <section class="Maxsulotlar">
     <div class="diva">
-      <div class="toas" style="z-index: 99; position: absolute; margin: auto;">
-        <Toast />
-
-      </div>
+      
 
       <div class="div">
         <div
@@ -147,7 +146,7 @@ function AddShop(idw) {
     localStorage.setItem("savat", JSON.stringify(listProducts.product_list));
   });
   toast.add({
-    // severity: "success",
+    severity: "success",
     summary: "Maxsulot savatda",
     detail: "",
     life: 2000,
