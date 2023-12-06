@@ -23,6 +23,7 @@ const product_list = products();
 let search = ref("");
 // let data2 = JSON.parse(JSON.stringify(product_list.srt));
 
+
 // function Search() {
 //   watchEffect(() => {
 //     let Data1 = data2.filter((list) => {
