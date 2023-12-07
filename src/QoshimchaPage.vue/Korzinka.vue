@@ -8,7 +8,7 @@
       Hali hech qanday maxsulot olganingiz yuq! <p>&#128512;</p>
     </p>
     <router-link to="/">
-    <button class="btn btn-primary p-2 my-4">
+    <button class="btn btn-primary p-2 my-4 pe-3">
       <i class="fa-solid fa-arrow-left pe-2" style="color: #f5f5f5;"></i>
       Bosh Sahifaga</button>
     </router-link>
