@@ -78,6 +78,7 @@ function Sort(value) {
   }
   // Elektronika
   if (value == "Elektronika") {
+    ProductsList.srt = []
     let Elektronika = ProductsList.srt.sort((first, second) => {
       if (first.category < second.category) return -1;
       if (first.category > second.category) return 1;
@@ -89,6 +90,8 @@ function Sort(value) {
   }
   // Sumkalar
   if (value == "Sumkalar") {
+    ProductsList.srt = []
+
     let Sumkalar = ProductsList.srt.sort((first, second) => {
       if (first.description <= second.description) return -1;
       if (first.description >= second.description) return 1;
@@ -99,6 +102,8 @@ function Sort(value) {
   }
   // NarxiB
   if (value == "NarxiB") {
+    ProductsList.srt = []
+
     let NarxiB = ProductsList.srt.sort((first, second) => {
       if (first.price > second.price) return -1;
       if (first.price < second.price) return 1;
@@ -110,6 +115,8 @@ function Sort(value) {
   }
   // NarxiP
   if (value == "NarxiP") {
+    ProductsList.srt = []
+
     let NarxiP = ProductsList.srt.sort((first, second) => {
       if (first.price < second.price) return -1;
       if (first.price > second.price) return 1;
