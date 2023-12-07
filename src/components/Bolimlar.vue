@@ -24,7 +24,6 @@ const ProductsList = products();
 //         if (first.category < second.category) return 1;
 //         return 0;
 //       });
-//       ProductsList.srt = Kiyim;
 //     }
 //     // Elektronika
 //     if (value == "Elektronika") {
@@ -33,7 +32,6 @@ const ProductsList = products();
 //         if (first.category > second.category) return 1;
 //         return 0;
 //       });
-//       ProductsList.srt = Elektronika;
 //     }
 //     // Sumkalar
 //     if (value == "Sumkalar") {
@@ -42,7 +40,6 @@ const ProductsList = products();
 //         if (first.description >= second.description) return 1;
 //         return 0;
 //       });
-//       ProductsList.srt = Sumkalar;
 //     }
 //     // NarxiB
 //     if (value == "NarxiB") {
@@ -51,7 +48,6 @@ const ProductsList = products();
 //         if (first.price < second.price) return 1;
 //         return 0;
 //       });
-//       ProductsList.srt = NarxiB;
 //     }
 //     // NarxiP
 //     if (value == "NarxiP") {
@@ -60,7 +56,6 @@ const ProductsList = products();
 //         if (first.price > second.price) return 1;
 //         return 0;
 //       });
-//       ProductsList.srt = NarxiP;
 //     }
 //   }
 // });
