@@ -10,7 +10,7 @@
     <router-link to="/">
     <button class="btn btn-primary p-2 my-4">
       <i class="fa-solid fa-arrow-left pe-2" style="color: #f5f5f5;"></i>
-      Bosh Sahifaga qaytish</button>
+      Bosh Sahifaga</button>
     </router-link>
   </div>
     <div class="kard border rounded-5" v-for="(data, index) of ff" :key="data">
