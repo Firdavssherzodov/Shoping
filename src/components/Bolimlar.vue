@@ -73,57 +73,38 @@ function Sort(value) {
       if (first.category < second.category) return 1;
       return 0;
     });
-    let kiyim = JSON.parse(JSON.stringify(Kiyim));
-    console.log((ProductsList.srt = [...kiyim]));
   }
   // Elektronika
   if (value == "Elektronika") {
-    ProductsList.srt = []
     let Elektronika = ProductsList.srt.sort((first, second) => {
       if (first.category < second.category) return -1;
       if (first.category > second.category) return 1;
       return 0;
     });
-    let elektronika = JSON.parse(JSON.stringify(Elektronika));
-
-    ProductsList.srt = [...elektronika];
   }
   // Sumkalar
   if (value == "Sumkalar") {
-    ProductsList.srt = []
-
     let Sumkalar = ProductsList.srt.sort((first, second) => {
       if (first.description <= second.description) return -1;
       if (first.description >= second.description) return 1;
       return 0;
     });
-    let sumkalar = JSON.parse(JSON.stringify(Sumkalar));
-    ProductsList.srt = [...sumkalar];
   }
   // NarxiB
   if (value == "NarxiB") {
-    ProductsList.srt = []
-
     let NarxiB = ProductsList.srt.sort((first, second) => {
       if (first.price > second.price) return -1;
       if (first.price < second.price) return 1;
       return 0;
     });
-
-    let narxB = JSON.parse(JSON.stringify(NarxiB));
-    ProductsList.srt = [...narxB];
   }
   // NarxiP
   if (value == "NarxiP") {
-    ProductsList.srt = []
-
     let NarxiP = ProductsList.srt.sort((first, second) => {
       if (first.price < second.price) return -1;
       if (first.price > second.price) return 1;
       return 0;
     });
-    let narxiP = JSON.parse(JSON.stringify(NarxiP));
-    ProductsList.srt = [...narxiP];
   }
 }
 </script>
