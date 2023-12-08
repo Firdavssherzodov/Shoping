@@ -24,9 +24,12 @@ const router = createRouter({
       name: "seach",
       component: () => import("../QoshimchaPage.vue/Qidiruv.vue"),
     },
+    {
+      path: "/favorites",
+      naem: "favorites",
+      component: () => import("../QoshimchaPage.vue/Like.vue"),
+    },
   ],
 });
-
- 
 
 export default router;

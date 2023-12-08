@@ -2,11 +2,7 @@
   <header class="diva">
     <router-link to="/">
       <div class="d1">
-        <img
-          src="../../images/header.icons.png"
-          alt=""
-          class="px-5 rounded-circle my-1 my-2"
-        />
+        <img src="../../images/header.icons.png" alt="" class="" />
       </div>
     </router-link>
     <div class="d2">
@@ -46,13 +42,15 @@
           </p>
         </div>
       </router-link>
-      <div>
-        <i
-          class="fa-regular fa-heart fs-5 text-danger"
-          style="color: #838891"
-        ></i>
-        <p class="px-3 my-4">Saralangan</p>
-      </div>
+      <router-link to="/favorites">
+        <div>
+          <i
+            class="fa-regular fa-heart fs-5 text-danger"
+            style="color: red"
+          ></i>
+          <p class="px-3 my-4" style="color: #838891">Saralangan</p>
+        </div>
+      </router-link>
     </div>
   </header>
 
@@ -100,7 +98,7 @@
         </button>
       </div>
     </router-link>
-    <router-link to="">
+    <router-link to="/favorites">
       <div>
         <a href="#" class="fa-regular fa-heart fs-4" style="color: #8c8989"></a>
         <p style="font-size: 0.7rem; position: absolute; margin-left: -2vh">
@@ -206,7 +204,7 @@ onMounted(async () => {
   justify-content: space-around;
 }
 .d1 {
-  width: 30%;
+  width: 50%;
   height: 100%;
 }
 .d2 {
@@ -223,8 +221,8 @@ onMounted(async () => {
 }
 
 img {
-  width: 180px;
-  height: 100%;
+  width: 200%;
+  height: 160%;
 }
 .Menu {
   width: 350px;

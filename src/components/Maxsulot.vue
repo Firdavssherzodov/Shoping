@@ -12,10 +12,11 @@
       <div class="div">
         <div
           class="kard border rounded-5 m-2 ms-5"
-          v-for="data in listProducts.srt"
-          :key="data.id"
+          v-for="(data,index) in listProducts.srt"
+          :key="data"
         >
           <div class="div_img">
+            <i class="fa-regular fa-heart fs-5 like" @click="Like(data.id,index)"></i>
             <img :src="data.image" alt="inkas" />
             <p class="mt-5 mx-2" style="font-size: 0.8rem">{{ data.title }}</p>
             <h5 class="mx-2 text-dark fw-bold">{{ data.price }} $</h5>
@@ -157,6 +158,19 @@ function AddShop(idw) {
     life: 1500,
   });
 }
+function Like(id,index){
+
+
+  axios.get(`https://fakestoreapi.com/products/${id}`).then((resp) => {
+    // console.log(resp.data);
+    listProducts.favorites.push(resp.data);
+    localStorage.setItem("likes", JSON.stringify(listProducts.favorites))
+
+
+
+  });
+}
+
 </script>
 <style scoped>
 .loader {
@@ -224,6 +238,16 @@ svg rect {
   top: 8%;
   left: 60%;
 }
+.like{
+  position: absolute;
+margin-left: 9.7%;
+margin-top: 1vh;
+color: #838891;
+
+}
+.like:hover{
+  cursor: pointer;
+}
 /* Responsive 385px */
 @media (max-width: 385px) {
   .div {
@@ -271,6 +295,13 @@ svg rect {
   .Maxsulotlar {
     height: 1850px !important;
   }
+  .like{
+  position: absolute;
+margin-left: 34%;
+font-size: 1.25rem !important;
+margin-top: 1vh;
+color: #838891;
+}
 }
 /* Responsive 576px */
 @media (max-width: 576px) {
@@ -320,5 +351,12 @@ svg rect {
   .Maxsulotlar {
     height: 1850px !important;
   }
+  .like{
+  position: absolute;
+margin-left: 34%;
+font-size: 1.3rem ;
+margin-top: 1vh;
+color: #838891;
+}
 }
 </style>
