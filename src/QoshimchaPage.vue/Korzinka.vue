@@ -148,7 +148,7 @@ function Canculator() {
 }
 .diva {
   width: 78%;
-  height: 900px;
+  height: 950px;
   margin: 3vh auto;
   display: flex !important;
   flex-wrap: wrap;

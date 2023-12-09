@@ -228,7 +228,7 @@ svg rect {
   padding: 2px;
 }
 .kard p {
-  width: 100%;
+  width: 215px;
   height: 15%;
   overflow: hidden;
   line-clamp: 1;

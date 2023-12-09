@@ -134,6 +134,8 @@ function Delete(index) {
   left: 5% !important;
   width: 65px !important;
   height: 40px;
+  margin-top: 1.5vh !important;
+  margin-left: -1vh !important;
 }
 /* Responnsive 385px */
 @media (max-width: 385px) {
