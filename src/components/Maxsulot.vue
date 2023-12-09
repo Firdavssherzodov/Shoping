@@ -11,13 +11,16 @@
     <div class="diva">
       <div class="div">
         <div
-          class="kard border rounded-5 m-2 ms-5"
-          v-for="(data,index) in listProducts.srt"
-          :key="data"
+          class="kard border rounded-5 m-2"
+          v-for="(data, index) in listProducts.srt"
+          :key="data.id"
         >
           <div class="div_img">
-            <i class="fa-regular fa-heart fs-5 like" @click="Like(data.id,index)"></i>
-            <img :src="data.image" alt="inkas" />
+            <i
+              class="fa-solid fa-heart fs-5 like rounded-5"
+              @click="Like(data.id,index)"
+            ></i>
+            <img :src="data.image" alt="inkas" class="rounded-5" />
             <p class="mt-5 mx-2" style="font-size: 0.8rem">{{ data.title }}</p>
             <h5 class="mx-2 text-dark fw-bold">{{ data.price }} $</h5>
             <Rating :cancel="false" class="ms-2 mt-3 Rating" />
@@ -158,19 +161,20 @@ function AddShop(idw) {
     life: 1500,
   });
 }
-function Like(id,index){
+function Like(id,index) {
+console.log(listProducts.srt[index]);
+  if (listProducts.srt[index] == index) {
+    let like = document.querySelector('.like');
+    like.classList.toggle('text-danger');
+  }
+   
 
-
-  axios.get(`https://fakestoreapi.com/products/${id}`).then((resp) => {
-    // console.log(resp.data);
-    listProducts.favorites.push(resp.data);
-    localStorage.setItem("likes", JSON.stringify(listProducts.favorites))
-
-
-
-  });
+    axios.get(`https://fakestoreapi.com/products/${id}`).then((resp) => {
+      listProducts.favorites.push(resp.data);
+      localStorage.setItem("likes", JSON.stringify(listProducts.favorites));
+    });
+  
 }
-
 </script>
 <style scoped>
 .loader {
@@ -238,14 +242,13 @@ svg rect {
   top: 8%;
   left: 60%;
 }
-.like{
+.like {
   position: absolute;
-margin-left: 9.7%;
-margin-top: 1vh;
-color: #838891;
-
+  margin-left: 9.7%;
+  margin-top: 1vh;
+  /* color: #838891; */
 }
-.like:hover{
+.like:hover {
   cursor: pointer;
 }
 /* Responsive 385px */
@@ -295,13 +298,13 @@ color: #838891;
   .Maxsulotlar {
     height: 1850px !important;
   }
-  .like{
-  position: absolute;
-margin-left: 34%;
-font-size: 1.25rem !important;
-margin-top: 1vh;
-color: #838891;
-}
+  .like {
+    position: absolute;
+    margin-left: 34%;
+    font-size: 1.25rem !important;
+    margin-top: 1vh;
+    /* color: #838891; */
+  }
 }
 /* Responsive 576px */
 @media (max-width: 576px) {
@@ -351,12 +354,12 @@ color: #838891;
   .Maxsulotlar {
     height: 1850px !important;
   }
-  .like{
-  position: absolute;
-margin-left: 34%;
-font-size: 1.3rem ;
-margin-top: 1vh;
-color: #838891;
-}
+  .like {
+    position: absolute;
+    margin-left: 34%;
+    font-size: 1.3rem;
+    margin-top: 1vh;
+    color: #838891;
+  }
 }
 </style>
