@@ -18,7 +18,7 @@
           <div class="div_img">
             <i
               class="fa-solid fa-heart fs-5 like rounded-5"
-              @click="Like(data.id,index)"
+              @click="Like(data.id, index)"
             ></i>
             <img :src="data.image" alt="inkas" class="rounded-5" />
             <p class="mt-5 mx-2" style="font-size: 0.8rem">{{ data.title }}</p>
@@ -161,16 +161,14 @@ function AddShop(idw) {
     life: 1500,
   });
 }
-function Like(id,index) {
-if ( listProducts.srt[index]) {
-  
-}
+function Like(id, index) {
+  if (listProducts.srt[index]) {
+  }
 
-    axios.get(`https://fakestoreapi.com/products/${id}`).then((resp) => {
-      listProducts.favorites.push(resp.data);
-      localStorage.setItem("likes", JSON.stringify(listProducts.favorites));
-    });
-  
+  axios.get(`https://fakestoreapi.com/products/${id}`).then((resp) => {
+    listProducts.favorites.push(resp.data);
+    localStorage.setItem("likes", JSON.stringify(listProducts.favorites));
+  });
 }
 </script>
 <style scoped>
