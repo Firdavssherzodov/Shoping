@@ -48,7 +48,9 @@
             class="fa-regular fa-heart fs-5 text-danger"
             style="color: red"
           ></i>
-          <p class="px-3 my-4" style="color: var(--mdb-body-color)">Saralangan</p>
+          <p class="px-3 my-4" style="color: var(--mdb-body-color)">
+            Saralangan
+          </p>
         </div>
       </router-link>
     </div>
@@ -229,7 +231,7 @@ img {
   height: 70px;
   position: fixed;
   left: 40.5%;
-  z-index: 22;
+  z-index: 288882;
   bottom: 0px !important;
   display: flex;
   justify-content: space-around;

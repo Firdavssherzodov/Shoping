@@ -8,7 +8,21 @@
     }"
   />
   <div class="diva card">
-   
+    <div class="text1 text-center">
+      <!-- <p class="text-center mt-5 ">
+      Hali hech qanday maxsulot olganingiz yuq! <p>&#128512;</p>
+    </p> -->
+      <router-link to="/">
+        <button
+          class="btn btn-primary p-2 my-4 pe-3"
+          style="margin-top: 13.4vh !important"
+        >
+          <i class="fa-solid fa-arrow-left pe-2" style="color: #f5f5f5"></i>
+          Bosh Sahifaga
+        </button>
+      </router-link>
+    </div>
+
     <div
       class="kard border rounded-5"
       v-for="(data, index) of Likes"
@@ -44,7 +58,6 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import axios from "axios";
 import Xadaer from "../components/Header.vue";
 import Toast from "primevue/toast";
 import { useToast } from "primevue/usetoast";
@@ -57,18 +70,14 @@ const listProducts = products();
 onMounted(() => {
   Likes.value = JSON.parse(localStorage.getItem("likes"));
 
-
-    // console.log(listProducts.product_list);
-    localStorage.setItem("savat", JSON.stringify(listProducts.product_list));
-  });
-  toast.add({
-    severity: "success",
-    summary: "Maxsulot savatda",
-    detail: "",
-    group: "pt",
-    life: 1500,
-  });
-}
+  if (Likes.length == null || 0 || undefined || []) {
+    let text = document.querySelector(".text1");
+    text.classList.add("text2");
+  } else {
+    let text = document.querySelector(".text1");
+    text.classList.add("text3");
+  }
+});
 
 function Delete(index) {
   Likes.value.splice(index, 1);
@@ -122,7 +131,12 @@ function Delete(index) {
 .fa-xmark {
   cursor: pointer;
 }
-
+.text2 {
+  display: block;
+}
+.text3 {
+  display: none;
+}
 .btn-success {
   position: relative;
   top: 8%;
@@ -187,6 +201,7 @@ function Delete(index) {
     margin-left: 2vh;
   }
   .d2 h6 {
+    width: 90px !important;
     padding-top: 2.5vh !important;
   }
   .fa-xmark {
@@ -203,14 +218,14 @@ function Delete(index) {
     font-size: 0.7rem !important;
   }
   .btn-success {
-  padding: 10px;
-  top: -8%;
-  left: 15% !important;
-  width: 15% !important;
-  font-size: 0.5rem;
-}
-.btn-success i {
-  font-size: 0.9rem;
-}
+    padding: 10px;
+    top: -8%;
+    left: 15% !important;
+    width: 15% !important;
+    font-size: 0.5rem;
+  }
+  .btn-success i {
+    font-size: 0.9rem;
+  }
 }
 </style>

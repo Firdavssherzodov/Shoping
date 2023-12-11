@@ -5,13 +5,14 @@
         type="text"
         class="rounded-5 px-3 py-3"
         placeholder="Qidiruv"
-        v-model="search"
+        v-model="Search"
       />
     </div>
     <button class="btn btn-primary rounded-5" @click="Search()">
       <i class="fa-solid fa-magnifying-glass"></i>
     </button>
   </div>
+  <p style="position: absolute; top: 30%;left: 30%;display: none; " class="error">Siz qidirgan topilmadi </p>
 </template>
 
 <script setup>
@@ -20,21 +21,24 @@ import { onMounted, ref, watchEffect } from "vue";
 
 const product_list = products();
 
-let search = ref("");
+let Search = ref("");
 
 
-// onMounted(() => {
-  
+onMounted(() => {
+  product_list.srt = []
+
 let data2 = JSON.parse(JSON.stringify(product_list.srt));
 
 watchEffect(() => {
+
   let Data1 = data2.filter((list) => {
-    return list.title.toUpperCase().includes(search.value.toUpperCase());
+    return list.title.toUpperCase().includes(Search.value.toUpperCase());
   });
   product_list.srt = [...Data1];
 });
 
-// });
+
+});
 </script>
 
 <style scoped>

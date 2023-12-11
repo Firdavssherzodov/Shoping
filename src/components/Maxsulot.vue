@@ -162,11 +162,8 @@ function AddShop(idw) {
   });
 }
 function Like(id,index) {
-console.log(listProducts.srt[index]);
-  if (listProducts.srt[index] == index) {
-    let like = document.querySelector('.like');
-    like.classList.toggle('text-danger');
-  }
+  // if (listProducts.srt[index] == index) {
+  // }
    
 
     axios.get(`https://fakestoreapi.com/products/${id}`).then((resp) => {
