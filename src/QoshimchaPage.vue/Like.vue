@@ -56,12 +56,7 @@ const listProducts = products();
 
 onMounted(() => {
   Likes.value = JSON.parse(localStorage.getItem("likes"));
-});
-function AddShop(idw) {
-  axios.get(`https://fakestoreapi.com/products/${idw}`).then((resp) => {
-    // console.log(resp.data);
 
-    listProducts.product_list.push(resp.data);
 
     // console.log(listProducts.product_list);
     localStorage.setItem("savat", JSON.stringify(listProducts.product_list));

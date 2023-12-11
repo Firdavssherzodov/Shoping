@@ -21,18 +21,7 @@ import { onMounted, ref, watchEffect } from "vue";
 const product_list = products();
 
 let search = ref("");
-// let data2 = JSON.parse(JSON.stringify(product_list.srt));
 
-
-// function Search() {
-//   watchEffect(() => {
-//     let Data1 = data2.filter((list) => {
-//       return list.title.toUpperCase().includes(search.value.toUpperCase());
-//     });
-
-//     product_list.srt = [...Data1];
-//   });
-// }
 
 // onMounted(() => {
   
@@ -42,7 +31,6 @@ watchEffect(() => {
   let Data1 = data2.filter((list) => {
     return list.title.toUpperCase().includes(search.value.toUpperCase());
   });
-
   product_list.srt = [...Data1];
 });
 
