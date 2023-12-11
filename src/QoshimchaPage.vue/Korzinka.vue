@@ -143,24 +143,12 @@ function Canculator() {
 </script>
 
 <style scoped>
-* {
-  margin: 0%;
-  padding: 0%;
-  box-sizing: border-box;
-}
 .diva {
   width: 78%;
   height: 950px;
   margin: 3vh auto;
   display: flex !important;
   flex-wrap: wrap;
-  /* justify-content: space-around;  */
-}
-.text2 {
-  display: block;
-}
-.text3 {
-  display: none;
 }
 .kard {
   width: 25%;
@@ -252,7 +240,6 @@ span::selection {
   .fa-minus {
     margin-left: -2vh !important;
   }
-
   .umumiy {
     width: 100%;
     bottom: 7.5vh;
@@ -269,46 +256,7 @@ span::selection {
 }
 /* Responnsive 576px */
 @media (max-width: 576px) {
-  .diva {
-    width: 90%;
-    display: block !important;
-  }
-  .kard {
-    width: 90%;
-    height: 20%;
-    margin-top: 1.5vh;
-    margin-left: 2vh;
-  }
-  .span {
-    align-items: center;
-    width: 40%;
-    height: 50%;
-    margin-left: 8% !important;
-  }
 
-  .d2 h6 {
-    padding-top: 2.5vh !important;
-  }
-  .fa-xmark {
-    margin-top: 2vh;
-    margin-left: 2.5vh;
-    padding: 0px !important;
-    font-size: 1.8rem !important;
-    cursor: pointer;
-    width: 30px !important;
-    height: 30px;
-  }
-  .span input {
-    padding-left: 5px !important;
-    width: 31% !important;
-  }
-  .d1 p {
-    width: 90% !important;
-    font-size: 0.7rem !important;
-  }
-  .fa-minus {
-    margin-left: -2vh !important;
-  }
   .umumiy {
     width: 100%;
     bottom: 7.7vh;
