@@ -2,8 +2,8 @@
 <Toast position="top-center"/>
 
   <Header1 />
-  <div class="diva card">
-<div class="text1 text-center" >
+  <div class="diva ">
+<!-- <div class="text1 text-center" >
     <p class="text-center mt-5 ">
       Hali hech qanday maxsulot olganingiz yuq! <p>&#128512;</p>
     </p>
@@ -12,34 +12,34 @@
       <i class="fa-solid fa-arrow-left pe-2" style="color: #f5f5f5;"></i>
       Bosh Sahifaga</button>
     </router-link>
+  </div> -->
+    <!-- <div class="kard border rounded-5" v-for="(data, index) of ff" :key="data"> -->
+<div class="kard border rounded-5" v-for="(data,index) in ff" :key="data">
+<div class="d1 d-flex">
+  <img :src="data.image" alt="inkas" class="mx-4 my-3">
+  <p class="py-4">{{ data.title }}</p>
+  <i class="fa-solid fa-trash-can fs-5 my-4 me-4" style="color: #eb0505; cursor: pointer;" @click="Delete(index)"></i>
+</div>
+<div class="d2 d-flex">
+  <h6 class="fw-bold py-2">${{ data.price }}</h6>
+  <div class="counter d-flex">
+    <span class="s1 rounded">
+    <i class="fa-solid fa-minus  text-primary border-primary ps-2 py-2" style="cursor: pointer;" @click="minus(data)"></i>
+  </span>
+<p class="px-2 mx-2 mt-1" style="width: 25px;">{{ data.count }}</p>
+<span class="s2 rounded">
+    <i class="fa-solid fa-plus text-primary border-primary ps-2 py-2" style="cursor: pointer;" @click="plus(data)"></i>
+  </span>
   </div>
-    <div class="kard border rounded-5" v-for="(data, index) of ff" :key="data">
-      <div class="d1 d-flex">
-        <img class="div_img my-4 ms-5 me-4" :src="data.image" />
-        <p class="py-4 mt-3 d-block" style="font-size: 0.8rem">
-          {{ data.title }}
-        </p>
-        <!-- <p class="mt-4">$ {{ data.price }} </p> -->
-      </div>
-      <div class="d2 d-flex mx-2">
-        <span class="span my-3 mx-2 px-2">
-          <i class="fa-solid fa-minus fs-5 px-3 ps-2" @click="minus(data)"></i>
-          <span class="px-2">{{ data.count }}</span>
-          <i class="fa-solid fa-plus fs-5 px-3" @click="plus(data)"></i>
-        </span>
-        <h6 class="py-3 pe-3 w-25 fw-bold">$ {{ data.price }}</h6>
-        <i
-          class="fa-solid fa-xmark fs-3 px-5 py-3"
-          style="color: #e50606"
-          @click="Delete(index)"
-        ></i>
-      </div>
-    </div>
+</div>
+</div>
+
+      
   </div>
   <section class="umumiy border border-start-0 border-end-0">
     <ul class="ul">
-      <li>Umumiy narx : $ {{ total }}</li>
-      <li>Maxsulotlar soni : {{ ff?.length }}</li>
+      <li class="w-100">Umumiy narx : $ {{ total }}</li>
+      <li> {{ ff?.length }} ta mahsulot</li>
     </ul>
     <button class="btn btn-primary p-2"  @click="sendtelegram">Rasmiylashtirish</button>
   </section>
@@ -70,7 +70,7 @@ const ff = ref([]);
 
 onMounted(() => {
   srt.value = []
-  
+
   srt.value = JSON.parse(localStorage.getItem("savat"));
   if (!!srt.value)
     srt.value.forEach((el) => {
@@ -85,13 +85,13 @@ onMounted(() => {
     });
   // }
 
-  if (ff.value.length == 0) {
-    let text = document.querySelector(".text1");
-    text.classList.add("text2");
-  } else {
-    let text = document.querySelector(".text1");
-    text.classList.add("text3");
-  }
+  // if (ff.value.length == 0) {
+  //   let text = document.querySelector(".text1");
+  //   text.classList.add("text2");
+  // } else {
+  //   let text = document.querySelector(".text1");
+  //   text.classList.add("text3");
+  // }
 
   // Data();
 
@@ -143,46 +143,49 @@ function Canculator() {
 </script>
 
 <style scoped>
-.diva {
+ .diva {
   width: 78%;
   height: 950px;
   margin: 3vh auto;
   display: flex !important;
   flex-wrap: wrap;
-}
-.kard {
+  }
+  .kard {
   width: 25%;
-  height: 25%;
+  height: 16%;
   margin-top: 1.5vh;
   margin-left: 8vh;
 }
-.div_img {
-  width: 25%;
-  height: 70%;
-}
-.d1 {
-  width: 100%;
-  height: 70%;
-}
-.d2 {
-  width: 100%;
-  height: 30%;
-}
-.span {
-  width: 40%;
-  height: 100%;
-  display: block;
-}
-span::selection {
-  display: none;
-}
-.span i {
-  cursor: pointer;
-}
-
-.fa-xmark {
-  cursor: pointer;
-}
+  .d1{
+    width: 100%;
+    height: 70%;
+  }
+  .d1 img{
+    width: 20%;
+    height: 80%;
+  }
+  .d1 p{
+    font-size: 0.8rem;
+    width: 210px;
+  }
+  .d2{
+    margin-top: -2vh;
+  }
+  .d2 h6{
+    width: 50%;
+    margin-left: 13vh;
+    /* border: 1px solid blue; */
+  }
+  .counter{
+    width: 50%;
+    margin-left: 1vh;
+    /* border: 1px solid blue;   */
+  }
+  .s1,.s2{
+    width: 30px;
+    height: 33px;
+    background-color: rgba(0, 0, 255, 0.131);
+  }
 .umumiy {
   background-color: white;
   width: 67%;
@@ -197,6 +200,8 @@ span::selection {
 }
 .ul {
   list-style: none;
+  padding-top: 2vh;
+  padding-left: 0px !important;
 }
 /* Responnsive 385px */
 @media (max-width: 385px) {
@@ -204,46 +209,28 @@ span::selection {
     width: 100% !important;
     display: block !important;
   }
-  .kard {
+  .kard{
     width: 90%;
-    height: 20%;
-    margin-top: 1.5vh;
-    margin-left: 2vh;
+    margin: 2.5vh;
   }
-  .span {
-    align-items: center;
-    width: 40%;
-    height: 50%;
-    margin-left: 8% !important;
+  .d2 h6{
+    width: 50%;
+    margin-left: 15.5vh !important;
+    /* border: 1px solid blue; */
   }
-
-  .d2 h6 {
-    padding-top: 2.5vh !important;
+  .d2{
+    margin-top: -0.5vh;
   }
-  .fa-xmark {
-    margin-top: 2vh;
-    margin-left: 2.5vh;
-    padding: 0px !important;
-    font-size: 1.8rem !important;
-    cursor: pointer;
-    width: 30px !important;
-    height: 30px;
+  .counter{
+    margin-left: -2vh;
   }
-  .span input {
-    padding-left: 5px !important;
-    width: 31% !important;
-  }
-  .d1 p {
-    width: 90% !important;
-    font-size: 0.7rem !important;
-  }
-  .fa-minus {
-    margin-left: -2vh !important;
+  .fa-trash-can{
+    font-size: 1.1rem !important;
   }
   .umumiy {
     width: 100%;
     bottom: 7.5vh;
-    left: 0%;
+    left: 0% !important;
   }
   .ul li {
     padding-left: 2vh;
@@ -256,7 +243,18 @@ span::selection {
 }
 /* Responnsive 576px */
 @media (max-width: 576px) {
-
+  .diva {
+    width: 85%;
+    display: block !important;
+  }
+  .kard{
+    width: 90%;
+    margin: 2.5vh;
+  }
+  .d2 h6{
+    width: 50%;
+    margin-left: 15.5vh !important;
+  }
   .umumiy {
     width: 100%;
     bottom: 7.7vh;

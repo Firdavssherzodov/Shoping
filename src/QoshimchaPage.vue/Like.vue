@@ -38,7 +38,7 @@
       <div class="d2 d-flex mx-5">
         <h6 class="py-4 px-2 pe-3 w-25 fw-bold">$ {{ data.price }}</h6>
         <i
-          class="fa-solid fa-xmark fs-3 px-5 py-3"
+          class="fa-regular fa-trash-can fs-3 px-5 py-3"
           style="color: #e50606"
           @click="Delete(index)"
         ></i>
@@ -130,7 +130,7 @@ function Delete(index) {
   height: 30%;
 }
 
-.fa-xmark {
+.fa-trash-can {
   cursor: pointer;
 }
 .text2 {
@@ -165,7 +165,7 @@ function Delete(index) {
     width: 100px !important;
     padding-top: 2.3vh !important;
   }
-  .fa-xmark {
+  .fa-trash-can {
     margin-top: 1.5vh !important;
     margin-left: 5vh !important;
     padding: 0px !important;
@@ -206,7 +206,7 @@ function Delete(index) {
     width: 90px !important;
     padding-top: 2.5vh !important;
   }
-  .fa-xmark {
+  .fa-trash-can {
     margin-top: 2vh;
     margin-left: 6vh;
     padding: 0px !important;
