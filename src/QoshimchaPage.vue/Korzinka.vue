@@ -86,7 +86,6 @@ onMounted(() => {
         image: el.image,
       });
     });
-  // }
 
   // if (ff.value.length == 0) {
   //   let text = document.querySelector(".text1");
@@ -96,7 +95,6 @@ onMounted(() => {
   //   text.classList.add("text3");
   // }
 
-  // Data();
 
   Canculator();
 });
