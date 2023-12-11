@@ -70,7 +70,9 @@ const listProducts = products();
 onMounted(() => {
   Likes.value = JSON.parse(localStorage.getItem("likes"));
 
-  if (Likes.length == null || 0 || undefined || []) {
+  if (Likes.value = []) 
+    return;
+  if (!!Likes.value.length == null || 0) {
     let text = document.querySelector(".text1");
     text.classList.add("text2");
   } else {
