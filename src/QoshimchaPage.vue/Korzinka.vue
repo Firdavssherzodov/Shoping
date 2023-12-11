@@ -3,7 +3,7 @@
 
   <Header1 />
   <div class="diva ">
-<!-- <div class="text1 text-center" >
+<div class="text1 text-center" >
     <p class="text-center mt-5 ">
       Hali hech qanday maxsulot olganingiz yuq! <p>&#128512;</p>
     </p>
@@ -12,8 +12,9 @@
       <i class="fa-solid fa-arrow-left pe-2" style="color: #f5f5f5;"></i>
       Bosh Sahifaga</button>
     </router-link>
-  </div> -->
-    <!-- <div class="kard border rounded-5" v-for="(data, index) of ff" :key="data"> -->
+  </div>
+
+
 <div class="kard border rounded-5" v-for="(data,index) in ff" :key="data">
 <div class="d1 d-flex">
   <img :src="data.image" alt="inkas" class="mx-4 my-3">
@@ -32,6 +33,8 @@
   </span>
   </div>
 </div>
+
+
 </div>
 
       

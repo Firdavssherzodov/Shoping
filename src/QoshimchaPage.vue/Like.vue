@@ -8,11 +8,9 @@
     }"
   />
   <div class="diva card">
-    <div class="text1 text-center">
-      <!-- <p class="text-center mt-5 ">
-      Hali hech qanday maxsulot olganingiz yuq! <p>&#128512;</p>
-    </p> -->
-      <router-link to="/">
+    <!-- <div class="text1 text-center"> -->
+
+    <!-- <router-link to="/">
         <button
           class="btn btn-primary p-2 my-4 pe-3"
           style="margin-top: 13.4vh !important"
@@ -21,27 +19,24 @@
           Bosh Sahifaga
         </button>
       </router-link>
-    </div>
+    </div> -->
 
     <div
       class="kard border rounded-5"
-      v-for="(data, index) of Likes"
+      v-for="(data, index) in Likes"
       :key="data"
     >
       <div class="d1 d-flex">
-        <img class="div_img my-4 ms-5 me-4" :src="data.image" />
-        <p class="py-4 mt-3 d-block" style="font-size: 0.8rem">
-          {{ data.title }}
-        </p>
-        <!-- <p class="mt-4">$ {{ data.price }} </p> -->
-      </div>
-      <div class="d2 d-flex mx-5">
-        <h6 class="py-4 px-2 pe-3 w-25 fw-bold">$ {{ data.price }}</h6>
+        <img :src="data.image" alt="inkas" class="mx-4 my-3" />
+        <p class="py-4">{{ data.title }}</p>
         <i
-          class="fa-regular fa-trash-can fs-3 px-5 py-3"
-          style="color: #e50606"
+          class="fa-solid fa-trash-can fs-5 my-4 me-4"
+          style="color: #eb0505; cursor: pointer"
           @click="Delete(index)"
         ></i>
+      </div>
+      <div class="d2 d-flex">
+        <h6 class="fw-bold py-2">${{ data.price }}</h6>
         <button
           class="btn btn-success btn btn-outline-success ripple-surface-dark mx-2 my-2"
           @click="AddShop(data.id)"
@@ -70,15 +65,13 @@ const listProducts = products();
 onMounted(() => {
   Likes.value = JSON.parse(localStorage.getItem("likes"));
 
-  if (Likes.value = []) 
-    return;
-  if (!!Likes.value.length == null || 0) {
-    let text = document.querySelector(".text1");
-    text.classList.add("text2");
-  } else {
-    let text = document.querySelector(".text1");
-    text.classList.add("text3");
-  }
+  // if (!!Likes.value.length == null || 0) {
+  //   let text = document.querySelector(".text1");
+  //   text.classList.add("text2");
+  // } else {
+  //   let text = document.querySelector(".text1");
+  //   text.classList.add("text3");
+  // }
 });
 
 function Delete(index) {
@@ -99,54 +92,43 @@ function Delete(index) {
 }
 .diva {
   width: 78%;
-  height: 900px;
+  height: 950px;
   margin: 3vh auto;
   display: flex !important;
   flex-wrap: wrap;
-  /* justify-content: space-around;  */
-}
-.text2 {
-  display: block;
-}
-.text3 {
-  display: none;
 }
 .kard {
   width: 25%;
-  height: 25%;
+  height: 16%;
   margin-top: 1.5vh;
   margin-left: 8vh;
-}
-.div_img {
-  width: 25%;
-  height: 70%;
 }
 .d1 {
   width: 100%;
   height: 70%;
 }
+.d1 img {
+  width: 20%;
+  height: 80%;
+}
+.d1 p {
+  font-size: 0.8rem;
+  width: 210px;
+}
 .d2 {
-  width: 100%;
-  height: 30%;
+  margin-top: -2vh;
 }
-
-.fa-trash-can {
-  cursor: pointer;
-}
-.text2 {
-  display: block;
-}
-.text3 {
-  display: none;
+.d2 h6 {
+  width: 50%;
+  margin-left: 13vh;
+  /* border: 1px solid blue; */
 }
 .btn-success {
+  width: 12%;
+  padding: 10px;
   position: relative;
   top: 8%;
-  left: 5% !important;
-  width: 65px !important;
-  height: 40px;
-  margin-top: 1.5vh !important;
-  margin-left: -1vh !important;
+  left: -3.5%;
 }
 /* Responnsive 385px */
 @media (max-width: 385px) {
@@ -155,74 +137,50 @@ function Delete(index) {
     display: block !important;
   }
   .kard {
-    width: 90% !important;
-    height: 20%;
-    margin-top: 1.5vh;
-    margin-left: 2vh;
+    width: 90%;
+    margin: 2.5vh;
   }
-
   .d2 h6 {
-    width: 100px !important;
-    padding-top: 2.3vh !important;
+    width: 50%;
+    margin-left: 15.5vh !important;
+    /* border: 1px solid blue; */
+  }
+  .d2 {
+    margin-top: -0.5vh;
   }
   .fa-trash-can {
-    margin-top: 1.5vh !important;
-    margin-left: 5vh !important;
-    padding: 0px !important;
-    font-size: 1.9rem !important;
-    cursor: pointer;
-    width: 30px !important;
-    height: 30px;
+    font-size: 1.1rem !important;
   }
-
-  .d1 p {
-    width: 100% !important;
-    font-size: 0.7rem !important;
+  .btn-success {
+    padding: 10px;
+    top: -15% !important;
+    left: -3% !important;
+    width: 15% !important;
+    margin-top: -1vh !important;
+    font-size: 0.5rem;
   }
-}
-.btn-success {
-  padding: 10px;
-  top: -8%;
-  left: 13% !important;
-  width: 15% !important;
-  font-size: 0.5rem;
-}
-.btn-success i {
-  font-size: 0.9rem;
+  .btn-success i {
+    font-size: 0.9rem;
+  }
 }
 /* Responnsive 576px */
 @media (max-width: 576px) {
   .diva {
-    width: 90%;
+    width: 85%;
     display: block !important;
   }
   .kard {
     width: 90%;
-    height: 20%;
-    margin-top: 1.5vh;
-    margin-left: 2vh;
+    margin: 2.5vh;
   }
   .d2 h6 {
-    width: 90px !important;
-    padding-top: 2.5vh !important;
-  }
-  .fa-trash-can {
-    margin-top: 2vh;
-    margin-left: 6vh;
-    padding: 0px !important;
-    font-size: 1.8rem !important;
-    cursor: pointer;
-    width: 30px !important;
-    height: 30px;
-  }
-  .d1 p {
-    width: 90% !important;
-    font-size: 0.7rem !important;
+    width: 50%;
+    margin-left: 15.5vh !important;
   }
   .btn-success {
     padding: 10px;
-    top: -8%;
-    left: 15% !important;
+    top: -15%;
+    left: -4% !important;
     width: 15% !important;
     font-size: 0.5rem;
   }
