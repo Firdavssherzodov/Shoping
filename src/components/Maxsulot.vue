@@ -162,9 +162,9 @@ function AddShop(idw) {
   });
 }
 function Like(id,index) {
-  // if (listProducts.srt[index] == index) {
-  // }
-   
+if ( listProducts.srt[index]) {
+  
+}
 
     axios.get(`https://fakestoreapi.com/products/${id}`).then((resp) => {
       listProducts.favorites.push(resp.data);
