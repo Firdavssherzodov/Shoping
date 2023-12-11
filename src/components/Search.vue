@@ -25,12 +25,10 @@ let Search = ref("");
 
 
 onMounted(() => {
-  product_list.srt = []
 
 let data2 = JSON.parse(JSON.stringify(product_list.srt));
 
 watchEffect(() => {
-
   let Data1 = data2.filter((list) => {
     return list.title.toUpperCase().includes(Search.value.toUpperCase());
   });
