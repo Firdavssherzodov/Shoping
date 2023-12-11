@@ -53,6 +53,7 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+import axios from "axios";
 import Xadaer from "../components/Header.vue";
 import Toast from "primevue/toast";
 import { useToast } from "primevue/usetoast";
@@ -73,6 +74,31 @@ onMounted(() => {
   //   text.classList.add("text3");
   // }
 });
+
+function AddShop(idw,index) {
+  axios.get(`https://fakestoreapi.com/products/${idw}`).then((resp) => {
+    // console.log(resp.data);
+
+    listProducts.product_list.push(resp.data);
+
+    // console.log(listProducts.product_list);
+    localStorage.setItem("savat", JSON.stringify(listProducts.product_list));
+  });
+  toast.add({
+    severity: "success",
+    summary: "Maxsulot savatda",
+    detail: "",
+    group: "pt",
+    life: 1500,
+  });
+  
+  Likes.value.splice(index, 1);
+  if (Likes.value.length == 0) {
+    localStorage.clear();
+  } else {
+    localStorage.setItem("likes", JSON.stringify(Likes.value));
+  }
+} 
 
 function Delete(index) {
   Likes.value.splice(index, 1);

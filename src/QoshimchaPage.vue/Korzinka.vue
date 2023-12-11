@@ -51,7 +51,7 @@
       <li>{{ ff?.length }} ta mahsulot</li>
     </ul>
     <button class="btn btn-primary p-2" @click="sendtelegram">
-      Rasmiylashtirish
+      Buyurtma berish
     </button>
   </section>
 </template>
@@ -106,6 +106,8 @@ onMounted(() => {
   Canculator();
 });
 
+
+
 function Delete(index) {
   ff.value.splice(index, 1);
   if (ff.value.length == 0) {
@@ -149,6 +151,14 @@ function Canculator() {
 </script>
 
 <style scoped>
+
+.text2{
+  display: block;
+}
+.text3{
+  display: none !important;
+}
+
 .diva {
   width: 78%;
   height: 950px;

@@ -2,9 +2,7 @@
   <Toast
     position="top-center"
     group="pt"
-    :pt="{
-      container: { style: 'margin-top:8.8vh;' },
-    }"
+   
   />
 
   <section class="Maxsulotlar">
