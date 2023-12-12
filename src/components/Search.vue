@@ -39,7 +39,6 @@ watchEffect(() => {
 });
 
 
-let data2 = JSON.parse(JSON.stringify(product_list.srt));
 
 watchEffect(() => {
   let Data1 = data2.filter((list) => {

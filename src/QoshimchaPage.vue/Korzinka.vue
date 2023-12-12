@@ -59,21 +59,11 @@
 <script setup>
 import Header1 from "../components/Header.vue";
 import { ref, onMounted } from "vue";
-
 import Toast from "primevue/toast";
 import { useToast } from "primevue/usetoast";
 const toast = useToast();
 import { products } from "../user/store/userStore";
 const listProducts = products();
-
-const sendtelegram = () => {
-  toast.add({
-    severity: "success",
-    summary: "Xaridingiz uchun raxmat",
-    detail: `Maxsulotlar yig'lmoqda`,
-    life: 4000,
-  });
-};
 
 //  // // // //
 let srt = ref([]);
@@ -81,7 +71,6 @@ const ff = ref([]);
 
 onMounted(() => {
   srt.value = [];
-
   srt.value = JSON.parse(localStorage.getItem("savat"));
   if (!!srt.value)
     srt.value.forEach((el) => {
@@ -105,8 +94,6 @@ onMounted(() => {
 
   Canculator();
 });
-
-
 
 function Delete(index) {
   ff.value.splice(index, 1);

@@ -64,7 +64,6 @@ let Likes = ref([]);
 const listProducts = products();
 
 onMounted(() => {
-  Likes.value = JSON.parse(localStorage.getItem("likes"));
 
   // if (!!Likes.value.length == null || 0) {
   //   let text = document.querySelector(".text1");
