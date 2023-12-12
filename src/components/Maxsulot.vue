@@ -1,9 +1,5 @@
 <template>
-  <Toast
-    position="top-center"
-    group="pt"
-   
-  />
+  <Toast position="top-center" group="pt" />
 
   <section class="Maxsulotlar">
     <div class="diva">
@@ -156,11 +152,16 @@ function AddShop(idw) {
     summary: "Maxsulot savatda",
     detail: "",
     group: "pt",
-    life: 1500,
+    life: 1000,
   });
 }
 function Like(id, index) {
   if (listProducts.srt[index]) {
+    let life = document.querySelector(".like");
+    life.style.color = "red";
+  } else {
+    let life = document.querySelector(".like");
+    life.style.color = " ";
   }
 
   axios.get(`https://fakestoreapi.com/products/${id}`).then((resp) => {

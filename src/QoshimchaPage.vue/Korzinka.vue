@@ -2,7 +2,7 @@
   <Toast position="top-center" />
 
   <Header1 />
-  <div class="diva">
+  <div class="diva border">
     <div class="text1 text-center">
       <p class="text-center mt-5">Hali hech qanday maxsulot olganingiz yuq!</p>
       <router-link to="/">
@@ -28,7 +28,7 @@
         <div class="counter d-flex">
           <span class="s1 rounded">
             <i
-              class="fa-solid fa-minus text-primary border-primary ps-2 py-2"
+              class="fa-solid fa-minus text-primary border-primary ps-0 py-2"
               style="cursor: pointer"
               @click="minus(data)"
             ></i>
@@ -36,7 +36,7 @@
           <p class="px-2 mx-2 mt-1" style="width: 25px">{{ data.count }}</p>
           <span class="s2 rounded">
             <i
-              class="fa-solid fa-plus text-primary border-primary ps-2 py-2"
+              class="fa-solid fa-plus text-primary border-primary ps-0 py-2"
               style="cursor: pointer"
               @click="plus(data)"
             ></i>
@@ -48,7 +48,7 @@
   <section class="umumiy border border-start-0 border-end-0">
     <ul class="ul">
       <li class="w-100">Umumiy narx : $ {{ total }}</li>
-      <li>{{ ff?.length }} ta mahsulot</li>
+      <li>{{ srt?.length }} ta mahsulot</li>
     </ul>
     <button class="btn btn-primary p-2" @click="sendtelegram">
       Buyurtma berish
@@ -72,17 +72,22 @@ const ff = ref([]);
 onMounted(() => {
   srt.value = [];
   srt.value = JSON.parse(localStorage.getItem("savat"));
-  if (!!srt.value)
-    srt.value.forEach((el) => {
-      ff.value.push({
-        count: 1,
-        id: el.id,
-        title: el.title,
-        description: el.description,
-        price: el.price,
-        image: el.image,
+
+  if (!!srt.value) {
+    if (!!srt.value)
+      srt.value.forEach((el) => {
+        ff.value.push({
+          count: 1,
+          id: el.id,
+          title: el.title,
+          description: el.description,
+          price: el.price,
+          image: el.image,
+        });
       });
-    });
+  }
+
+
 
   if (ff.value.length == 0) {
     let text = document.querySelector(".text1");
@@ -93,6 +98,7 @@ onMounted(() => {
   }
 
   Canculator();
+  // TakrorId();
 });
 
 function Delete(index) {
@@ -109,10 +115,9 @@ function minus(data) {
   if (data.count == 1) {
     return;
   }
-
   data.count--;
   for (let item of ff.value) {
-    let price1 = (total - item.price) / item.price;
+    let price1 = (total - item.price) * item.price;
     total = price1;
   }
 }
@@ -126,7 +131,22 @@ function plus(data) {
     total = price2;
   }
 }
+// TakrorId
+// function TakrorId() {
+//   let uniqueItems = {};
 
+//   for (let item of ff.value) {
+//     if (uniqueItems[item.id]) {
+//       uniqueItems[item.id].count++;
+//     } else {
+//       uniqueItems[item.id] = item;
+//       uniqueItems[item.id].count = 1;
+//     }
+//   }
+//   ff.value = uniqueItems;
+//   console.log(uniqueItems);
+//   console.log(ff.value);
+// }
 // Savatdagi barcha mahsulotlarning umumiy narxini hisoblash
 function Canculator() {
   for (let item of ff.value) {
@@ -135,14 +155,23 @@ function Canculator() {
     total = price3;
   }
 }
+
+const sendtelegram = () => {
+  toast.add({
+    severity: "success",
+    summary: "Xaridingiz uchun raxmat",
+    detail: `Maxsulotlar yig'lmoqda`,
+    life: 3000,
+  });
+  localStorage.removeItem("savat");
+};
 </script>
 
 <style scoped>
-
-.text2{
+.text2 {
   display: block;
 }
-.text3{
+.text3 {
   display: none !important;
 }
 
@@ -152,6 +181,7 @@ function Canculator() {
   margin: 3vh auto;
   display: flex !important;
   flex-wrap: wrap;
+  text-align: center;
 }
 .kard {
   width: 25%;
@@ -212,6 +242,7 @@ function Canculator() {
   .diva {
     width: 100% !important;
     display: block !important;
+    margin: 0 !important;
   }
   .kard {
     width: 90%;

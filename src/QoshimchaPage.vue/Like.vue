@@ -8,9 +8,8 @@
     }"
   />
   <div class="diva card">
-    <!-- <div class="text1 text-center"> -->
-
-    <!-- <router-link to="/">
+    <div class="text1 text-center">
+      <router-link to="/">
         <button
           class="btn btn-primary p-2 my-4 pe-3"
           style="margin-top: 13.4vh !important"
@@ -19,7 +18,7 @@
           Bosh Sahifaga
         </button>
       </router-link>
-    </div> -->
+    </div>
 
     <div
       class="kard border rounded-5"
@@ -63,18 +62,7 @@ const toast = useToast();
 let Likes = ref([]);
 const listProducts = products();
 
-onMounted(() => {
-
-  // if (!!Likes.value.length == null || 0) {
-  //   let text = document.querySelector(".text1");
-  //   text.classList.add("text2");
-  // } else {
-  //   let text = document.querySelector(".text1");
-  //   text.classList.add("text3");
-  // }
-});
-
-function AddShop(idw,index) {
+function AddShop(idw, index) {
   axios.get(`https://fakestoreapi.com/products/${idw}`).then((resp) => {
     // console.log(resp.data);
 
@@ -88,16 +76,17 @@ function AddShop(idw,index) {
     summary: "Maxsulot savatda",
     detail: "",
     group: "pt",
-    life: 1500,
+    life: 1000,
   });
-  
+
   Likes.value.splice(index, 1);
+
   if (Likes.value.length == 0) {
     localStorage.clear();
   } else {
     localStorage.setItem("likes", JSON.stringify(Likes.value));
   }
-} 
+}
 
 function Delete(index) {
   Likes.value.splice(index, 1);
@@ -107,9 +96,30 @@ function Delete(index) {
     localStorage.setItem("likes", JSON.stringify(Likes.value));
   }
 }
+
+onMounted(() => {
+  Likes.value = JSON.parse(localStorage.getItem("likes"));
+
+if (!!Likes.value) {
+  if (Likes.value.length == 0) {
+    let text = document.querySelector(".text1");
+    text.classList.add("text2");
+  } else {
+    let text = document.querySelector(".text1");
+    text.classList.add("text3");
+  }
+}return;
+ 
+});
 </script>
 
 <style scoped>
+.text2 {
+  display: block;
+}
+.text3 {
+  display: none !important;
+}
 * {
   margin: 0%;
   padding: 0%;

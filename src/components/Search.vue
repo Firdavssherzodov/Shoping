@@ -8,11 +8,16 @@
         v-model="Search"
       />
     </div>
-    <button class="btn btn-primary rounded-5" @click="Search()">
+    <button class="btn btn-primary rounded-5" @click="Searchfunc()">
       <i class="fa-solid fa-magnifying-glass"></i>
     </button>
   </div>
-  <p style="position: absolute; top: 30%;left: 30%;display: none; " class="error">Siz qidirgan topilmadi </p>
+  <p
+    style="position: absolute; top: 30%; left: 30%; display: none"
+    class="error"
+  >
+    Siz qidirgan topilmadi
+  </p>
 </template>
 
 <script setup>
@@ -23,29 +28,27 @@ const product_list = products();
 
 let Search = ref("");
 
-
-onMounted(() => {
+function Searchfunc() {
+  let data2 = JSON.parse(JSON.stringify(product_list.srt));
+    let Data1 = data2.filter((list) => {
+      return list.title.toUpperCase().includes(Search.value.toUpperCase());
+    });
+    product_list.srt = [...Data1];
+}
 
 let data2 = JSON.parse(JSON.stringify(product_list.srt));
 
-watchEffect(() => {
+onMounted(()=>{
+  
+  watchEffect(() => {
   let Data1 = data2.filter((list) => {
     return list.title.toUpperCase().includes(Search.value.toUpperCase());
   });
   product_list.srt = [...Data1];
 });
+})
 
 
-});
-
-
-
-watchEffect(() => {
-  let Data1 = data2.filter((list) => {
-    return list.title.toUpperCase().includes(Search.value.toUpperCase());
-  });
-  product_list.srt = [...Data1];
-});
 </script>
 
 <style scoped>
