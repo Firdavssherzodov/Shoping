@@ -5,11 +5,11 @@
     <div class="diva">
       <div class="div">
         <div
-          class="kard border rounded-5 m-2"
+          class="kard  rounded-5 m-2"
           v-for="(data, index) in listProducts.srt"
           :key="data.id"
         >
-          <div class="div_img">
+          <div class="div_img rounded-5">
             <i
               class="fa-solid fa-heart fs-5 like rounded-5"
               @click="Like(data.id, index)"
@@ -210,7 +210,6 @@ svg rect {
 .kard {
   width: 15%;
   height: 50%;
-  border: 1px solid;
 }
 .div_img {
   width: 100%;
