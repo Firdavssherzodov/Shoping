@@ -30,25 +30,22 @@ let Search = ref("");
 
 function Searchfunc() {
   let data2 = JSON.parse(JSON.stringify(product_list.srt));
-    let Data1 = data2.filter((list) => {
-      return list.title.toUpperCase().includes(Search.value.toUpperCase());
-    });
-    product_list.srt = [...Data1];
-}
-
-let data2 = JSON.parse(JSON.stringify(product_list.srt));
-
-onMounted(()=>{
-  
-  watchEffect(() => {
   let Data1 = data2.filter((list) => {
     return list.title.toUpperCase().includes(Search.value.toUpperCase());
   });
   product_list.srt = [...Data1];
+}
+
+let data2 = JSON.parse(JSON.stringify(product_list.srt));
+
+onMounted(() => {
+  watchEffect(() => {
+    let Data1 = data2.filter((list) => {
+      return list.title.toUpperCase().includes(Search.value.toUpperCase());
+    });
+    product_list.srt = [...Data1];
+  });
 });
-})
-
-
 </script>
 
 <style scoped>
@@ -86,20 +83,22 @@ button {
   }
   .diva:focus {
     position: relative !important;
+    z-index: 999999;
   }
   .form {
     margin-left: 3.5vh !important;
     width: 80%;
     border: 1px solid blue;
-    z-index: 333232244;
+    z-index: 22222 !important;
   }
 
   form:focus {
-    z-index: 3333422;
+    z-index: 99999999 !important;
   }
   button {
     left: 77% !important;
     height: 70% !important;
+    z-index: 1000000;
   }
 }
 /* Responsive 576px*/
@@ -112,11 +111,12 @@ button {
     margin-left: 3vh !important;
     width: 80%;
     height: 70%;
-    z-index: 22 !important;
+    /* z-index: 22222 !important; */
   }
   button {
     left: 80%;
     height: 70% !important;
+    z-index: 1000000;
   }
 }
 </style>

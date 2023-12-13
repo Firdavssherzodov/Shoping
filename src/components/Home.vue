@@ -1,10 +1,10 @@
 <template>
   <div>
-    <Header1 />
-    <Search />
-    <karusel />
-    <Bolim />
-    <Maxsulot />
+    <Header1></Header1>
+    <Search ></Search>
+    <karusel ></karusel>
+    <Bolim ></Bolim>
+    <Maxsulot></Maxsulot>
   </div>
 </template>
 

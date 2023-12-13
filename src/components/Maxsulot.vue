@@ -137,7 +137,7 @@ function Like(id, index) {
   width: 20%;
   font-size: 2rem;
   text-align: center;
-  padding: 0.6em;
+  padding: 1em;
   margin: 0 auto 1em;
   display: inline-block;
   vertical-align: top;
@@ -258,6 +258,11 @@ svg rect {
     margin-top: 1vh;
     /* color: #838891; */
   }
+  .loader{
+    
+    padding: 0.6rem;
+    padding-top: 2rem !important;
+  }
 }
 /* Responsive 576px */
 @media (max-width: 576px) {
@@ -316,3 +321,4 @@ svg rect {
   }
 }
 </style>
+
