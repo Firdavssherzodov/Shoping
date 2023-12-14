@@ -9,8 +9,14 @@
           v-for="(data, index) in listProducts.srt"
           :key="data.id"
         >
+          <!-- {{ activeIndexes }} -->
           <div class="div_img rounded-5">
             <i
+              :class="[
+                activeIndexes.includes(index)
+                  ? 'text-danger'
+                  : 'text-secondary',
+              ]"
               class="fa-solid fa-heart fs-5 like rounded-5"
               @click="Like(data.id, index)"
             ></i>
@@ -115,7 +121,19 @@ function AddShop(idw) {
     life: 1000,
   });
 }
+
+const activeIndexes = ref([]);
 function Like(id, index) {
+  if (activeIndexes.value.includes(index)) {
+    activeIndexes.value.forEach((el, idx) => {
+      if (el == index) {
+        activeIndexes.value.splice(index, 1);
+      }
+    });
+  } else {
+    activeIndexes.value.push(index);
+  }
+
   axios.get(`https://fakestoreapi.com/products/${id}`).then((resp) => {
     listProducts.favorites.push(resp.data);
     localStorage.setItem("likes", JSON.stringify(listProducts.favorites));
@@ -250,8 +268,7 @@ svg rect {
     margin-top: 1vh;
     /* color: #838891; */
   }
-  .loader{
-    
+  .loader {
     padding: 0.6rem;
     padding-top: 2rem !important;
   }

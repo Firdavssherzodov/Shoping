@@ -21,16 +21,17 @@
 </template>
 
 <script setup>
+
 import { products } from "../user/store/userStore";
-import { onMounted, ref, watchEffect } from "vue";
+import { onBeforeMount, ref, watchEffect } from "vue";
 
 const product_list = products();
 
 let Search = ref("");
+let data1 = JSON.parse(JSON.stringify(product_list.srt));
 
 function Searchfunc() {
-  let data2 = JSON.parse(JSON.stringify(product_list.srt));
-  let Data1 = data2.filter((list) => {
+  let Data1 = data1.filter((list) => {
     return list.title.toUpperCase().includes(Search.value.toUpperCase());
   });
   product_list.srt = [...Data1];
@@ -38,12 +39,14 @@ function Searchfunc() {
 
 let data2 = JSON.parse(JSON.stringify(product_list.srt));
 
+onBeforeMount(() => {
   watchEffect(() => {
     let Data1 = data2.filter((list) => {
       return list.title.toUpperCase().includes(Search.value.toUpperCase());
     });
     product_list.srt = [...Data1];
   });
+});
 </script>
 
 <style scoped>
