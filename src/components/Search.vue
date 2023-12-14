@@ -38,14 +38,12 @@ function Searchfunc() {
 
 let data2 = JSON.parse(JSON.stringify(product_list.srt));
 
-onMounted(() => {
   watchEffect(() => {
     let Data1 = data2.filter((list) => {
       return list.title.toUpperCase().includes(Search.value.toUpperCase());
     });
     product_list.srt = [...Data1];
   });
-});
 </script>
 
 <style scoped>

@@ -116,14 +116,6 @@ function AddShop(idw) {
   });
 }
 function Like(id, index) {
-  if (listProducts.srt[index]) {
-    let life = document.querySelector(".like");
-    life.style.color = "red";
-  } else {
-    let life = document.querySelector(".like");
-    life.style.color = " ";
-  }
-
   axios.get(`https://fakestoreapi.com/products/${id}`).then((resp) => {
     listProducts.favorites.push(resp.data);
     localStorage.setItem("likes", JSON.stringify(listProducts.favorites));
@@ -321,4 +313,3 @@ svg rect {
   }
 }
 </style>
-
