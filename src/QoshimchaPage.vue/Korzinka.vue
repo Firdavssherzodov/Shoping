@@ -151,7 +151,6 @@ function plus(data) {
 function Canculator() {
   for (let item of ff.value) {
     let price3 = (total += item.price * item.count);
-
     total = price3;
   }
 }
