@@ -13,10 +13,10 @@
       </template>
       <template #default="{ isShowMenu }">
         <fwb-navbar-collapse :is-show-menu="isShowMenu" class="pe-32">
-          <fwb-navbar-link link="#"> Bosh sahifa </fwb-navbar-link>
-          <fwb-navbar-link link="#"> Katalog </fwb-navbar-link>
-          <fwb-navbar-link link="#"> Savat </fwb-navbar-link>
-          <fwb-navbar-link link="#"> Kabinet </fwb-navbar-link>
+          <fwb-navbar-link link="/"> Bosh sahifa </fwb-navbar-link>
+          <fwb-navbar-link link="/search"> Katalog </fwb-navbar-link>
+          <fwb-navbar-link link="/korzinka"> Savat </fwb-navbar-link>
+          <fwb-navbar-link link="/users"> Kabinet </fwb-navbar-link>
         </fwb-navbar-collapse>
       </template>
       <template #right-side>
@@ -27,15 +27,13 @@
   </div>
 
   <section
-    class="Menu sm:hidden  border border-x-0 w-full h-16 fixed sm:left-[40.5%] left-0 bottom-0 z-[20] flex justify-around items-center rounded-lg bg-white"
+    class="Menu sm:hidden border border-x-0 w-full h-16 fixed sm:left-[40.5%] left-0 bottom-0 z-[20] flex justify-around items-center rounded-lg bg-white"
   >
     <router-link to="/">
       <div class="relative">
-        <a href="#" class="fa-solid fa-house text-xl text-gray-500" ></a>
+        <a href="#" class="fa-solid fa-house text-xl text-gray-500"></a>
 
-        <p class="text-[11px] absolute left-[-1rem]  z-30">
-          Bosh/sahifa
-        </p>
+        <p class="text-[11px] absolute left-[-1rem] z-30">Bosh/sahifa</p>
       </div>
     </router-link>
     <router-link to="/search">
@@ -49,38 +47,31 @@
     </router-link>
     <router-link to="/korzinka">
       <div class="relative">
-        <a
-          href="#"
-          class="fa-solid fa-cart-shopping text-xl text-gray-500"
-        ></a>
-        <p class="text-[11px] absolute left-[-0.1rem]">
-          Savat
-        </p>
-        <Badge :value="countet.length" class="absolute bottom-3 bg-color2 "></Badge>
-       
+        <a href="#" class="fa-solid fa-cart-shopping text-xl text-gray-500"></a>
+        <p class="text-[11px] absolute left-[-0.1rem]">Savat</p>
+        <Badge
+          :value="countet.length"
+          class="absolute bottom-3 bg-color2"
+        ></Badge>
       </div>
     </router-link>
     <router-link to="/">
       <div class="relative">
-        <a href="#" class="fa-regular fa-heart text-xl text-gray-500" ></a>
-        <p class="text-[11px] absolute left-[-1rem]">
-          Saralangan
-        </p>
+        <a href="#" class="fa-regular fa-heart text-xl text-gray-500"></a>
+        <p class="text-[11px] absolute left-[-1rem]">Saralangan</p>
       </div>
     </router-link>
     <router-link to="/user">
       <div class="relative">
-        <a href="#" class="fa-regular fa-user text-xl text-gray-500" ></a>
-        <p class="text-[11px] absolute left-[-0.6rem]">
-          Kabinet
-        </p>
+        <a href="#" class="fa-regular fa-user text-xl text-gray-500"></a>
+        <p class="text-[11px] absolute left-[-0.6rem]">Kabinet</p>
       </div>
     </router-link>
   </section>
 </template>
 
 <script setup>
-import Badge from 'primevue/badge';
+import Badge from "primevue/badge";
 import { ref, onMounted } from "vue";
 import {
   FwbButton,

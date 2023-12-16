@@ -2,17 +2,8 @@
   <!-- <Toast position="top-center" /> -->
 
   <Header1 />
-  <div class="diva">
-    <div class="text1 text-center m-auto">
-      <p class="text-center mt-5">Hali hech qanday maxsulot olganingiz yuq!</p>
-      <router-link to="/">
-        <button class="btn btn-primary p-2 my-4 pe-3">
-          <i class="fa-solid fa-arrow-left pe-2" style="color: #f5f5f5"></i>
-          Bosh Sahifaga
-        </button>
-      </router-link>
-    </div>
-
+  <div class="w-full h-full ">
+    <p class="text-center text-gray-600">Savat</p>
     <div class="kard border rounded-5" v-for="(data, index) in ff" :key="data">
       <div class="d1 d-flex">
         <img :src="data.image" alt="inkas" class="mx-4 my-3" />
@@ -23,9 +14,9 @@
           @click="Delete(index)"
         ></i>
       </div>
-      <div class="d2 d-flex">
+      <div class="flex">
         <h6 class="fw-bold py-2">${{ data.price }}</h6>
-        <div class="counter d-flex">
+        <div class="flex">
           <span class="s1 rounded" style="background-color: #eb0505">
             <i
               class="fa-solid fa-minus text-white border-primary ps-0 py-2"
@@ -45,24 +36,29 @@
       </div>
     </div>
   </div>
-  <section class="umumiy border border-x-0">
+
+  <section
+    class="umumiy border border-x-0 bg-white md:w-7/12 w-full h-20 fixed md:left-[25%] left-0 md:bottom-1 bottom-16 flex justify-between
+      rounded-t-lg items-center"
+  >
     <ul class="ul py-0">
-      <li class="pt-1">Umumiy narx : $ {{ total }}</li>
-      <li
-        class="pt-1"
-      >
+      <li class="md:pt-1 ml-3 my-1 md:text-base text-[13px] md:w-80 w-[200px]">
+        Umumiy narx : $ {{ total }}
+      </li>
+      <li class="md:pt-1 ml-3 md:text-base text-[13px]">
         {{ srt?.length }} ta mahsulot
       </li>
     </ul>
-      <fwb-button color="default" class="bg-color2">Buyurtma berish</fwb-button>
-
+    <fwb-button color="default" class="bg-color2 md:mr-5 mr-3  "
+      >Buyurtma berish</fwb-button
+    >
   </section>
 </template>
 
 <script setup>
 import Header1 from "../components/Header.vue";
 import { ref, onMounted } from "vue";
-import { FwbButton } from 'flowbite-vue'
+import { FwbButton } from "flowbite-vue";
 // import Toast from "primevue/toast";
 // import { useToast } from "primevue/usetoast";
 // const toast = useToast();
@@ -91,13 +87,7 @@ onMounted(() => {
       });
   }
 
-  if (ff.value.length == 0) {
-    let text = document.querySelector(".text1");
-    text.classList.add("text2");
-  } else {
-    let text = document.querySelector(".text1");
-    text.classList.add("text3");
-  }
+
 
   Canculator();
   // TakrorId();
@@ -168,74 +158,4 @@ function Canculator() {
 // };
 </script>
 
-<style scoped>
-
-
-/* Responnsive 385px */
-@media (max-width: 385px) {
-  .diva {
-    width: 100% !important;
-    display: block !important;
-    margin: 0 !important;
-  }
-  .kard {
-    width: 90%;
-    margin: 2.5vh;
-  }
-  .d2 h6 {
-    width: 50%;
-    margin-left: 15.5vh !important;
-    /* border: 1px solid blue; */
-  }
-  .d2 {
-    margin-top: -0.5vh;
-  }
-  .counter {
-    margin-left: -2vh;
-  }
-  .fa-trash-can {
-    font-size: 1.1rem !important;
-  }
-  .umumiy {
-    width: 100%;
-    bottom: 7.5vh;
-    left: 0% !important;
-  }
-  .ul li {
-    padding-left: 2vh;
-    font-size: 0.8rem;
-  }
-  .umumiy button {
-    margin-right: 3vh;
-    font-size: 0.5rem;
-  }
-}
-/* Responnsive 576px */
-@media (max-width: 576px) {
-  .diva {
-    width: 85%;
-    display: block !important;
-  }
-  .kard {
-    width: 90%;
-    margin: 2.5vh;
-  }
-  .d2 h6 {
-    width: 50%;
-    margin-left: 15.5vh !important;
-  }
-  .umumiy {
-    width: 100%;
-    bottom: 7.7vh;
-    left: 0%;
-  }
-  .ul li {
-    padding-left: 2vh;
-    font-size: 0.8rem;
-  }
-  .umumiy button {
-    margin-right: 2.5vh;
-    font-size: 0.6rem;
-  }
-}
-</style>
+<style scoped></style>

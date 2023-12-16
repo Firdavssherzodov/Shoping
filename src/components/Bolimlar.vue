@@ -1,7 +1,7 @@
 <template>
   <div class="w-full sm:py-5 py-1">
     <ul
-      class="flex flex-wrap sm:justify-between justify-around sm:w-11/12 md:w-2/4 w-11/12 m-auto sm:ps-0 sm:text-lg text-[14.5px] sm:font-medium font-normal"
+      class="flex flex-wrap sm:justify-between justify-around sm:w-11/12 md:w-2/4 w-11/12 m-auto sm:ps-0 sm:text-lg text-[14.5px] sm:font-medium font-light"
     >
       <li @click="Sort('kiyim')" class="hover:text-blue-700 cursor-pointer">
         Kiyimlar

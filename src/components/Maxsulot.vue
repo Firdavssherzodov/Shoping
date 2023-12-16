@@ -3,14 +3,18 @@
 
   <section class="Maxsulotlar">
     <div class="diva">
-      <div class="div sm:w-full md:w-[80%]  w-[98%]  h-full m-auto flex flex-wrap ">
+      <div
+        class="div sm:w-full md:w-[80%] w-[98%] h-full m-auto flex flex-wrap"
+      >
         <div
-          class="kard sm:m-3 sm:w-[30%] sm:h-[40%] md:h-[40%] md:w-[15%] w-[45%]  md:m-3  m-2 rounded-xl shadow-lg  shadow-color1-500/50 "
+          class="kard sm:m-3 sm:w-[30%] sm:h-[40%] md:h-[40%] md:w-[15%] w-[45%] md:m-3 m-2 rounded-xl shadow-lg shadow-color1-500/50"
           v-for="(data, index) in listProducts.srt"
           :key="data.id"
-        > 
+        >
           <!-- {{ activeIndexes }} -->
-          <div class="div_img rounded-xl bg-gray-100 sm:h-[55%] h-[50%] border relative">
+          <div
+            class="div_img rounded-xl bg-gray-100 sm:h-[55%] h-[50%] border relative"
+          >
             <i
               :class="[
                 activeIndexes.includes(index)
@@ -23,64 +27,37 @@
             <img
               :src="data.image"
               alt="inkas"
-              class="rounded-xl sm:w-28 w-24 sm:h-32 h-28 m-auto sm:my-7 my-3.5 "
+              class="rounded-xl sm:w-28 w-24 sm:h-32 h-28 m-auto sm:my-7 my-3.5"
             />
-            <p class="pt-6 mx-2 overflow-hidden line-clamp-2 h-[60px] text-[0.8rem]">
+            <p
+              class="pt-6 mx-2 overflow-hidden line-clamp-2 h-[60px] text-[0.8rem]"
+            >
               {{ data.title }}
             </p>
-            <h5 class="mx-2 pt-2 text-dark font-semibold">{{ data.price }} $</h5>
-            <fwb-rating size="sm" :rating="4" class="pt-[0.30rem] px-2"  >
-            <template #besideText>
-      <p class="ml-2 text-xs font-medium text-gray-500 dark:text-white">
-        4.95
-      </p>
-    </template>
-    </fwb-rating>
+            <h5 class="mx-2 pt-2 text-dark font-semibold">
+              {{ data.price }} $
+            </h5>
+            <fwb-rating size="sm" :rating="4" class="pt-[0.30rem] px-2">
+              <template #besideText>
+                <p
+                  class="ml-2 text-xs font-medium text-gray-500 dark:text-white"
+                >
+                  4.95
+                </p>
+              </template>
+            </fwb-rating>
             <fwb-button
               color="green"
               class="rounded-lg my-2.5 sm:ml-36 md:ml-40 ml-[67%]"
               outline
               @click="AddShop(data.id)"
             >
-              <i
-                class="fa-solid fa-cart-shopping"
-                
-              ></i
+              <i class="fa-solid fa-cart-shopping"></i
             ></fwb-button>
           </div>
         </div>
         <!-- loading -->
-        <div class="loader loader--style3" title="2">
-          <svg
-            version="1.1"
-            id="loader-1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            x="0px"
-            y="0px"
-            width="40px"
-            height="40px"
-            viewBox="0 0 50 50"
-            style="enable-background: new 0 0 50 50"
-            xml:space="preserve"
-          >
-            <path
-              fill="#000"
-              d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z"
-            >
-              <animateTransform
-                attributeType="xml"
-                attributeName="transform"
-                type="rotate"
-                from="0 25 25"
-                to="360 25 25"
-                dur="0.6s"
-                repeatCount="indefinite"
-              />
-            </path>
-          </svg>
-        </div>
-
+        <fwb-spinner size="12" class="loader mx-auto my-40 " />
         <!-- loading -->
       </div>
     </div>
@@ -88,8 +65,9 @@
 </template>
 
 <script setup>
-import { FwbRating } from 'flowbite-vue'
+import { FwbRating } from "flowbite-vue";
 import { FwbButton } from "flowbite-vue";
+import { FwbSpinner } from "flowbite-vue";
 import axios from "axios";
 import { ref, onMounted } from "vue";
 import { products } from "../user/store/userStore";
@@ -108,16 +86,18 @@ onMounted(() => {
         if (!!resp.data) {
           listProducts.srt.push(element);
           let loader = document.querySelector(".loader");
-          loader.classList.add("loading");
+          loader.classList.add("hidden");
         } else {
           let loader = document.querySelector(".loader");
-          loader.classList.remove("loading");
+          loader.classList.remove("hidden");
         }
         // console.log(element);
       });
     }
   });
+
 });
+
 
 function AddShop(idw) {
   axios.get(`https://fakestoreapi.com/products/${idw}`).then((resp) => {
@@ -156,30 +136,7 @@ function Like(id, index) {
 }
 </script>
 <style scoped>
-.loader {
-  margin: 0 0 2em;
-  height: 100px;
-  width: 20%;
-  font-size: 2rem;
-  text-align: center;
-  padding: 1em;
-  margin: 0 auto 1em;
-  display: inline-block;
-  vertical-align: top;
-}
-.loading {
-  display: none;
-}
 
-/*
-  Set the color of the icon
-*/
-svg path,
-svg rect {
-  fill: #3b71ca;
-  /* fill: #FF6700; */
-}
-/* loading */
 .diva {
   width: 100%;
   height: 900px;
