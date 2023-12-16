@@ -169,59 +169,7 @@ function Canculator() {
 </script>
 
 <style scoped>
-/* .text2 {
-  display: block;
-}
-.text3 {
-  display: none !important;
-}
 
-.diva {
-  width: 78%;
-  height: 950px;
-  margin: 3vh auto;
-  display: flex !important;
-  flex-wrap: wrap;
-  text-align: center;
-}
-.kard {
-  width: 25%;
-  height: 16%;
-  margin-top: 1.5vh;
-  margin-left: 8vh;
-}
-.d1 {
-  width: 100%;
-  height: 70%;
-}
-.d1 img {
-  width: 20%;
-  height: 80%;
-}
-.d1 p {
-  font-size: 0.8rem;
-  width: 210px;
-}
-.d2 {
-  margin-top: -2vh;
-}
-.d2 h6 {
-  width: 50%;
-  margin-left: 13vh;
-  /* border: 1px solid blue; */
-
-.umumiy {
-  background-color: white;
-  width: 67%;
-  height: 10vh;
-  position: fixed;
-  left: 14.5%;
-  bottom: 1px;
-  display: flex;
-  border-radius: 10px !important;
-  justify-content: space-between;
-  align-items: center;
-}
 
 /* Responnsive 385px */
 @media (max-width: 385px) {
