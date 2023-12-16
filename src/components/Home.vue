@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-white dark:bg-white">
     <Header1></Header1>
     <Search></Search>
     <!-- <Carusel></Carusel> -->

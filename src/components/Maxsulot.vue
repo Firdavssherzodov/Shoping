@@ -1,7 +1,7 @@
 <template>
   <!-- <Toast position="top-center" group="pt" /> -->
 
-  <section class="Maxsulotlar">
+  <section class="Maxsulotlar bg-white dark:bg-white">
     <div class="">
       <div
         class="div sm:w-full md:w-[80%] w-[98%] h-full m-auto flex flex-wrap relative"
@@ -84,6 +84,7 @@ import { products } from "../user/store/userStore";
 // const toast = useToast();
 const currentPage = ref(1);
 
+Pagination(currentPage);
 console.log(currentPage.value);
 const listProducts = products();
 
@@ -106,6 +107,17 @@ onMounted(() => {
     }
   });
 });
+
+function Pagination(pagination) {
+  console.log(pagination.value);
+  axios.get("https://fakestoreapi.com/products").then((resp) => {
+    let DaTA = resp.data;
+
+    if (pagination == 2) {
+      DaTA.slice(12, 20).forEach((el) => {});
+    }
+  });
+}
 
 function AddShop(idw) {
   axios.get(`https://fakestoreapi.com/products/${idw}`).then((resp) => {
