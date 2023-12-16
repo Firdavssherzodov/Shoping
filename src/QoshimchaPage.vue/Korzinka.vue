@@ -1,9 +1,9 @@
 <template>
-  <Toast position="top-center" />
+  <!-- <Toast position="top-center" /> -->
 
   <Header1 />
-  <div class="diva border">
-    <div class="text1 text-center">
+  <div class="diva ">
+    <div class="text1 text-center m-auto">
       <p class="text-center mt-5">Hali hech qanday maxsulot olganingiz yuq!</p>
       <router-link to="/">
         <button class="btn btn-primary p-2 my-4 pe-3">
@@ -26,9 +26,9 @@
       <div class="d2 d-flex">
         <h6 class="fw-bold py-2">${{ data.price }}</h6>
         <div class="counter d-flex">
-          <span class="s1 rounded">
+          <span class="s1 rounded" style="background-color: #eb0505;">
             <i
-              class="fa-solid fa-minus text-primary border-primary ps-0 py-2"
+              class="fa-solid fa-minus text-white border-primary ps-0 py-2"
               style="cursor: pointer"
               @click="minus(data)"
             ></i>
@@ -59,9 +59,9 @@
 <script setup>
 import Header1 from "../components/Header.vue";
 import { ref, onMounted } from "vue";
-import Toast from "primevue/toast";
-import { useToast } from "primevue/usetoast";
-const toast = useToast();
+// import Toast from "primevue/toast";
+// import { useToast } from "primevue/usetoast";
+// const toast = useToast();
 import { products } from "../user/store/userStore";
 const listProducts = products();
 

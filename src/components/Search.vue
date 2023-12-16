@@ -1,28 +1,41 @@
 <template>
-  <div class="diva">
-    <div class="form m-auto my-3 square border border-primary rounded-5">
-      <input
-        type="text"
-        class="rounded-5 px-3 py-3"
-        placeholder="Qidiruv"
-        v-model="Search"
-      />
-    </div>
-    <button class="btn btn-primary rounded-5" @click="Searchfunc()">
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </button>
-  </div>
-  <p
-    style="position: absolute; top: 30%; left: 30%; display: none"
-    class="error"
+<div class="sm:w-2/4 w-11/12 m-auto sm:mt-4 mt-5">
+  <fwb-input
+    v-model="Search"
+    placeholder=" search query"
+    size="lg"
+    class="rounded-xl sm:py-3 py-[0.8rem] sm:my-[0.30rem] my-[0.28rem] border-color1 text-gray-500"
   >
-    Siz qidirgan topilmadi
-  </p>
-</template>
+    <template #prefix>
+      <svg
+        aria-hidden="true"
+        class="w-5 h-5 text-gray-500 dark:text-gray-400"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        />
+      </svg>
+    </template>
+    <template #suffix>
+      <fwb-button >Search</fwb-button>
+    </template>
+  </fwb-input>
 
+</div>
+</template>
+<!-- sm:px-3 px-2 py-3  border sm:w-3/4 m-uto w-[84%] px-2 -->
 <script setup>
 import { products } from "../user/store/userStore";
-import { onBeforeMount, ref, watchEffect } from "vue";
+import { ref, watchEffect } from "vue";
+
+import { FwbButton, FwbInput } from "flowbite-vue";
 
 const product_list = products();
 
@@ -30,55 +43,18 @@ let Search = ref("");
 
 let data2 = JSON.parse(JSON.stringify(product_list.srt));
 
-  watchEffect(() => {
-    let Data1 = data2.filter((list) => {
-      return list.title.toUpperCase().includes(Search.value.toUpperCase());
-    });
-    product_list.srt = [...Data1];
+watchEffect(() => {
+  let Data1 = data2.filter((list) => {
+    return list.title.toUpperCase().includes(Search.value.toUpperCase());
   });
+  product_list.srt = [...Data1];
+});
 </script>
 
 <style scoped>
-.diva {
-  width: 100%;
-  height: 8vh;
-  margin-top: 6.5vh;
-  position: relative !important;
-  display: flex;
-  align-items: center;
-}
-.form {
-  width: 50%;
-  height: 60%;
-  border: 1px solid;
-  display: flex;
-  /* z-index: 2233; */
-}
-input {
-  padding-top: 30vh;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-button {
-  position: absolute;
-  left: 74%;
-  height: 60%;
-  z-index: 3223;
-}
-/* Responsive 385px*/
-@media (max-width: 385px) {
-  .diva {
-    margin-top: 4vh !important;
-  }
-  .diva:focus {
-    position: relative !important;
-    z-index: 999999;
-  }
-  .form {
-    margin-left: 3.5vh !important;
-    width: 80%;
-    border: 1px solid blue;
-    z-index: 22222 !important;
-  }
 
+:deep button{
+  margin-top: 3rem;
+}
+  
+</style>

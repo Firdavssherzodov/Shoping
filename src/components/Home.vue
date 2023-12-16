@@ -1,10 +1,11 @@
 <template>
   <div>
     <Header1></Header1>
-    <Search ></Search>
-    <karusel ></karusel>
-    <Bolim ></Bolim>
+    <Search></Search>
+    <!-- <Carusel></Carusel> -->
+    <Bolim></Bolim>
     <Maxsulot></Maxsulot>
+    <!-- <Mini></Mini> -->
   </div>
 </template>
 
@@ -13,7 +14,8 @@ import Header1 from "../components/Header.vue";
 import Search from "../components/Search.vue";
 import Bolim from "../components/Bolimlar.vue";
 import Maxsulot from "../components/Maxsulot.vue";
-import karusel from "../components/Karusel.vue";
+// import Carusel from "../components/Karusel.vue";
+// import Mini from "../components/MiniCarusel.vue";
 </script>
 
 <style scoped></style>

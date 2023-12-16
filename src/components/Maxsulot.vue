@@ -1,38 +1,47 @@
 <template>
-  <Toast position="top-center" group="pt" />
+  <!-- <Toast position="top-center" group="pt" /> -->
 
   <section class="Maxsulotlar">
-    <div class="diva">
-      <div class="div">
+    <div class="diva row">
+      <div class="div sm:w-[77%] w-full h-full m-auto flex flex-wrap ">
         <div
-          class="kard rounded-5 m-2"
+          class="kard sm:m-3 sm:w-[15%] sm:h-2/5 w-[45%] m-2"
           v-for="(data, index) in listProducts.srt"
           :key="data.id"
         >
           <!-- {{ activeIndexes }} -->
-          <div class="div_img rounded-5">
+          <div class="div_img rounded-xl bg-gray-100 h-[55%] border relative">
             <i
               :class="[
                 activeIndexes.includes(index)
                   ? 'text-danger'
                   : 'text-secondary',
               ]"
-              class="fa-solid fa-heart fs-5 like rounded-5"
+              class="fa-solid fa-heart text-xl absolute sm:left-44 left-[80%] py-1 px-1 cursor-pointer"
               @click="Like(data.id, index)"
             ></i>
-            <img :src="data.image" alt="inkas" class="rounded-5" />
-            <p class="mt-5 mx-2" style="font-size: 0.8rem">{{ data.title }}</p>
-            <h5 class="mx-2 text-dark fw-bold">{{ data.price }} $</h5>
+            <img
+              :src="data.image"
+              alt="inkas"
+              class="rounded-xl w-28 h-32 m-auto my-7"
+            />
+            <p class="pt-6 mx-2 overflow-hidden line-clamp-1 text-[0.8rem]">
+              {{ data.title }}
+            </p>
+            <h5 class="mx-2 pt-2 text-dark font-bold">{{ data.price }} $</h5>
             <Rating :cancel="false" class="ms-2 mt-3 Rating" />
-            <button
-              class="btn btn-success btn btn-outline-success ripple-surface-dark mx-2 my-2"
+
+            <fwb-button
+              color="green"
+              class="rounded-lg my-3 sm:ml-40 ml-32"
+              outline
               @click="AddShop(data.id)"
             >
               <i
-                class="fa-solid fa-cart-shopping text-seccess"
-                style="color: #14a44d"
-              ></i>
-            </button>
+                class="fa-solid fa-cart-shopping"
+                
+              ></i
+            ></fwb-button>
           </div>
         </div>
         <!-- loading -->
@@ -74,13 +83,14 @@
 </template>
 
 <script setup>
+import { FwbButton } from "flowbite-vue";
 import axios from "axios";
 import { ref, onMounted } from "vue";
 import Rating from "primevue/rating";
 import { products } from "../user/store/userStore";
-import Toast from "primevue/toast";
-import { useToast } from "primevue/usetoast";
-const toast = useToast();
+// import Toast from "primevue/toast";
+// import { useToast } from "primevue/usetoast";
+// const toast = useToast();
 
 const listProducts = products();
 
@@ -169,12 +179,8 @@ svg rect {
   width: 100%;
   height: 900px;
 }
-.div {
-  width: 77%;
-  height: 100%;
-  /* border: 1px solid; */
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
+.overflow {
+  overflow: none !important;
+  line-clamp: none;
 }
 </style>

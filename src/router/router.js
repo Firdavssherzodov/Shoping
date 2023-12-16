@@ -26,9 +26,15 @@ const router = createRouter({
     },
     {
       path: "/favorites",
-      naem: "favorites",
+      name: "favorites",
       component: () => import("../QoshimchaPage.vue/Like.vue"),
     },
+    {
+      path:'/register',
+      name:'register',
+      component:()=>import("../Registertion/Reregistertion.vue")
+    }
+
   ],
 });
 

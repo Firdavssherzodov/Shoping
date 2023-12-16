@@ -2,20 +2,21 @@
   <header class="diva">
     <router-link to="/">
       <div class="d1">
-        <img src="../../images/header.icons.png" alt="" class="" />
+        <img src="../../images/header.icons.png" alt="" class="w-3/5" />
       </div>
     </router-link>
     <div class="d2">
-      <div data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-        <i
-          class="fa-regular fa-user fs-5 text-primary"
-          style="color: #838891"
-        ></i>
-        <p class="px-3 my-4 text-none" style="color: var(--mdb-body-color)">
-          Kirish
-        </p>
-      </div>
-
+      <router-link to="/">
+        <div>
+          <i
+            class="fa-regular fa-user fs-5 text-primary"
+            style="color: #838891"
+          ></i>
+          <p class="px-3 my-4 text-none" style="color: var(--mdb-body-color)">
+            Kirish
+          </p>
+        </div>
+      </router-link>
       <router-link to="/korzinka">
         <div>
           <i
@@ -57,7 +58,7 @@
   </header>
 
   <section
-    class="Menu d-none border border-start-0 border-end-0 border-bottom-0"
+    class="Menu sm:none border border-start-0 border-end-0 border-bottom-0"
   >
     <router-link to="/">
       <div>
@@ -117,60 +118,6 @@
       </div>
     </router-link>
   </section>
-  <!--  -->
-  <!-- Modal -->
-  <div
-    class="modal top fade"
-    id="exampleModal"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-    data-mdb-backdrop="static"
-    data-mdb-keyboard="true"
-  >
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header my-2">
-          <h5
-            class="modal-title"
-            id="exampleModalLabel"
-            style="margin-left: 12.3vh"
-          >
-            Telefon raqamini kiriting
-          </h5>
-
-          <button
-            type="button"
-            class="btn-close"
-            data-mdb-dismiss="modal"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="modal-body my-2">
-          <input
-            type="text"
-            class="rounded-5 border-1 px-3"
-            style="
-              margin-left: 12vh;
-              width: 60%;
-              height: 50px;
-              font-size: 1.1rem;
-            "
-            placeholder="+998 00 000-00-00"
-          />
-        </div>
-        <div class="modal-footer my-2">
-          <button
-            type="button"
-            class="btn btn-primary rounded-4"
-            style="margin-right: 8vh; width: 60%; height: 40px"
-          >
-            Kodni olish
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
 </template>
 
 <script setup>
@@ -184,17 +131,17 @@ let countet = ref([]);
 onMounted(async () => {
   countet.value = (await JSON.parse(localStorage.getItem("savat"))) || [];
 
-  if (countet.value.length > 0) {
-    let count = document.querySelector(".counter");
-    count.style.display = "block";
-    let count2 = document.querySelector(".counter2");
-    count2.style.display = "block";
-  } else {
-    let count = document.querySelector(".counter");
-    count.style.display = "none";
-    let count2 = document.querySelector(".counter2");
-    count2.style.display = "none";
-  }
+  // if (countet.value.length > 0) {
+  //   let count = document.querySelector(".counter");
+  //   count.style.display = "block";
+  //   let count2 = document.querySelector(".counter2");
+  //   count2.style.display = "block";
+  // } else {
+  //   let count = document.querySelector(".counter");
+  //   count.style.display = "none";
+  //   let count2 = document.querySelector(".counter2");
+  //   count2.style.display = "none";
+  // }
 });
 </script>
 
@@ -222,10 +169,7 @@ onMounted(async () => {
   cursor: pointer;
 }
 
-img {
-  width: 200%;
-  height: 160%;
-}
+
 .Menu {
   width: 350px;
   height: 70px;
