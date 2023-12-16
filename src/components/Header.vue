@@ -24,7 +24,7 @@
     </template>
     <template #right-side>
       <fwb-button>
-        Get started
+        Sigin up
       </fwb-button>
     </template>
   </fwb-navbar>

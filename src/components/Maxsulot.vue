@@ -2,10 +2,10 @@
   <!-- <Toast position="top-center" group="pt" /> -->
 
   <section class="Maxsulotlar">
-    <div class="diva row">
-      <div class="div sm:w-[77%] w-[98%]  h-full m-auto flex flex-wrap ">
+    <div class="diva">
+      <div class="div sm:w-full md:w-[80%]  w-[98%]  h-full m-auto flex flex-wrap ">
         <div
-          class="kard sm:m-3 sm:w-[15%]  sm:h-2/5 w-[45%] h-[35%] m-2 rounded-xl shadow-lg  shadow-color1-500/50 "
+          class="kard sm:m-3 sm:w-[30%] sm:h-[40%] md:h-[40%] md:w-[15%] w-[45%]  md:m-3  m-2 rounded-xl shadow-lg  shadow-color1-500/50 "
           v-for="(data, index) in listProducts.srt"
           :key="data.id"
         > 
@@ -17,7 +17,7 @@
                   ? 'text-danger'
                   : 'text-secondary',
               ]"
-              class="fa-regular fa-heart text-xl absolute sm:left-44 left-[80%] py-1 px-1 cursor-pointer text-gray-400"
+              class="fa-regular fa-heart text-xl absolute sm:left-42 left-[80%] py-1 px-1 cursor-pointer text-gray-400"
               @click="Like(data.id, index)"
             ></i>
             <img
@@ -38,7 +38,7 @@
     </fwb-rating>
             <fwb-button
               color="green"
-              class="rounded-lg my-2.5 sm:ml-40 ml-[67%]"
+              class="rounded-lg my-2.5 sm:ml-36 md:ml-40 ml-[67%]"
               outline
               @click="AddShop(data.id)"
             >
