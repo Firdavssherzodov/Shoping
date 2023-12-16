@@ -17,7 +17,7 @@
                   ? 'text-danger'
                   : 'text-secondary',
               ]"
-              class="fa-solid fa-heart text-xl absolute sm:left-44 left-[80%] py-1 px-1 cursor-pointer"
+              class="fa-regular fa-heart text-xl absolute sm:left-44 left-[80%] py-1 px-1 cursor-pointer text-gray-400"
               @click="Like(data.id, index)"
             ></i>
             <img
@@ -31,7 +31,7 @@
             <h5 class="mx-2 pt-2 text-dark font-semibold">{{ data.price }} $</h5>
             <fwb-rating size="sm" :rating="4" class="pt-[0.30rem] px-2"  >
             <template #besideText>
-      <p class="ml-2 text-sm font-medium text-gray-500 dark:text-white">
+      <p class="ml-2 text-xs font-medium text-gray-500 dark:text-white">
         4.95
       </p>
     </template>
