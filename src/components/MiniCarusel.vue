@@ -1,37 +1,47 @@
 <template>
-  <div class="card">
+  <div class="card dark:bg-white">
     <Carousel
       :value="products"
       :numVisible="3"
       :numScroll="3"
       :responsiveOptions="responsiveOptions"
-      :pt="{
-        indicatorButton: { class: 'border-round-lg' },
-      }"
+      :autoplayInterval="3000"
     >
-      <template #item="slotProps1" v-for="slotProps of products">
-        <div class="border-1 border rounded m-2 text-center py-5 px-3">
-          >
+      <template #item="slotProps">
+        <div
+          class="w-[95%] h-72 border m-1 text-center py-5 px-3 rounded-xl shadow-lg shadow-color1-500/50 dark:bg-slate-50"
+        >
           <div class="mb-3">
             <img
               :src="slotProps.data.image"
-              :alt="slotProps.data.name"
-              class="w-6 shadow-2"
+              :alt="slotProps.data.title"
+              class="w-20 h-24 shadow-2 m-auto rounded-lg"
             />
           </div>
           <div>
-            <h4 class="mb-1">{{ slotProps.data.name }}</h4>
-            <h6 class="mt-0 mb-3">${{ slotProps.data.price }}</h6>
-            <Tag
-              :value="slotProps.data.inventoryStatus"
-              :severity="getSeverity(slotProps.data.inventoryStatus)"
-            />
-            <div
-              class="mt-5 d-flex align-items-center justify-content-center gap-2"
+            <p
+              class="mb-1 overflow-hidden line-clamp-2 text-dark text-[0.8rem] pt-2 text-left dark:text-white"
             >
-              <Button icon="pi pi-search" rounded />
-              <Button icon="pi pi-star-fill" rounded severity="secondary" />
-            </div>
+              {{ slotProps.data.title }}
+            </p>
+            <p class="mt-2 font-bold text-left mb-1 h-15 text-[15px] dark:text-white">
+              {{ slotProps.data.price }} $
+            </p>
+
+            <fwb-rating size="sm" :rating="1" :scale="1" class="h-15">
+              <template #besideText>
+                <p class="ml-2 text-xs text-gray-500 dark:text-white">4.95</p>
+              </template>
+            </fwb-rating>
+
+            <fwb-button
+              color="green"
+              class="rounded-lg my-2 sm:ml-36 md:ml-40 ml-[67%]"
+              outline
+              @click="AddShop(slotProps.data.id)"
+            >
+              <i class="fa-solid fa-cart-shopping"></i
+            ></fwb-button>
           </div>
         </div>
       </template>
@@ -40,14 +50,17 @@
 </template>
 
 <script setup>
+import Carousel from "primevue/carousel";
+import { FwbRating } from "flowbite-vue";
+import { FwbButton } from "flowbite-vue";
+
 import { ref, onMounted } from "vue";
 import axios from "axios";
+
 onMounted(() => {
   axios
     .get("https://fakestoreapi.com/products")
-    .then((resp) => resp.data.slice(0, 10).forEach((element) => {
-        products.value.push(element)
-    }));
+    .then((data) => (products.value = data.data));
 });
 
 const products = ref();
@@ -69,24 +82,24 @@ const responsiveOptions = ref([
   },
   {
     breakpoint: "575px",
-    numVisible: 1,
+    numVisible: 2,
     numScroll: 1,
   },
 ]);
 
-// const getSeverity = (status) => {
-//     switch (status) {
-//         case 'INSTOCK':
-//             return 'success';
+const getSeverity = (status) => {
+  switch (status) {
+    case "INSTOCK":
+      return "success";
 
-//         case 'LOWSTOCK':
-//             return 'warning';
+    case "LOWSTOCK":
+      return "warning";
 
-//         case 'OUTOFSTOCK':
-//             return 'danger';
+    case "OUTOFSTOCK":
+      return "danger";
 
-//         default:
-//             return null;
-//     }
-// };
+    default:
+      return null;
+  }
+};
 </script>

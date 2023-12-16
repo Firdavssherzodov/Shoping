@@ -2,9 +2,9 @@
   <!-- <Toast position="top-center" group="pt" /> -->
 
   <section class="Maxsulotlar">
-    <div class="diva">
+    <div class="">
       <div
-        class="div sm:w-full md:w-[80%] w-[98%] h-full m-auto flex flex-wrap"
+        class="div sm:w-full md:w-[80%] w-[98%] h-full m-auto flex flex-wrap relative"
       >
         <div
           class="kard sm:m-3 sm:w-[30%] sm:h-[40%] md:h-[40%] md:w-[15%] w-[45%] md:m-3 m-2 rounded-xl shadow-lg shadow-color1-500/50"
@@ -30,11 +30,11 @@
               class="rounded-xl sm:w-28 w-24 sm:h-32 h-28 m-auto sm:my-7 my-3.5"
             />
             <p
-              class="pt-6 mx-2 overflow-hidden line-clamp-2 h-[60px] text-[0.8rem]"
+              class="pt-6 mx-2 overflow-hidden line-clamp-2 h-[60px] text-[0.8rem] dark:text-white"
             >
               {{ data.title }}
             </p>
-            <h5 class="mx-2 pt-2 text-dark font-semibold">
+            <h5 class="mx-2 pt-2 text-dark font-semibold dark:text-white">
               {{ data.price }} $
             </h5>
             <fwb-rating size="sm" :rating="4" class="pt-[0.30rem] px-2">
@@ -57,24 +57,34 @@
           </div>
         </div>
         <!-- loading -->
-        <fwb-spinner size="12" class="loader mx-auto my-40 " />
+        <fwb-spinner size="12" class="loader mx-auto my-40" />
         <!-- loading -->
       </div>
     </div>
   </section>
+
+  <fwb-pagination
+    v-model="currentPage"
+    :total-pages="5"
+    show-icons
+    class="sm:my-10 my-10 sm:py-10 pb-16 text-center align-text-bottom page"
+  ></fwb-pagination>
 </template>
 
 <script setup>
 import { FwbRating } from "flowbite-vue";
 import { FwbButton } from "flowbite-vue";
 import { FwbSpinner } from "flowbite-vue";
+import { FwbPagination } from "flowbite-vue";
 import axios from "axios";
 import { ref, onMounted } from "vue";
 import { products } from "../user/store/userStore";
 // import Toast from "primevue/toast";
 // import { useToast } from "primevue/usetoast";
 // const toast = useToast();
+const currentPage = ref(1);
 
+console.log(currentPage.value);
 const listProducts = products();
 
 // let id = ref(null);
@@ -82,7 +92,7 @@ onMounted(() => {
   axios.get("https://fakestoreapi.com/products").then((resp) => {
     // console.log(resp.data);
     if (resp.data) {
-      resp.data.forEach((element) => {
+      resp.data.slice(0, 12).forEach((element) => {
         if (!!resp.data) {
           listProducts.srt.push(element);
           let loader = document.querySelector(".loader");
@@ -96,7 +106,6 @@ onMounted(() => {
     }
   });
 });
-
 
 function AddShop(idw) {
   axios.get(`https://fakestoreapi.com/products/${idw}`).then((resp) => {
@@ -135,7 +144,6 @@ function Like(id, index) {
 }
 </script>
 <style scoped>
-
 .diva {
   width: 100%;
   height: 900px;
