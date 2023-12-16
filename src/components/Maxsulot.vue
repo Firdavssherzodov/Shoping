@@ -5,7 +5,7 @@
     <div class="diva row">
       <div class="div sm:w-[77%] w-full h-full m-auto flex flex-wrap ">
         <div
-          class="kard sm:m-3 sm:w-[15%] sm:h-2/5 w-[45%] m-2"
+          class="kard sm:m-3 sm:w-[15%]  sm:h-2/5 w-[45%] m-2 "
           v-for="(data, index) in listProducts.srt"
           :key="data.id"
         >
@@ -29,7 +29,7 @@
               {{ data.title }}
             </p>
             <h5 class="mx-2 pt-2 text-dark font-bold">{{ data.price }} $</h5>
-            <Rating :cancel="false" class="ms-2 mt-3 Rating" />
+            <Rating :cancel="false" class="ms-2 mt-3 " />
 
             <fwb-button
               color="green"

@@ -2,7 +2,7 @@
   <!-- <Toast position="top-center" /> -->
 
   <Header1 />
-  <div class="diva ">
+  <div class="diva">
     <div class="text1 text-center m-auto">
       <p class="text-center mt-5">Hali hech qanday maxsulot olganingiz yuq!</p>
       <router-link to="/">
@@ -26,7 +26,7 @@
       <div class="d2 d-flex">
         <h6 class="fw-bold py-2">${{ data.price }}</h6>
         <div class="counter d-flex">
-          <span class="s1 rounded" style="background-color: #eb0505;">
+          <span class="s1 rounded" style="background-color: #eb0505">
             <i
               class="fa-solid fa-minus text-white border-primary ps-0 py-2"
               style="cursor: pointer"
@@ -86,8 +86,6 @@ onMounted(() => {
         });
       });
   }
-
-
 
   if (ff.value.length == 0) {
     let text = document.querySelector(".text1");
@@ -155,15 +153,15 @@ function Canculator() {
   }
 }
 
-const sendtelegram = () => {
-  toast.add({
-    severity: "success",
-    summary: "Xaridingiz uchun raxmat",
-    detail: `Maxsulotlar yig'lmoqda`,
-    life: 3000,
-  });
-  localStorage.removeItem("savat");
-};
+// const sendtelegram = () => {
+//   toast.add({
+//     severity: "success",
+//     summary: "Xaridingiz uchun raxmat",
+//     detail: `Maxsulotlar yig'lmoqda`,
+//     life: 3000,
+//   });
+//   localStorage.removeItem("savat");
+// };
 </script>
 
 <style scoped>
