@@ -3,7 +3,7 @@
 
   <section class="Maxsulotlar">
     <div class="diva row">
-      <div class="div sm:w-[77%] w-full h-full m-auto flex flex-wrap ">
+      <div class="div sm:w-[77%] w-[98%] h-full m-auto flex flex-wrap ">
         <div
           class="kard sm:m-3 sm:w-[15%]  sm:h-2/5 w-[45%] m-2 "
           v-for="(data, index) in listProducts.srt"
