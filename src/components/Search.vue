@@ -21,32 +21,21 @@
 </template>
 
 <script setup>
-
 import { products } from "../user/store/userStore";
 import { onBeforeMount, ref, watchEffect } from "vue";
 
 const product_list = products();
 
 let Search = ref("");
-let data1 = JSON.parse(JSON.stringify(product_list.srt));
-
-function Searchfunc() {
-  let Data1 = data1.filter((list) => {
-    return list.title.toUpperCase().includes(Search.value.toUpperCase());
-  });
-  product_list.srt = [...Data1];
-}
 
 let data2 = JSON.parse(JSON.stringify(product_list.srt));
 
-onBeforeMount(() => {
   watchEffect(() => {
     let Data1 = data2.filter((list) => {
       return list.title.toUpperCase().includes(Search.value.toUpperCase());
     });
     product_list.srt = [...Data1];
   });
-});
 </script>
 
 <style scoped>
@@ -93,31 +82,3 @@ button {
     z-index: 22222 !important;
   }
 
-  form:focus {
-    z-index: 99999999 !important;
-  }
-  button {
-    left: 77% !important;
-    height: 70% !important;
-    z-index: 1000000;
-  }
-}
-/* Responsive 576px*/
-@media (max-width: 576px) {
-  .diva {
-    margin-top: 4vh;
-    z-index: 333222 !important  ;
-  }
-  .form {
-    margin-left: 3vh !important;
-    width: 80%;
-    height: 70%;
-    /* z-index: 22222 !important; */
-  }
-  button {
-    left: 80%;
-    height: 70% !important;
-    z-index: 1000000;
-  }
-}
-</style>
