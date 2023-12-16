@@ -58,7 +58,7 @@
   </header>
 
   <section
-    class="Menu sm:none border border-start-0 border-end-0 border-bottom-0"
+    class="Menu sm:hidden border  border-bottom-x-0"
   >
     <router-link to="/">
       <div>
@@ -146,6 +146,9 @@ onMounted(async () => {
 </script>
 
 <style scoped>
+.hidden{
+  display: none;
+}
 .diva {
   width: 100%;
   height: 8vh;

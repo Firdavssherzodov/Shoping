@@ -8,7 +8,7 @@
           class="kard sm:m-3 sm:w-[15%]  sm:h-2/5 w-[45%] m-2 "
           v-for="(data, index) in listProducts.srt"
           :key="data.id"
-        >
+        > 
           <!-- {{ activeIndexes }} -->
           <div class="div_img rounded-xl bg-gray-100 h-[55%] border relative">
             <i
@@ -25,12 +25,17 @@
               alt="inkas"
               class="rounded-xl w-28 h-32 m-auto my-7"
             />
-            <p class="pt-6 mx-2 overflow-hidden line-clamp-1 text-[0.8rem]">
+            <p class="pt-6 mx-2 overflow-hidden line-clamp-2 h-[60px] text-[0.8rem]">
               {{ data.title }}
             </p>
-            <h5 class="mx-2 pt-2 text-dark font-bold">{{ data.price }} $</h5>
-            <Rating :cancel="false" class="ms-2 mt-3 " />
-
+            <h5 class="mx-2 pt-2 text-dark font-semibold">{{ data.price }} $</h5>
+            <fwb-rating size="sm" :rating="4" class="pt-[0.30rem] px-2"  >
+            <template #besideText>
+      <p class="ml-2 text-sm font-medium text-gray-500 dark:text-white">
+        4.95
+      </p>
+    </template>
+    </fwb-rating>
             <fwb-button
               color="green"
               class="rounded-lg my-3 sm:ml-40 ml-32"
@@ -83,10 +88,10 @@
 </template>
 
 <script setup>
+import { FwbRating } from 'flowbite-vue'
 import { FwbButton } from "flowbite-vue";
 import axios from "axios";
 import { ref, onMounted } from "vue";
-import Rating from "primevue/rating";
 import { products } from "../user/store/userStore";
 // import Toast from "primevue/toast";
 // import { useToast } from "primevue/usetoast";
