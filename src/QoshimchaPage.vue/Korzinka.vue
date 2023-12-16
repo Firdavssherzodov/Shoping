@@ -45,20 +45,24 @@
       </div>
     </div>
   </div>
-  <section class="umumiy border border-start-0 border-end-0">
-    <ul class="ul">
-      <li class="w-100">Umumiy narx : $ {{ total }}</li>
-      <li>{{ srt?.length }} ta mahsulot</li>
+  <section class="umumiy border border-x-0">
+    <ul class="ul py-0">
+      <li class="pt-1">Umumiy narx : $ {{ total }}</li>
+      <li
+        class="pt-1"
+      >
+        {{ srt?.length }} ta mahsulot
+      </li>
     </ul>
-    <button class="btn btn-primary p-2" @click="sendtelegram">
-      Buyurtma berish
-    </button>
+      <fwb-button color="default" class="bg-color2">Buyurtma berish</fwb-button>
+
   </section>
 </template>
 
 <script setup>
 import Header1 from "../components/Header.vue";
 import { ref, onMounted } from "vue";
+import { FwbButton } from 'flowbite-vue'
 // import Toast from "primevue/toast";
 // import { useToast } from "primevue/usetoast";
 // const toast = useToast();
@@ -165,7 +169,7 @@ function Canculator() {
 </script>
 
 <style scoped>
-.text2 {
+/* .text2 {
   display: block;
 }
 .text3 {
@@ -205,18 +209,7 @@ function Canculator() {
   width: 50%;
   margin-left: 13vh;
   /* border: 1px solid blue; */
-}
-.counter {
-  width: 50%;
-  margin-left: 1vh;
-  /* border: 1px solid blue;   */
-}
-.s1,
-.s2 {
-  width: 30px;
-  height: 33px;
-  background-color: rgba(0, 0, 255, 0.131);
-}
+
 .umumiy {
   background-color: white;
   width: 67%;
@@ -229,11 +222,7 @@ function Canculator() {
   justify-content: space-between;
   align-items: center;
 }
-.ul {
-  list-style: none;
-  padding-top: 2vh;
-  padding-left: 0px !important;
-}
+
 /* Responnsive 385px */
 @media (max-width: 385px) {
   .diva {

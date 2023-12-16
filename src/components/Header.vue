@@ -1,91 +1,77 @@
 <template>
-  <div class="sm:w-[70%] w-full m-auto ">
-  <fwb-navbar>
-    <template #logo>
-      <fwb-navbar-logo alt="Jalolxon Market logo" image-url="/images/header.icons.png" link="#" class="text-color1 ">
-        Jalolxon Market
-      </fwb-navbar-logo>
-    </template>
-    <template #default="{isShowMenu}">
-      <fwb-navbar-collapse :is-show-menu="isShowMenu" class="pe-16">
-        <fwb-navbar-link  link="#">
-          Bosh sahifa
-        </fwb-navbar-link>
-        <fwb-navbar-link link="#">
-          Xizmat
-        </fwb-navbar-link>
-        <fwb-navbar-link link="#">
-          Pricing
-        </fwb-navbar-link>
-        <fwb-navbar-link link="#">
-          Contact
-        </fwb-navbar-link>
-      </fwb-navbar-collapse>
-    </template>
-    <template #right-side>
-      <fwb-button>
-        Sigin up
-      </fwb-button>
-    </template>
-  </fwb-navbar>
+  <div class="sm:w-[80%] w-full m-auto sm:block hidden">
+    <fwb-navbar>
+      <template #logo>
+        <fwb-navbar-logo
+          alt="Jalolxon Market logo"
+          image-url="/images/header.icons.png"
+          link="#"
+          class="text-color1 relative"
+        >
+          Jalolxon Market
+        </fwb-navbar-logo>
+      </template>
+      <template #default="{ isShowMenu }">
+        <fwb-navbar-collapse :is-show-menu="isShowMenu" class="pe-32">
+          <fwb-navbar-link link="#"> Bosh sahifa </fwb-navbar-link>
+          <fwb-navbar-link link="#"> Katalog </fwb-navbar-link>
+          <fwb-navbar-link link="#"> Savat </fwb-navbar-link>
+          <fwb-navbar-link link="#"> Kabinet </fwb-navbar-link>
+        </fwb-navbar-collapse>
+      </template>
+      <template #right-side>
+        <fwb-button class="mr-2 font-normal" outline> Log in </fwb-button>
+        <fwb-button class="font-bold"> Sigin up </fwb-button>
+      </template>
+    </fwb-navbar>
+  </div>
 
-</div>
   <section
-    class="Menu sm:hidden border  border-bottom-x-0"
+    class="Menu sm:hidden  border border-x-0 w-full h-16 fixed sm:left-[40.5%] left-0 bottom-0 z-[20] flex justify-around items-center rounded-lg bg-white"
   >
     <router-link to="/">
-      <div>
-        <a href="#" class="fa-solid fa-house fs-4" style="color: #8c8989"></a>
-        <p style="font-size: 0.7rem; position: absolute; margin-left: -2vh">
-          Bosh sahifa
+      <div class="relative">
+        <a href="#" class="fa-solid fa-house text-xl text-gray-500" ></a>
+
+        <p class="text-[11px] absolute left-[-1rem]  z-30">
+          Bosh/sahifa
         </p>
       </div>
     </router-link>
     <router-link to="/search">
-      <div>
+      <div class="relative">
         <a
           href="#"
-          class="fa-solid fa-magnifying-glass fs-4"
-          style="color: #8c8989"
+          class="fa-solid fa-magnifying-glass text-xl text-gray-500"
         ></a>
-        <p style="font-size: 0.7rem; position: absolute">Katalog</p>
+        <p class="text-[11px] absolute left-[-0.6rem]">Katalog</p>
       </div>
     </router-link>
     <router-link to="/korzinka">
-      <div>
+      <div class="relative">
         <a
           href="#"
-          class="fa-solid fa-cart-shopping text-seccess fs-4"
-          style="color: #8c8989"
+          class="fa-solid fa-cart-shopping text-xl text-gray-500"
         ></a>
-        <p style="font-size: 0.7rem; position: absolute; margin-left: -0.2vh">
+        <p class="text-[11px] absolute left-[-0.1rem]">
           Savat
         </p>
-        <button
-          class="btn btn-primary btn-floating fa-bounce counter"
-          style="
-            border-radius: 50px;
-            font-size: 0.7rem;
-            width: 20px;
-            height: 20px;
-          "
-        >
-          {{ countet.length }}
-        </button>
+        <Badge :value="countet.length" class="absolute bottom-3 bg-color2 "></Badge>
+       
       </div>
     </router-link>
-    <router-link to="/favorites">
-      <div>
-        <a href="#" class="fa-regular fa-heart fs-4" style="color: #8c8989"></a>
-        <p style="font-size: 0.7rem; position: absolute; margin-left: -2vh">
+    <router-link to="/">
+      <div class="relative">
+        <a href="#" class="fa-regular fa-heart text-xl text-gray-500" ></a>
+        <p class="text-[11px] absolute left-[-1rem]">
           Saralangan
         </p>
       </div>
     </router-link>
     <router-link to="/user">
-      <div>
-        <a href="#" class="fa-regular fa-user fs-4" style="color: #8c8989"></a>
-        <p style="font-size: 0.7rem; position: absolute; margin-left: -1.3vh">
+      <div class="relative">
+        <a href="#" class="fa-regular fa-user text-xl text-gray-500" ></a>
+        <p class="text-[11px] absolute left-[-0.6rem]">
           Kabinet
         </p>
       </div>
@@ -94,6 +80,7 @@
 </template>
 
 <script setup>
+import Badge from 'primevue/badge';
 import { ref, onMounted } from "vue";
 import {
   FwbButton,
@@ -101,9 +88,12 @@ import {
   FwbNavbarCollapse,
   FwbNavbarLink,
   FwbNavbarLogo,
-} from 'flowbite-vue'
+} from "flowbite-vue";
 let countet = ref([]);
 
+// setInterval(()=>{
+//   countet.value =  JSON.parse(localStorage.getItem("savat"));
+// },1000)
 
 onMounted(async () => {
   countet.value = (await JSON.parse(localStorage.getItem("savat"))) || [];
@@ -123,10 +113,13 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-:deep img{
-  width: 110px;
-  height: 70px;
+:deep img {
+  margin: 0px !important;
+  width: 200px;
+  height: 120px;
 }
-
-
+:deep a {
+  margin: 0px !important;
+  justify-content: center;
+}
 </style>
