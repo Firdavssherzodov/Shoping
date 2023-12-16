@@ -104,9 +104,6 @@ import {
 } from 'flowbite-vue'
 let countet = ref([]);
 
-// setInterval(()=>{
-//   countet.value =  JSON.parse(localStorage.getItem("savat"));
-// },1000)
 
 onMounted(async () => {
   countet.value = (await JSON.parse(localStorage.getItem("savat"))) || [];
@@ -132,75 +129,4 @@ onMounted(async () => {
 }
 
 
-.Menu {
-  width: 350px;
-  height: 70px;
-  position: fixed;
-  left: 40.5%;
-  z-index: 288882;
-  bottom: 0px !important;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border-radius: 10px !important;
-  background-color: rgb(255, 255, 255);
-}
-.Menu a:hover {
-  color: #3b71ca !important;
-}
-.counter {
-  bottom: 55%;
-  margin-left: 4%;
-  position: absolute;
-}
-.counter2 {
-  display: none;
-  margin-left: 14px !important;
-  position: absolute;
-}
-/* Responsive 385px*/
-@media (max-width: 385px) {
-  .diva {
-    display: none;
-  }
-  .Menu {
-    display: block;
-    width: 100%;
-    height: 65px !important;
-    left: 0% !important;
-    padding-bottom: 1vh;
-  }
-  .Menu p {
-    margin-left: -0.8vh;
-    position: absolute !important;
-    max-height: 10px;
-  }
-
-  .Menu,
-  a {
-    font-size: 1.3rem !important;
-  }
-}
-/* Responsive  576px*/
-@media (max-width: 576px) {
-  .diva {
-    display: none;
-  }
-  .Menu {
-    display: inline-flex !important;
-    width: 100%;
-    height: 60px !important;
-    left: 0%;
-    padding-bottom: 1vh;
-  }
-  .Menu,
-  a {
-    font-size: 1.4rem;
-  }
-  .counter {
-    bottom: 55%;
-    margin-left: 4%;
-    position: absolute;
-  }
-}
 </style>
