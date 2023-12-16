@@ -4,7 +4,6 @@
 <search/>
 <bolimlar/>
 <maxsulot/>
-    </section>
 </template>
 
 <script setup>
