@@ -3,14 +3,14 @@
 
   <section class="Maxsulotlar">
     <div class="diva row">
-      <div class="div sm:w-[77%] w-[98%] h-full m-auto flex flex-wrap ">
+      <div class="div sm:w-[77%] w-[98%]  h-full m-auto flex flex-wrap ">
         <div
-          class="kard sm:m-3 sm:w-[15%]  sm:h-2/5 w-[45%] m-2 rounded-xl shadow-lg  shadow-color1-500/50 "
+          class="kard sm:m-3 sm:w-[15%]  sm:h-2/5 w-[45%] h-[35%] m-2 rounded-xl shadow-lg  shadow-color1-500/50 "
           v-for="(data, index) in listProducts.srt"
           :key="data.id"
         > 
           <!-- {{ activeIndexes }} -->
-          <div class="div_img rounded-xl bg-gray-100 h-[55%] border relative">
+          <div class="div_img rounded-xl bg-gray-100 sm:h-[55%] h-[50%] border relative">
             <i
               :class="[
                 activeIndexes.includes(index)
@@ -23,7 +23,7 @@
             <img
               :src="data.image"
               alt="inkas"
-              class="rounded-xl w-28 h-32 m-auto my-7"
+              class="rounded-xl sm:w-28 w-24 sm:h-32 h-28 m-auto sm:my-7 my-3.5 "
             />
             <p class="pt-6 mx-2 overflow-hidden line-clamp-2 h-[60px] text-[0.8rem]">
               {{ data.title }}

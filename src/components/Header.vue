@@ -1,62 +1,35 @@
 <template>
-  <header class="diva">
-    <router-link to="/">
-      <div class="d1">
-        <img src="../../images/header.icons.png" alt="" class="w-3/5" />
-      </div>
-    </router-link>
-    <div class="d2">
-      <router-link to="/">
-        <div>
-          <i
-            class="fa-regular fa-user fs-5 text-primary"
-            style="color: #838891"
-          ></i>
-          <p class="px-3 my-4 text-none" style="color: var(--mdb-body-color)">
-            Kirish
-          </p>
-        </div>
-      </router-link>
-      <router-link to="/korzinka">
-        <div>
-          <i
-            class="fa-solid fa-cart-shopping text-seccess fs-5 text-primary"
-            style="color: #838891"
-          ></i>
-          <button
-            class="btn btn-primary btn-floating fa-bounce mb-4 mx-2 counter2"
-            style="
-              border-radius: 50px;
-              font-size: 0.7rem;
-              width: 20px;
-              height: 20px;
-            "
-          >
-            {{ countet?.length }}
-          </button>
-          <p
-            class="px-3 my-4"
-            style="color: var(--mdb-body-color)"
-            @click="handleStart()"
-          >
-            Savat
-          </p>
-        </div>
-      </router-link>
-      <router-link to="/favorites">
-        <div>
-          <i
-            class="fa-regular fa-heart fs-5 text-danger"
-            style="color: red"
-          ></i>
-          <p class="px-3 my-4" style="color: var(--mdb-body-color)">
-            Saralangan
-          </p>
-        </div>
-      </router-link>
-    </div>
-  </header>
+  <div class="sm:w-[70%] w-full m-auto ">
+  <fwb-navbar>
+    <template #logo>
+      <fwb-navbar-logo alt="Jalolxon Market logo" image-url="/images/header.icons.png" link="#" class="text-color1 ">
+        Jalolxon Market
+      </fwb-navbar-logo>
+    </template>
+    <template #default="{isShowMenu}">
+      <fwb-navbar-collapse :is-show-menu="isShowMenu" class="pe-16">
+        <fwb-navbar-link  link="#">
+          Bosh sahifa
+        </fwb-navbar-link>
+        <fwb-navbar-link link="#">
+          Xizmat
+        </fwb-navbar-link>
+        <fwb-navbar-link link="#">
+          Pricing
+        </fwb-navbar-link>
+        <fwb-navbar-link link="#">
+          Contact
+        </fwb-navbar-link>
+      </fwb-navbar-collapse>
+    </template>
+    <template #right-side>
+      <fwb-button>
+        Get started
+      </fwb-button>
+    </template>
+  </fwb-navbar>
 
+</div>
   <section
     class="Menu sm:hidden border  border-bottom-x-0"
   >
@@ -122,6 +95,13 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+import {
+  FwbButton,
+  FwbNavbar,
+  FwbNavbarCollapse,
+  FwbNavbarLink,
+  FwbNavbarLogo,
+} from 'flowbite-vue'
 let countet = ref([]);
 
 // setInterval(()=>{
@@ -146,30 +126,9 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-.hidden{
-  display: none;
-}
-.diva {
-  width: 100%;
-  height: 8vh;
-  display: flex;
-  justify-content: space-around;
-}
-.d1 {
-  width: 50%;
-  height: 100%;
-}
-.d2 {
-  width: 22%;
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.d2 div {
-  display: flex;
-  align-items: center !important;
-  cursor: pointer;
+:deep img{
+  width: 110px;
+  height: 70px;
 }
 
 
