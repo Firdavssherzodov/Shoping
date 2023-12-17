@@ -2,7 +2,7 @@
   <header1 />
   <p class="text-center text-black py-5 font-medium font-sans">Shaxsiy kabinet</p>
 
-  <div class="rounded-xl  md:w-2/5 w-full md:h-[40rem] h-full pb-96 m-auto bg-gray-100">
+  <div class="rounded-xl  md:w-2/5 w-full md:h-[40rem] h-full md:pb-0 pb-96 m-auto bg-gray-100">
     <!-- userHeader -->
 <div class="userHeader rounded-xl w-full h-[20%] flex">
   <!-- userAvater -->
@@ -22,11 +22,11 @@
   </div>
     <!-- /userHeader -->
 <div class="flex justify-between py-4 items-center active:bg-slate-200 rounded-xl w- m-1 cursor-pointer">
-  <i class="pi  pi-shopping-bag text-black ps-4 md:text-2xl text-lg" > <span class="ps-3 text-lg font-sans">Buyurtmalar</span></i>
+  <i class="pi  pi-shopping-bag text-black ps-4 md:text-2xl text-lg" > <span class="ps-3 md:text-lg text-sm font-sans">Buyurtmalar</span></i>
   <i class="pi pi-chevron-right pe-4"></i>
 </div>
 <div class="flex justify-between py-4 items-center active:bg-slate-200 rounded-xl w- m-1 mt-1. cursor-pointer">
-  <i class="pi  pi-user text-black ps-4 md:text-2xl text-lg"> <span class="ps-3 text-lg font-sans">Profil</span></i>
+  <i class="pi  pi-user text-black ps-4 md:text-2xl text-lg"> <span class="ps-3 md:text-lg text-sm font-sans">Profil</span></i>
   <i class="pi pi-chevron-right pe-4"></i>
 </div>
   </div>

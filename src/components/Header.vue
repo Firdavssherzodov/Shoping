@@ -6,23 +6,23 @@
           alt="Jalolxon Market logo"
           image-url="/images/header.icons.png"
           link="#"
-          class="text-color1 relative"
+          class="text-color1 relative font-sans"
         >
           Jalolxon Market
         </fwb-navbar-logo>
       </template>
       <template #default="{ isShowMenu }">
         <fwb-navbar-collapse :is-show-menu="isShowMenu" class="pe-32">
-          <fwb-navbar-link link="/"> Bosh sahifa </fwb-navbar-link>
-          <fwb-navbar-link link="/search"> Katalog </fwb-navbar-link>
-          <fwb-navbar-link link="/korzinka"> Savat </fwb-navbar-link>
-          <fwb-navbar-link link="/user"> Kabinet </fwb-navbar-link>
+          <fwb-navbar-link link="/" class="font-sans"> Bosh sahifa </fwb-navbar-link>
+          <fwb-navbar-link link="/search" class="font-sans"> Katalog </fwb-navbar-link>
+          <fwb-navbar-link link="/korzinka" class="font-sans"> Savat </fwb-navbar-link>
+          <fwb-navbar-link link="/user" class="font-sans"> Kabinet </fwb-navbar-link>
         </fwb-navbar-collapse>
       </template>
       <template #right-side>
-        <fwb-button class="mr-2 font-normal" outline> Log in </fwb-button>
+        <fwb-button class="mr-2 font-normal font-sans" outline> Log in </fwb-button>
         <router-link to="/registration">
-        <fwb-button class="font-bold" > Sigin up </fwb-button>
+        <fwb-button class="font-bold font-sans" > Sigin up </fwb-button>
       </router-link>
       </template>
     </fwb-navbar>
