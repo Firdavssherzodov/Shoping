@@ -3,7 +3,7 @@
 
   <Header1 />
 
-  <p class="text-center text-black py-5 font-medium">Savat</p>
+  <p class="text-center text-black py-5 font-medium font-sans">Savat</p>
 
   <div
     class="md:w-8/12 w-full h-full md:flex flex-wrap block md:ml-[23rem] m-auto pt-4 pb-36"
@@ -15,7 +15,7 @@
     >
       <div class="flex">
         <img :src="data.image" alt="inkas" class="m-5 mx-7 w-1/5 md:h-20 h-24" />
-        <p class="py-6 text-[13px] w-2/4">{{ data.title }}</p>
+        <p class="py-6 text-[13px] w-2/4 font-sans">{{ data.title }}</p>
         <i
           class="fa-solid fa-trash-can text-lg py-3 md:ml-6 ml-5 text-red-600 cursor-pointer"
           @click="Delete(index)"
@@ -23,7 +23,7 @@
       </div>
 
       <div class="flex pb-6">
-        <h6 class="font-bold ps-36 w-20">${{ data.price }}</h6>
+        <h6 class="font-bold ps-36 w-20 font-sans">${{ data.price }}</h6>
         <div class="flex md:ps-32 ps-36">
           <span class="border-red-500/100 border w-6 h-6 rounded">
             <i
@@ -31,7 +31,7 @@
               @click="minus(data)"
             ></i>
           </span>
-          <p class="px-2 mx-2 w-6">{{ data.count }}</p>
+          <p class="px-2 mx-2 w-6 font-sans">{{ data.count }}</p>
           <span class="rounded border border-color1/100 w-6 h-6">
             <i
               class="fa-solid fa-plus text-color1 cursor-pointer p-1"
@@ -48,14 +48,14 @@
     class="umumiy border border-x-0 bg-white md:w-8/12 w-full h-20 fixed md:left-[18.5%] left-0 md:bottom-1 bottom-16 flex justify-between rounded-t-lg items-center"
   >
     <ul class="ul py-0">
-      <li class="md:pt-1 ml-3 my-1 md:text-base text-[13px] md:w-80 w-[290px]">
+      <li class="md:pt-1 ml-3 my-1 md:text-base text-[13px] md:w-80 w-[250px] font-sans">
         Umumiy narx : $ {{ total }}
       </li>
-      <li class="md:pt-1 ml-3 md:text-base text-[13px]">
+      <li class="md:pt-1 ml-3 md:text-base text-[13px] font-sans">
         {{ srt?.length }} ta mahsulot
       </li>
     </ul>
-    <fwb-button color="default" class="bg-color2 md:mr-5 mr-3"
+    <fwb-button color="default" class="bg-color2 md:mr-5 mr-3 font-sans"
       >Buyurtma berish</fwb-button
     >
   </section>

@@ -6,7 +6,7 @@
       v-model="Search"
       placeholder=" search query"
       size="lg"
-      class="rounded-xl sm:py-3 py-[0.8rem] sm:my-[0.30rem] my-[0.28rem] border-color1 text-gray-500"
+      class="rounded-xl sm:py-3 py-[0.8rem] sm:my-[0.30rem] my-[0.28rem] border-color1 text-gray-500 font-sans"
     >
       <template #prefix>
         <svg

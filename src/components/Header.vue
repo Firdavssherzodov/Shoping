@@ -35,7 +35,7 @@
       <div class="relative">
         <a href="#" class="fa-solid fa-house text-xl text-gray-500"></a>
 
-        <p class="text-[11px] absolute left-[-1rem] z-30">Bosh/sahifa</p>
+        <p class="text-[11px] absolute left-[-1rem] z-30 font-sans">Bosh/sahifa</p>
       </div>
     </router-link>
     <router-link to="/search">
@@ -44,13 +44,13 @@
           href="#"
           class="fa-solid fa-magnifying-glass text-xl text-gray-500"
         ></a>
-        <p class="text-[11px] absolute left-[-0.6rem]">Katalog</p>
+        <p class="text-[11px] absolute left-[-0.6rem] font-sans">Katalog</p>
       </div>
     </router-link>
     <router-link to="/korzinka">
       <div class="relative">
         <a href="#" class="fa-solid fa-cart-shopping text-xl text-gray-500"></a>
-        <p class="text-[11px] absolute left-[-0.1rem]">Savat</p>
+        <p class="text-[11px] absolute left-[-0.1rem] font-sans">Savat</p>
         <Badge
           :value="countet.length"
           class="absolute bottom-3 bg-color2 counter hidden"
@@ -60,13 +60,13 @@
     <router-link to="/">
       <div class="relative">
         <a href="#" class="fa-regular fa-heart text-xl text-gray-500"></a>
-        <p class="text-[11px] absolute left-[-1rem]">Saralangan</p>
+        <p class="text-[11px] absolute left-[-1rem] font-sans">Saralangan</p>
       </div>
     </router-link>
     <router-link to="/user">
       <div class="relative">
         <a href="#" class="fa-regular fa-user text-xl text-gray-500"></a>
-        <p class="text-[11px] absolute left-[-0.6rem]">Kabinet</p>
+        <p class="text-[11px] absolute left-[-0.6rem] font-sans">Kabinet</p>
       </div>
     </router-link>
   </section>

@@ -29,19 +29,19 @@
           </div>
           <div>
             <p
-              class="mb-1 px-0.5 overflow-hidden line-clamp-2 h-12 text-[0.8rem] pt-2 text-left text-black dark:text-white"
+              class="mb-1 px-0.5 overflow-hidden line-clamp-2 h-12 text-[0.8rem] pt-2 text-left text-black dark:text-white font-sans"
             >
               {{ slotProps.data.title }}
             </p>
-            <p
-              class="mt-2 font-bold text-left mb-1 text-[15px] dark:text-white"
+            <h5
+              class="mt-2 font-semibold text-left mb-1 text-[15px] dark:text-white font-sans"
             >
               {{ slotProps.data.price }} $
-            </p>
+            </h5>
 
             <fwb-rating size="sm" :rating="1" :scale="1" class="md:h-6 h-15">
               <template #besideText>
-                <p class="ml-2 text-xs text-gray-500 dark:text-white">4.95</p>
+                <p class="ml-2 text-xs text-gray-500 dark:text-white font-sans">4.95</p>
               </template>
             </fwb-rating>
 

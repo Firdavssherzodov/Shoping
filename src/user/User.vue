@@ -1,6 +1,6 @@
 <template>
   <header1 />
-  <p class="text-center text-black py-5 font-medium">Shaxsiy kabinet</p>
+  <p class="text-center text-black py-5 font-medium font-sans">Shaxsiy kabinet</p>
 
   <div class="rounded-xl  md:w-2/5 w-full md:h-[40rem] h-full pb-96 m-auto bg-gray-100">
     <!-- userHeader -->
@@ -15,18 +15,18 @@
   <!-- userAvater -->
 <!-- userHeaderBody -->
 <div class="pt-8">
-<p class="font-semibold text-gray-700">Firdavs</p>
-<p class="py-0.5 text-gray-500">+998 99 939 39 48</p>
+<p class="font-medium font-sans">Firdavs</p>
+<p class="py-0.5 font-sans">+998 99 939 39 48</p>
 </div>
 <!-- /userHeaderBody -->
   </div>
     <!-- /userHeader -->
 <div class="flex justify-between py-4 items-center active:bg-slate-200 rounded-xl w- m-1 cursor-pointer">
-  <i class="pi  pi-shopping-bag text-black ps-4 md:text-2xl text-lg" > <span class="ps-3 text-lg">Buyurtmalar</span></i>
+  <i class="pi  pi-shopping-bag text-black ps-4 md:text-2xl text-lg" > <span class="ps-3 text-lg font-sans">Buyurtmalar</span></i>
   <i class="pi pi-chevron-right pe-4"></i>
 </div>
 <div class="flex justify-between py-4 items-center active:bg-slate-200 rounded-xl w- m-1 mt-1. cursor-pointer">
-  <i class="pi  pi-user text-black ps-4 md:text-2xl text-lg"> <span class="ps-3 text-lg">Profil</span></i>
+  <i class="pi  pi-user text-black ps-4 md:text-2xl text-lg"> <span class="ps-3 text-lg font-sans">Profil</span></i>
   <i class="pi pi-chevron-right pe-4"></i>
 </div>
   </div>

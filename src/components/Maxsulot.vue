@@ -28,17 +28,17 @@
               class="rounded-xl sm:w-28 w-24 sm:h-32 h-28 m-auto sm:my-7 my-3.5"
             />
             <p
-              class="pt-6 mx-2 overflow-hidden line-clamp-2 h-[60px] text-[0.8rem] text-black dark:text-white"
+              class="pt-6 mx-2 overflow-hidden line-clamp-2 h-[60px] text-[0.8rem] text-black dark:text-white font-sans"
             >
               {{ data.title }}
             </p>
-            <h5 class="mx-2 pt-2 text-dark font-semibold dark:text-white">
+            <h5 class="mx-2 pt-2 text-dark font-semibold dark:text-white font-sans">
               {{ data.price }} $
             </h5>
             <fwb-rating size="sm" :rating="4" class="pt-[0.30rem] px-2">
               <template #besideText>
                 <p
-                  class="ml-2 text-xs font-medium text-gray-500 dark:text-white"
+                  class="ml-2 text-xs font-medium text-gray-500 dark:text-white font-sans"
                 >
                   4.95
                 </p>
@@ -65,7 +65,7 @@
     v-model="currentPage"
     :total-pages="5"
     show-icons
-    class="md:my-10 mb-16 sm:py-10 pb-16 text-center align-text-bottom page text-black dark:text-white hidden"
+    class="md:my-10 mb-16 sm:py-10 pb-16 text-center align-text-bottom page text-black dark:text-white hidden font-sans"
   ></fwb-pagination>
 </template>
 
