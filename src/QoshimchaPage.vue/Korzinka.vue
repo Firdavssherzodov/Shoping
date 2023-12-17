@@ -23,8 +23,8 @@
       </div>
 
       <div class="flex pb-6">
-        <h6 class="font-bold ps-36 w-20 font-sans">${{ data.price }}</h6>
-        <div class="flex md:ps-32 ps-36">
+        <h6 class="font-bold md:ps-36 ps-32 w-20 font-sans">${{ data.price }}</h6>
+        <div class="flex md:ps-32 ps-[6.5rem]">
           <span class="border-red-500/100 border w-6 h-6 rounded">
             <i
               class="fa-solid fa-minus text-red-600 p-1 ps-[] cursor-pointer"
