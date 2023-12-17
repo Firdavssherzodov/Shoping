@@ -1,6 +1,6 @@
 <template>
   <header1 />
-  <div class="rounded-xl  md:w-2/5 w-full md:h-[48rem] h-full md:pb-0 pb-[35rem] m-auto bg-gray-100">
+  <div class="rounded-xl  md:w-2/5 w-full md:h-[48rem] h-full md:pb-0 pb-[31rem] m-auto bg-gray-100">
     <!-- userHeader -->
 <div class="userHeader md:rounded-xl rounded-none w-full h-[20%] flex rounded-b-none">
   <!-- userAvater -->
