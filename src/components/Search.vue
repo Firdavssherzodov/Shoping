@@ -29,7 +29,6 @@
     </fwb-input>
   </div>
 </template>
-<!-- sm:px-3 px-2 py-3  border sm:w-3/4 m-uto w-[84%] px-2 -->
 <script setup>
 import { products } from "../user/store/userStore";
 import { ref, watchEffect } from "vue";
@@ -39,7 +38,6 @@ import { FwbButton, FwbInput } from "flowbite-vue";
 const product_list = products();
 
 let Search = ref("");
-
 let data2 = JSON.parse(JSON.stringify(product_list.srt));
 
 watchEffect(() => {

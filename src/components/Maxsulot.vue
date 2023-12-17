@@ -84,48 +84,29 @@ import { products } from "../user/store/userStore";
 // const toast = useToast();
 const currentPage = ref(1);
 
-Pagination(currentPage);
-console.log(currentPage.value);
 const listProducts = products();
 
 // let id = ref(null);
 onMounted(() => {
   axios.get("https://fakestoreapi.com/products").then((resp) => {
-    // console.log(resp.data);
     if (resp.data) {
       resp.data.slice(0, 12).forEach((element) => {
         if (!!resp.data) {
-          listProducts.srt.push(element);
-          let loader = document.querySelector(".loader");
-          loader.classList.add("hidden");
-        } else {
-          let loader = document.querySelector(".loader");
-          loader.classList.remove("hidden");
-        }
-        // console.log(element);
+        listProducts.srt.push(el);
+        let loader = document.querySelector(".loader");
+        loader.classList.add("hidden");
+      } else {
+        let loader = document.querySelector(".loader");
+        loader.classList.remove("hidden");
+      }
       });
-    }
   });
 });
 
-function Pagination(pagination) {
-  console.log(pagination.value);
-  axios.get("https://fakestoreapi.com/products").then((resp) => {
-    let DaTA = resp.data;
-
-    if (pagination == 2) {
-      DaTA.slice(12, 20).forEach((el) => {});
-    }
-  });
-}
-
 function AddShop(idw) {
   axios.get(`https://fakestoreapi.com/products/${idw}`).then((resp) => {
-    // console.log(resp.data);
-
     listProducts.product_list.push(resp.data);
 
-    // console.log(listProducts.product_list);
     localStorage.setItem("savat", JSON.stringify(listProducts.product_list));
   });
   toast.add({
