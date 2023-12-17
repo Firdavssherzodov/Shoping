@@ -22,11 +22,11 @@
   </div>
     <!-- /userHeader -->
 <div class="flex justify-between py-4 items-center active:bg-slate-200 rounded-xl w- m-1 cursor-pointer">
-  <i class="pi  pi-shopping-bag text-black ps-4 md:text-2xl text-lg" > <span class="ps-3 md:text-lg text-sm font-sans">Buyurtmalar</span></i>
+  <i class="pi  pi-shopping-bag text-black ps-4 md:text-xl text-lg" > <span class="ps-3 md:text-[16px] text-sm font-sans">Buyurtmalar</span></i>
   <i class="pi pi-chevron-right pe-4"></i>
 </div>
 <div class="flex justify-between py-4 items-center active:bg-slate-200 rounded-xl w- m-1 mt-1. cursor-pointer">
-  <i class="pi  pi-user text-black ps-4 md:text-2xl text-lg"> <span class="ps-3 md:text-lg text-sm font-sans">Profil</span></i>
+  <i class="pi  pi-user text-black ps-4 md:text-xl text-lg"> <span class="ps-3 md:text-[16px] text-sm font-sans">Profil</span></i>
   <i class="pi pi-chevron-right pe-4"></i>
 </div>
   </div>
