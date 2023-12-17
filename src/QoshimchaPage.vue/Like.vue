@@ -100,16 +100,16 @@ function Delete(index) {
 onMounted(() => {
   Likes.value = JSON.parse(localStorage.getItem("likes"));
 
-if (!!Likes.value) {
-  if (Likes.value.length == 0) {
-    let text = document.querySelector(".text1");
-    text.classList.add("text2");
-  } else {
-    let text = document.querySelector(".text1");
-    text.classList.add("text3");
+  if (!!Likes.value) {
+    if (Likes.value.length == 0) {
+      let text = document.querySelector(".text1");
+      text.classList.add("text2");
+    } else {
+      let text = document.querySelector(".text1");
+      text.classList.add("text3");
+    }
   }
-}return;
- 
+  return;
 });
 </script>
 

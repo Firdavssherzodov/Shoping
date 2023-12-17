@@ -1,34 +1,35 @@
 <template>
-    <router-link to="/">
-    <i class="fa-solid fa-arrow-left md:ml-[25rem] ml-6 md:mt-20 mt-10 cursor-pointer md:text-3xl text-xl" >  O r q a g a</i>
-</router-link>
-    <div>
-<!-- ui verse -->
-<div class="form-box m-auto md:my-28 my-20 ">
-<form class="form">
-    <span class="title">Sign up</span>
-    <span class="subtitle">Create a free account with your email.</span>
-    <div class="form-container">
-      <input type="text" class="input " placeholder="Full Name">
-			<input type="email" class="input" placeholder="Email">
-			<input type="password" class="input" placeholder="Password">
+  <router-link to="/">
+    <i
+      class="fa-solid fa-arrow-left md:ml-[25rem] ml-6 md:mt-20 mt-10 cursor-pointer md:text-3xl text-xl"
+    >
+      O r q a g a</i
+    >
+  </router-link>
+  <div>
+    <!-- ui verse -->
+    <div class="form-box m-auto md:my-28 my-20">
+      <form class="form">
+        <span class="title">Sign up</span>
+        <span class="subtitle">Create a free account with your email.</span>
+        <div class="form-container">
+          <input type="text" class="input" placeholder="Full Name" />
+          <input type="email" class="input" placeholder="Email" />
+          <input type="password" class="input" placeholder="Password" />
+        </div>
+        <button>Sign up</button>
+      </form>
+      <div class="form-section">
+        <p>Have an account? <a href="">Log in</a></p>
+      </div>
     </div>
-    <button>Sign up</button>
-</form>
-<div class="form-section">
-  <p>Have an account? <a href="">Log in</a> </p>
-</div>
-</div>
-<!-- ui verse -->
-    </div>
+    <!-- ui verse -->
+  </div>
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
-
 .form-box {
   max-width: 400px;
   background: #f1f7fe;
@@ -62,7 +63,7 @@
   overflow: hidden;
   border-radius: 8px;
   background-color: #fff;
-  margin: 1rem 0 .5rem;
+  margin: 1rem 0 0.5rem;
   width: 100%;
 }
 
@@ -73,13 +74,13 @@
   height: 50px;
   width: 100%;
   border-bottom: 1px solid #eee;
-  font-size: .9rem;
+  font-size: 0.9rem;
   padding: 8px 15px;
 }
 
 .form-section {
   padding: 16px;
-  font-size: .85rem;
+  font-size: 0.85rem;
   background-color: #e0ecfb;
   box-shadow: rgb(0 0 0 / 8%) 0 -1px;
 }
@@ -87,7 +88,7 @@
 .form-section a {
   font-weight: bold;
   color: #0066ff;
-  transition: color .3s ease;
+  transition: color 0.3s ease;
 }
 
 .form-section a:hover {
@@ -105,7 +106,7 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color .3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .form button:hover {
