@@ -1,14 +1,14 @@
 <template>
-  <!-- <Toast position="top-center" group="pt" /> -->
+  <Toast position="top-center" group="pt" />
 
-  <section class="Maxsulotlar">
+  <section class="Maxsulotlar md:mb-2 mb-20">
     <div class="">
       <div
         class="div sm:w-full md:w-[80%] w-[98%] h-full m-auto flex flex-wrap relative"
       >
         <div
           class="kard sm:m-3 sm:w-[30%] sm:h-[40%] md:h-[40%] md:w-[15%] w-[45%] md:m-3 m-2 rounded-xl shadow-lg shadow-color1-500/50"
-          v-for="(data, index) in listProducts.srt "
+          v-for="(data, index) in listProducts.srt"
           :key="data.id"
         >
           <!-- {{ activeIndexes }} -->
@@ -17,9 +17,7 @@
           >
             <i
               :class="[
-                activeIndexes.includes(index)
-                  ? 'text-danger'
-                  : 'text-secondary',
+                activeIndexes.includes(index) ? 'text-[red]' : 'text-gray-400',
               ]"
               class="fa-regular fa-heart text-xl absolute sm:left-42 left-[80%] py-1 px-1 cursor-pointer text-gray-400"
               @click="Like(data.id, index)"
@@ -27,7 +25,7 @@
             <img
               :src="data.image"
               alt="inkas"
-              class="rounded-xl sm:w-28 w-24 sm:h-32 h-28 m-auto sm:my-7 my-3.5  "
+              class="rounded-xl sm:w-28 w-24 sm:h-32 h-28 m-auto sm:my-7 my-3.5"
             />
             <p
               class="pt-6 mx-2 overflow-hidden line-clamp-2 h-[60px] text-[0.8rem] text-black dark:text-white"
@@ -67,7 +65,7 @@
     v-model="currentPage"
     :total-pages="5"
     show-icons
-    class="sm:my-10 my-10 sm:py-10 pb-16 text-center align-text-bottom page text-black dark:text-white"
+    class="md:my-10 mb-16 sm:py-10 pb-16 text-center align-text-bottom page text-black dark:text-white hidden"
   ></fwb-pagination>
 </template>
 
@@ -79,21 +77,19 @@ import { FwbPagination } from "flowbite-vue";
 import axios from "axios";
 import { ref, onMounted } from "vue";
 import { products } from "../user/store/userStore";
-// import Toast from "primevue/toast";
-// import { useToast } from "primevue/usetoast";
-// const toast = useToast();
+import Toast from "primevue/toast";
+import { useToast } from "primevue/usetoast";
+const toast = useToast();
 const currentPage = ref(1);
 
 const listProducts = products();
 
-
 // let id = ref(null);
 onMounted(() => {
-  listProducts.srt =  []
+  listProducts.srt = [];
 
   axios.get("https://fakestoreapi.com/products").then((resp) => {
-
-listProducts.srt = resp.data
+    listProducts.srt = resp.data.slice(0,18);
     if (resp.data) {
       resp.data.slice(0, 12).forEach((element) => {
         // listProducts.srt.push(element)
@@ -101,9 +97,15 @@ listProducts.srt = resp.data
         if (!!resp.data) {
           let loader = document.querySelector(".loader");
           loader.classList.add("hidden");
+
+          let page = document.querySelector(".page");
+          page.classList.remove("hidden");
+          page.classList.add("block");
         } else {
           let loader = document.querySelector(".loader");
           loader.classList.remove("hidden");
+          let page = document.querySelector(".page");
+          page.classList.remove("block");
         }
         // console.log(element);
       });
@@ -130,7 +132,7 @@ const activeIndexes = ref([]);
 function Like(id, index) {
   if (activeIndexes.value.includes(index)) {
     activeIndexes.value.forEach((el, idx) => {
-      if (el == index) {
+      if (el == idx) {
         activeIndexes.value.splice(index, 1);
       }
     });
@@ -144,13 +146,4 @@ function Like(id, index) {
   });
 }
 </script>
-<style scoped>
-/* .diva {
-  width: 100%;
-  height: 900px;
-}
-.overflow {
-  overflow: none !important;
-  line-clamp: none;
-} */
-</style>
+<style scoped></style>

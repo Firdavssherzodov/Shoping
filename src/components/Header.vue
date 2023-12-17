@@ -51,7 +51,7 @@
         <p class="text-[11px] absolute left-[-0.1rem]">Savat</p>
         <Badge
           :value="countet.length"
-          class="absolute bottom-3 bg-color2"
+          class="absolute bottom-3 bg-color2 counter hidden"
         ></Badge>
       </div>
     </router-link>
@@ -89,17 +89,13 @@ let countet = ref([]);
 onMounted(async () => {
   countet.value = (await JSON.parse(localStorage.getItem("savat"))) || [];
 
-  // if (countet.value.length > 0) {
-  //   let count = document.querySelector(".counter");
-  //   count.style.display = "block";
-  //   let count2 = document.querySelector(".counter2");
-  //   count2.style.display = "block";
-  // } else {
-  //   let count = document.querySelector(".counter");
-  //   count.style.display = "none";
-  //   let count2 = document.querySelector(".counter2");
-  //   count2.style.display = "none";
-  // }
+  if (countet.value.length > 0) {
+    let count = document.querySelector(".counter");
+    count.classList.add = "block";
+  } else {
+    let count = document.querySelector(".counter");
+    count.classList.remove = "block";
+  }
 });
 </script>
 
@@ -113,4 +109,6 @@ onMounted(async () => {
   margin: 0px !important;
   justify-content: center;
 }
+
+
 </style>

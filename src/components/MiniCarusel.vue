@@ -5,19 +5,27 @@
       :numVisible="6"
       :numScroll="1"
       :responsiveOptions="responsiveOptions"
-      :autoplayInterval="3000"
+      :autoplayInterval="4000"
       class="ps-38"
     >
-      <template #item="slotProps">
+      <template #item="slotProps,index">
         <div
-          class="md:w-[80%] w-[95%] h-72 m-1 text-center py-5 px-3 rounded-xl shadow-lg shadow-color1-600/60 dark:bg-slate-50"
+          class="md:w-[80%] w-[95%] h-72 m-1 text-center py-5 px-3 rounded-xl shadow-lg shadow-color2-500/50 relative "
         >
-          <div class="mb-3">
+          <div class="mb-3 w-full  rounded-xl">
+            <i
+              :class="[
+                activeIndexes.includes(index) ? 'text-[red]' : 'text-gray-400',
+              ]"
+              class="fa-regular fa-heart text-lg absolute md:left-30 top-[-0.1rem] left-[75%] py-1 px-1 cursor-pointer text-gray-400"
+              @click="Like(slotProps.data.id, index)"
+            ></i>
             <img
               :src="slotProps.data.image"
               :alt="slotProps.data.title"
               class="w-20 h-24 shadow-2 m-auto rounded-lg"
             />
+           
           </div>
           <div>
             <p
@@ -104,6 +112,18 @@ const getSeverity = (status) => {
       return null;
   }
 };
+
+const activeIndexes = ref([]);
+function Like(id, index) {
+  if (activeIndexes.value.includes(index)) {
+    activeIndexes.value.forEach((el, idx) => {
+      if (el == idx) {
+        activeIndexes.value.splice(index, 1);
+      }
+    });
+  } else {
+    activeIndexes.value.push(index);
+  }}
 </script>
 <style scoped>
 :deep .p-carousel-item {

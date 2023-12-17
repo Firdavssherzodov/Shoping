@@ -2,32 +2,39 @@
   <!-- <Toast position="top-center" /> -->
 
   <Header1 />
-  <div class="w-full h-full ">
-    <p class="text-center text-gray-600">Savat</p>
-    <div class="kard border rounded-5" v-for="(data, index) in ff" :key="data">
-      <div class="d1 d-flex">
-        <img :src="data.image" alt="inkas" class="mx-4 my-3" />
-        <p class="py-4">{{ data.title }}</p>
+
+  <p class="text-center text-black py-5 font-medium">Savat</p>
+
+  <div
+    class="md:w-8/12 w-full h-full md:flex flex-wrap block md:ml-[23rem] m-auto pt-4 pb-36"
+  >
+    <div
+      class="kard border md:m-3 m-auto mt-2.5 rounded-xl md:w-96 w-11/12 md:h-30"
+      v-for="(data, index) in ff"
+      :key="data"
+    >
+      <div class="flex">
+        <img :src="data.image" alt="inkas" class="m-5 mx-7 w-1/5 md:h-20 h-24" />
+        <p class="py-6 text-[13px] w-2/4">{{ data.title }}</p>
         <i
-          class="fa-solid fa-trash-can fs-5 my-4 me-4"
-          style="color: #eb0505; cursor: pointer"
+          class="fa-solid fa-trash-can text-lg py-3 md:ml-7 ml-5 text-red-600 cursor-pointer"
           @click="Delete(index)"
         ></i>
       </div>
-      <div class="flex">
-        <h6 class="fw-bold py-2">${{ data.price }}</h6>
-        <div class="flex">
-          <span class="s1 rounded" style="background-color: #eb0505">
+
+      <div class="flex pb-6">
+        <h6 class="font-bold ps-36">${{ data.price }}</h6>
+        <div class="flex md:ps-20 ps-24">
+          <span class="border-red-500/100 border w-6 h-6 rounded">
             <i
-              class="fa-solid fa-minus text-white border-primary ps-0 py-2"
-              style="cursor: pointer"
+              class="fa-solid fa-minus text-red-600 p-1 ps-[] cursor-pointer"
               @click="minus(data)"
             ></i>
           </span>
-          <p class="px-2 mx-2 mt-1" style="width: 25px">{{ data.count }}</p>
-          <span class="s2 rounded">
+          <p class="px-2 mx-2 w-6">{{ data.count }}</p>
+          <span class="rounded border border-color1/100 w-6 h-6">
             <i
-              class="fa-solid fa-plus text-primary border-primary ps-0 py-2"
+              class="fa-solid fa-plus text-color1 cursor-pointer p-1"
               style="cursor: pointer"
               @click="plus(data)"
             ></i>
@@ -38,18 +45,17 @@
   </div>
 
   <section
-    class="umumiy border border-x-0 bg-white md:w-7/12 w-full h-20 fixed md:left-[25%] left-0 md:bottom-1 bottom-16 flex justify-between
-      rounded-t-lg items-center"
+    class="umumiy border border-x-0 bg-white md:w-8/12 w-full h-20 fixed md:left-[18.5%] left-0 md:bottom-1 bottom-16 flex justify-between rounded-t-lg items-center"
   >
     <ul class="ul py-0">
-      <li class="md:pt-1 ml-3 my-1 md:text-base text-[13px] md:w-80 w-[200px]">
+      <li class="md:pt-1 ml-3 my-1 md:text-base text-[13px] md:w-80 w-[290px]">
         Umumiy narx : $ {{ total }}
       </li>
       <li class="md:pt-1 ml-3 md:text-base text-[13px]">
         {{ srt?.length }} ta mahsulot
       </li>
     </ul>
-    <fwb-button color="default" class="bg-color2 md:mr-5 mr-3  "
+    <fwb-button color="default" class="bg-color2 md:mr-5 mr-3"
       >Buyurtma berish</fwb-button
     >
   </section>
@@ -87,8 +93,6 @@ onMounted(() => {
       });
   }
 
-
-
   Canculator();
   // TakrorId();
 });
@@ -123,22 +127,7 @@ function plus(data) {
     total = price2;
   }
 }
-// TakrorId
-// function TakrorId() {
-//   let uniqueItems = {};
 
-//   for (let item of ff.value) {
-//     if (uniqueItems[item.id]) {
-//       uniqueItems[item.id].count++;
-//     } else {
-//       uniqueItems[item.id] = item;
-//       uniqueItems[item.id].count = 1;
-//     }
-//   }
-//   ff.value = uniqueItems;
-//   console.log(uniqueItems);
-//   console.log(ff.value);
-// }
 // Savatdagi barcha mahsulotlarning umumiy narxini hisoblash
 function Canculator() {
   for (let item of ff.value) {
