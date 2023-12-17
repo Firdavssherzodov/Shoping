@@ -17,7 +17,7 @@
           >
             <i
               :class="[
-                activeIndexes.includes(index) ? 'text-[red]' : 'text-gray-400',
+                activeIndexes.includes(index) ? 'text-red-600' : 'text-gray-400',
               ]"
               class="fa-regular fa-heart text-xl absolute sm:left-42 left-[80%] py-1 px-1 cursor-pointer text-gray-400"
               @click="Like(data.id, index)"
@@ -32,7 +32,9 @@
             >
               {{ data.title }}
             </p>
-            <h5 class="mx-2 pt-2 text-dark font-semibold dark:text-white font-sans">
+            <h5
+              class="mx-2 pt-2 text-dark font-semibold dark:text-white font-sans"
+            >
               {{ data.price }} $
             </h5>
             <fwb-rating size="sm" :rating="4" class="pt-[0.30rem] px-2">
@@ -89,7 +91,7 @@ onMounted(() => {
   listProducts.srt = [];
 
   axios.get("https://fakestoreapi.com/products").then((resp) => {
-    listProducts.srt = resp.data.slice(0,18);
+    listProducts.srt = resp.data.slice(0, 18);
     if (resp.data) {
       resp.data.slice(0, 12).forEach((element) => {
         // listProducts.srt.push(element)
@@ -129,6 +131,7 @@ function AddShop(idw) {
 }
 
 const activeIndexes = ref([]);
+
 function Like(id, index) {
   if (activeIndexes.value.includes(index)) {
     activeIndexes.value.forEach((el, idx) => {
@@ -139,11 +142,6 @@ function Like(id, index) {
   } else {
     activeIndexes.value.push(index);
   }
-
-  axios.get(`https://fakestoreapi.com/products/${id}`).then((resp) => {
-    listProducts.favorites.push(resp.data);
-    localStorage.setItem("likes", JSON.stringify(listProducts.favorites));
-  });
 }
 </script>
 <style scoped></style>
