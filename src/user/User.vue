@@ -1,10 +1,9 @@
 <template>
   <header1 />
-  <p class="text-center text-black py-5 font-medium font-sans">Shaxsiy kabinet</p>
 
   <div class="rounded-xl  md:w-2/5 w-full md:h-[40rem] h-full md:pb-0 pb-96 m-auto bg-gray-100">
     <!-- userHeader -->
-<div class="userHeader rounded-xl w-full h-[20%] flex rounded-b-none">
+<div class="userHeader md:rounded-xl rounded-none w-full h-[20%] flex rounded-b-none">
   <!-- userAvater -->
     <div class="p-5">
       <fwb-avatar
