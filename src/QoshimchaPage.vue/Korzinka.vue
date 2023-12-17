@@ -17,7 +17,7 @@
         <img :src="data.image" alt="inkas" class="m-5 mx-7 w-1/5 md:h-20 h-24" />
         <p class="py-6 text-[13px] w-2/4 font-sans">{{ data.title }}</p>
         <i
-          class="fa-solid fa-trash-can text-lg py-3 md:ml-6 ml-5 text-red-600 cursor-pointer"
+          class="fa-solid fa-trash-can text-xl py-3 md:ml-6 ml-2  text-red-600 cursor-pointer"
           @click="Delete(index)"
         ></i>
       </div>
