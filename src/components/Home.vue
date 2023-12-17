@@ -1,12 +1,17 @@
 <template>
-  <div class="bg-white dark:bg-white">
+  <div>
     <Header1></Header1>
     <Search></Search>
-    <!-- <Carusel></Carusel> -->
+    <Carusel></Carusel>
     <Bolim></Bolim>
     <Mini></Mini>
 
-    <Maxsulot></Maxsulot>
+    <Maxsulot>
+
+    <Mini></Mini>
+
+    </Maxsulot>
+
   </div>
 </template>
 
@@ -15,8 +20,10 @@ import Header1 from "../components/Header.vue";
 import Search from "../components/Search.vue";
 import Bolim from "../components/Bolimlar.vue";
 import Maxsulot from "../components/Maxsulot.vue";
-// import Carusel from "../components/Karusel.vue";
+import Carusel from "../components/Carusel.vue";
 import Mini from "../components/MiniCarusel.vue";
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>

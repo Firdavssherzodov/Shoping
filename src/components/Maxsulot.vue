@@ -1,14 +1,14 @@
 <template>
   <!-- <Toast position="top-center" group="pt" /> -->
 
-  <section class="Maxsulotlar bg-white dark:bg-white">
+  <section class="Maxsulotlar">
     <div class="">
       <div
         class="div sm:w-full md:w-[80%] w-[98%] h-full m-auto flex flex-wrap relative"
       >
         <div
           class="kard sm:m-3 sm:w-[30%] sm:h-[40%] md:h-[40%] md:w-[15%] w-[45%] md:m-3 m-2 rounded-xl shadow-lg shadow-color1-500/50"
-          v-for="(data, index) in listProducts.srt"
+          v-for="(data, index) in listProducts.srt "
           :key="data.id"
         >
           <!-- {{ activeIndexes }} -->
@@ -27,10 +27,10 @@
             <img
               :src="data.image"
               alt="inkas"
-              class="rounded-xl sm:w-28 w-24 sm:h-32 h-28 m-auto sm:my-7 my-3.5"
+              class="rounded-xl sm:w-28 w-24 sm:h-32 h-28 m-auto sm:my-7 my-3.5  "
             />
             <p
-              class="pt-6 mx-2 overflow-hidden line-clamp-2 h-[60px] text-[0.8rem] dark:text-white"
+              class="pt-6 mx-2 overflow-hidden line-clamp-2 h-[60px] text-[0.8rem] text-black dark:text-white"
             >
               {{ data.title }}
             </p>
@@ -67,7 +67,7 @@
     v-model="currentPage"
     :total-pages="5"
     show-icons
-    class="sm:my-10 my-10 sm:py-10 pb-16 text-center align-text-bottom page"
+    class="sm:my-10 my-10 sm:py-10 pb-16 text-center align-text-bottom page text-black dark:text-white"
   ></fwb-pagination>
 </template>
 
@@ -86,20 +86,28 @@ const currentPage = ref(1);
 
 const listProducts = products();
 
+
 // let id = ref(null);
 onMounted(() => {
+  listProducts.srt =  []
+
   axios.get("https://fakestoreapi.com/products").then((resp) => {
+
+listProducts.srt = resp.data
     if (resp.data) {
       resp.data.slice(0, 12).forEach((element) => {
+        // listProducts.srt.push(element)
+
         if (!!resp.data) {
-        listProducts.srt.push(el);
-        let loader = document.querySelector(".loader");
-        loader.classList.add("hidden");
-      } else {
-        let loader = document.querySelector(".loader");
-        loader.classList.remove("hidden");
-      }
+          let loader = document.querySelector(".loader");
+          loader.classList.add("hidden");
+        } else {
+          let loader = document.querySelector(".loader");
+          loader.classList.remove("hidden");
+        }
+        // console.log(element);
       });
+    }
   });
 });
 
@@ -137,12 +145,12 @@ function Like(id, index) {
 }
 </script>
 <style scoped>
-.diva {
+/* .diva {
   width: 100%;
   height: 900px;
 }
 .overflow {
   overflow: none !important;
   line-clamp: none;
-}
+} */
 </style>

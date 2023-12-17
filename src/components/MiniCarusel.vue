@@ -1,5 +1,5 @@
 <template>
-  <div class="card dark:bg-white my-3 md:w-4/5 w-full m-auto ">
+  <div class="card dark:bg-white my-3 md:w-4/5 w-full m-auto">
     <Carousel
       :value="products"
       :numVisible="6"
@@ -10,23 +10,23 @@
     >
       <template #item="slotProps">
         <div
-          class= "md:w-[80%] w-[95%] h-72 m-1 text-center py-5 px-3 rounded-xl shadow-lg shadow-color1-600/60 dark:bg-slate-50"
+          class="md:w-[80%] w-[95%] h-72 m-1 text-center py-5 px-3 rounded-xl shadow-lg shadow-color1-600/60 dark:bg-slate-50"
         >
           <div class="mb-3">
             <img
               :src="slotProps.data.image"
               :alt="slotProps.data.title"
-              class=" w-20 h-24 shadow-2 m-auto rounded-lg"
+              class="w-20 h-24 shadow-2 m-auto rounded-lg"
             />
           </div>
           <div>
             <p
-              class="mb-1 px-0.5 overflow-hidden line-clamp-2 text-dark text-[0.8rem] pt-2 text-left text-black dark:text-white"
+              class="mb-1 px-0.5 overflow-hidden line-clamp-2 h-12 text-[0.8rem] pt-2 text-left text-black dark:text-white"
             >
               {{ slotProps.data.title }}
             </p>
             <p
-              class="mt-2 font-bold text-left mb-1 h-15 text-[15px] dark:text-white"
+              class="mt-2 font-bold text-left mb-1 text-[15px] dark:text-white"
             >
               {{ slotProps.data.price }} $
             </p>
@@ -39,9 +39,8 @@
 
             <fwb-button
               color="green"
-              class="rounded-lg my-2 sm:ml-36 md:ml-28 ml-[67%]"
+              class="rounded-lg my-2 sm:ml-36 md:ml-28 ml-[60%]"
               outline
-              @click="AddShop(slotProps.data.id)"
             >
               <i class="fa-solid fa-cart-shopping"></i
             ></fwb-button>
@@ -107,10 +106,9 @@ const getSeverity = (status) => {
 };
 </script>
 <style scoped>
-
-:deep .p-carousel-item{
+:deep .p-carousel-item {
   padding: 0px;
   margin: 0px;
-width: 10% ;
+  width: 10%;
 }
 </style>
