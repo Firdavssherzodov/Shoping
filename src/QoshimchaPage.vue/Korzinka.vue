@@ -48,7 +48,7 @@
     class="umumiy border border-x-0 bg-white md:w-8/12 w-full h-20 fixed md:left-[18.5%] left-0 md:bottom-1 bottom-16 flex justify-between rounded-t-lg items-center"
   >
     <ul class="ul py-0">
-      <li class="md:pt-1 ml-3 my-1 md:text-base text-[13px] md:w-80 w-[250px] font-sans">
+      <li class="md:pt-1 ml-3 my-1 md:text-base text-[13px] md:w-80 w-[180px] font-sans">
         Umumiy narx : $ {{ total }}
       </li>
       <li class="md:pt-1 ml-3 md:text-base text-[13px] font-sans">
