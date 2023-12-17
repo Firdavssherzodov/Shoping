@@ -16,12 +16,14 @@
           <fwb-navbar-link link="/"> Bosh sahifa </fwb-navbar-link>
           <fwb-navbar-link link="/search"> Katalog </fwb-navbar-link>
           <fwb-navbar-link link="/korzinka"> Savat </fwb-navbar-link>
-          <fwb-navbar-link link="/users"> Kabinet </fwb-navbar-link>
+          <fwb-navbar-link link="/user"> Kabinet </fwb-navbar-link>
         </fwb-navbar-collapse>
       </template>
       <template #right-side>
         <fwb-button class="mr-2 font-normal" outline> Log in </fwb-button>
-        <fwb-button class="font-bold"> Sigin up </fwb-button>
+        <router-link to="/registration">
+        <fwb-button class="font-bold" > Sigin up </fwb-button>
+      </router-link>
       </template>
     </fwb-navbar>
   </div>
