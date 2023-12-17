@@ -17,5 +17,3 @@ import MiniK from '../components/MiniCarusel.vue'
 </script>
 
 <style  scoped>
-
-</style>
