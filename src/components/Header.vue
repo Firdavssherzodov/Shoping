@@ -33,7 +33,7 @@
   >
     <router-link to="/">
       <div class="relative">
-        <a href="#" class="fa-solid fa-house text-xl text-gray-500"></a>
+        <a href="#" class="pi pi-home text-xl text-gray-500"></a>
 
         <p class="text-[11px] absolute left-[-1rem] z-30 font-sans">Bosh/sahifa</p>
       </div>
@@ -42,14 +42,14 @@
       <div class="relative">
         <a
           href="#"
-          class="fa-solid fa-magnifying-glass text-xl text-gray-500"
+          class="pi pi-search text-xl text-gray-500"
         ></a>
         <p class="text-[11px] absolute left-[-0.6rem] font-sans">Katalog</p>
       </div>
     </router-link>
     <router-link to="/korzinka">
       <div class="relative">
-        <a href="#" class="fa-solid fa-cart-shopping text-xl text-gray-500"></a>
+        <a href="#" class="pi pi-shopping-bag text-xl text-gray-500"></a>
         <p class="text-[11px] absolute left-[-0.1rem] font-sans">Savat</p>
         <Badge
           :value="countet.length"
@@ -59,13 +59,13 @@
     </router-link>
     <router-link to="/">
       <div class="relative">
-        <a href="#" class="fa-regular fa-heart text-xl text-gray-500"></a>
+        <a href="#" class="pi pi-heart text-xl text-gray-500"></a>
         <p class="text-[11px] absolute left-[-1rem] font-sans">Saralangan</p>
       </div>
     </router-link>
     <router-link to="/user">
       <div class="relative">
-        <a href="#" class="fa-regular fa-user text-xl text-gray-500"></a>
+        <a href="#" class="pi pi-user text-xl text-gray-500"></a>
         <p class="text-[11px] absolute left-[-0.6rem] font-sans">Kabinet</p>
       </div>
     </router-link>

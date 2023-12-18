@@ -54,7 +54,7 @@
               outline
               @click="AddShop(slotProps.data.id)"
             >
-              <i class="fa-solid fa-cart-shopping"></i
+              <i class="pi pi-shopping-bag"></i
             ></fwb-button>
           </div>
         </div>
