@@ -9,22 +9,22 @@
     class="md:w-8/12 w-full h-full md:flex flex-wrap block md:ml-[23rem] m-auto pt-4 pb-36"
   >
     <div
-      class="kard border md:m-3 m-auto mt-2.5 rounded-xl md:w-96 w-11/12 md:h-30 shadow-lg shadow-color1-500/50"
+      class="kard border md:m-3 m-auto mt-2.5 rounded-xl md:w-96 w-11/12 md:h-36 h-32 shadow-lg shadow-color1-500/50 hover:opacity-75 "
       v-for="(data, index) in srt"
       :key="data"
     >
       <div class="flex">
-        <img :src="data.image" alt="inkas" class="m-5 mx-7 w-1/5 md:h-20 h-24" />
+        <img :src="data.image" alt="inkas" class="m-5 mx-7 w-1/5 md:h-20 h-20" />
         <p class="py-6 text-[13px] w-2/4 font-sans">{{ data.title }}</p>
         <i
-          class="fa-solid fa-trash-can text-xl py-3 md:ml-6 ml-2  text-red-600 cursor-pointer"
+          class="fa-solid fa-trash-can md:text-xl text-lg py-3 md:ml-6 ml-2  text-red-600 cursor-pointer"
           @click="Delete(index)"
         ></i>
       </div>
 
-      <div class="flex pb-6">
-        <h6 class="font-bold md:ps-36 ps-32 w-20 font-sans">${{ data.price }}</h6>
-        <div class="flex md:ps-32 ps-[6.5rem]">
+      <div class="flex pb-6 mt-[-2rem]">
+        <h6 class="font-bold md:ps-32 ps-32 w-20 font-sans">${{ data.price }}</h6>
+        <div class="flex md:ps-32 ps-[6.6rem]">
           <span class="border-red-500/100 border w-6 h-6 rounded">
             <i
               class="fa-solid fa-minus text-red-600 p-1 ps-[] cursor-pointer"

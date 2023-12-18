@@ -10,24 +10,27 @@
     <!-- ui verse -->
     <div class="form-box m-auto md:my-28 my-20">
       <form class="form">
-        <span class="title">Sign up</span>
-        <span class="subtitle">Create a free account with your email.</span>
-        <div class="form-container">
-          <input type="text" class="input" placeholder="Full Name" />
-          <input type="email" class="input" placeholder="Email" />
-          <input type="password" class="input" placeholder="Password" />
+        <span class="title font-sans">Ro'yxatdan o'tish</span>
+        <span class="subtitle font-sans">Telfon raqamingiz bilan bepul hisob yarating.</span>
+        <div class="form-container font-sans">
+          <input type="text" class="input" placeholder="Toliq ismingiz" />
+          <input type="email" class="input" placeholder="Telfon raqamingiz" />
+          <input type="password" class="input" placeholder="O'zingiz uchun tahallus" />
         </div>
-        <button>Sign up</button>
+        <button class="font-sans">Ro'yxatdan o'tish</button>
       </form>
-      <div class="form-section">
-        <p>Have an account? <a href="">Log in</a></p>
+      <div class="form-section font-sans">
+        <p>Hisobingiz bormi? <a href="" >Kirish</a></p>
       </div>
     </div>
     <!-- ui verse -->
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+
+
+</script>
 
 <style lang="scss" scoped>
 .form-box {
@@ -109,3 +112,7 @@
   transition: background-color 0.3s ease;
 }
 
+.form button:hover {
+  background-color: #005ce6;
+}
+</style>

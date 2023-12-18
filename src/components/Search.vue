@@ -1,6 +1,6 @@
 <template>
   <div
-    class="sm:w-2/4 w-11/12 m-auto sm:mt-4 mt-5 focus:relative focus:z-[99999]"
+    class="sm:w-2/4 w-11/12 m-auto sm:mt-4 mt-5 focus:relative focus:z-[9999999]"
   >
     <fwb-input
       v-model="Search"

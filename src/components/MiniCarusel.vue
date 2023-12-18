@@ -3,7 +3,7 @@
 
   <div class="card dark:bg-white my-3 md:w-4/5 w-full m-auto">
     <Carousel
-      :value="products"
+      :value="products1"
       :numVisible="6"
       :numScroll="1"
       :responsiveOptions="responsiveOptions"
@@ -72,14 +72,16 @@ import { useToast } from "primevue/usetoast";
 const toast = useToast();
 import { ref, onMounted } from "vue";
 import axios from "axios";
+import { products } from "../user/store/userStore";
+const listProducts = products();
 
 onMounted(() => {
   axios
     .get("https://fakestoreapi.com/products")
-    .then((data) => (products.value = data.data));
+    .then((data) => (products1.value = data.data));
 });
 
-const products = ref();
+const products1 = ref();
 const responsiveOptions = ref([
   {
     breakpoint: "1400px",
