@@ -8,7 +8,9 @@
     <Maxsulot> </Maxsulot>
 
     <Mini></Mini>
-    <!-- <Footer></Footer> -->
+    
+    <Maxsulot> </Maxsulot>
+
   </div>
 </template>
 

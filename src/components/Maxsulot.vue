@@ -59,7 +59,7 @@
           </div>
         </div>
         <!-- loading -->
-        <fwb-spinner size="12" class="loader mx-auto my-40" />
+        <fwb-spinner size="12" class="loader mx-auto my-40 " />
         <!-- loading -->
       </div>
     </div>
