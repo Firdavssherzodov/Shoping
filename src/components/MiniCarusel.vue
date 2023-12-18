@@ -1,4 +1,6 @@
 <template>
+  <Toast position="top-center" group="pt" />
+
   <div class="card dark:bg-white my-3 md:w-4/5 w-full m-auto">
     <Carousel
       :value="products"
@@ -8,11 +10,11 @@
       :autoplayInterval="4000"
       class="ps-38"
     >
-      <template #item="slotProps,index">
+      <template #item="slotProps, index">
         <div
-          class="md:w-[80%] w-[95%] h-72 m-1 text-center py-5 px-3 rounded-xl shadow-lg shadow-color2-500/50 relative "
+          class="md:w-[80%] w-[95%] h-72 m-1 text-center py-5 px-3 rounded-xl shadow-lg shadow-color2-500/50 relative"
         >
-          <div class="mb-3 w-full  rounded-xl">
+          <div class="pb-3 w-full rounded-x ">
             <i
               :class="[
                 activeIndexes.includes(index) ? 'text-[red]' : 'text-gray-400',
@@ -25,7 +27,6 @@
               :alt="slotProps.data.title"
               class="w-20 h-24 shadow-2 m-auto rounded-lg"
             />
-           
           </div>
           <div>
             <p
@@ -41,7 +42,9 @@
 
             <fwb-rating size="sm" :rating="1" :scale="1" class="md:h-6 h-15">
               <template #besideText>
-                <p class="ml-2 text-xs text-gray-500 dark:text-white font-sans">4.95</p>
+                <p class="ml-2 text-xs text-gray-500 dark:text-white font-sans">
+                  4.95
+                </p>
               </template>
             </fwb-rating>
 
@@ -49,6 +52,7 @@
               color="green"
               class="rounded-lg my-2 sm:ml-36 md:ml-28 ml-[60%]"
               outline
+              @click="AddShop(slotProps.data.id)"
             >
               <i class="fa-solid fa-cart-shopping"></i
             ></fwb-button>
@@ -63,7 +67,9 @@
 import Carousel from "primevue/carousel";
 import { FwbRating } from "flowbite-vue";
 import { FwbButton } from "flowbite-vue";
-
+import Toast from "primevue/toast";
+import { useToast } from "primevue/usetoast";
+const toast = useToast();
 import { ref, onMounted } from "vue";
 import axios from "axios";
 
@@ -123,7 +129,23 @@ function Like(id, index) {
     });
   } else {
     activeIndexes.value.push(index);
-  }}
+  }
+}
+//
+function AddShop(idw) {
+  axios.get(`https://fakestoreapi.com/products/${idw}`).then((resp) => {
+    listProducts.product_list.push(resp.data);
+
+    localStorage.setItem("savat", JSON.stringify(listProducts.product_list));
+  });
+  toast.add({
+    severity: "success",
+    summary: "Maxsulot savatda",
+    detail: "",
+    group: "pt",
+    life: 1000,
+  });
+}
 </script>
 <style scoped>
 :deep .p-carousel-item {

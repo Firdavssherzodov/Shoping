@@ -13,11 +13,13 @@
         >
           <!-- {{ activeIndexes }} -->
           <div
-            class="div_img rounded-xl bg-gray-100 sm:h-[55%] h-[50%] border relative"
+            class="div_img rounded-xl rounded-b-none bg-gray-100 sm:h-[55%] h-[50%] border relative"
           >
             <i
               :class="[
-                activeIndexes.includes(index) ? 'text-red-600' : 'text-gray-400',
+                activeIndexes.includes(index)
+                  ? 'text-red-600'
+                  : 'text-gray-400',
               ]"
               class="fa-regular fa-heart text-xl absolute sm:left-42 left-[80%] py-1 px-1 cursor-pointer text-gray-400"
               @click="Like(data.id, index)"
