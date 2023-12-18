@@ -150,9 +150,9 @@ function AddShop(idw) {
 }
 </script>
 <style scoped>
-:deep .p-carousel-item {
+/* :deep .p-carousel-item {
   padding: 0px;
   margin: 0px;
   width: 10%;
-}
+} */
 </style>

@@ -6,6 +6,8 @@
     <Bolim></Bolim>
     <Mini></Mini>
     <Maxsulot> </Maxsulot>
+
+    <Mini></Mini>
     <!-- <Footer></Footer> -->
   </div>
 </template>
