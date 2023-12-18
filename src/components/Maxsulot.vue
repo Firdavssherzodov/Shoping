@@ -7,7 +7,7 @@
         class="div sm:w-full md:w-[80%] w-[98%] h-full m-auto flex flex-wrap relative"
       >
         <div
-          class="kard sm:m-3 sm:w-[30%] sm:h-[40%] md:h-[40%] md:w-[15%] w-[45%] md:m-3 m-2 rounded-xl hover:shadow-xl shadow-color1-500/50  cursor-pointer"
+          class="kard sm:m-3 sm:w-[30%] sm:h-[40%] md:h-[40%] md:w-[15%] w-[45%] md:m-3 m-2 rounded-xl hover:shadow-xl shadow-color1-500/50  cursor-pointer dark:bg-white"
           v-for="(data, index) in listProducts.srt"
           :key="data.id"
         >

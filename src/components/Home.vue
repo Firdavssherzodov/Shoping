@@ -5,13 +5,8 @@
     <Carusel></Carusel>
     <Bolim></Bolim>
     <Mini></Mini>
-
-    <Maxsulot>
-
-    <Mini></Mini>
-
-    </Maxsulot>
-
+    <Maxsulot> </Maxsulot>
+    <!-- <Footer></Footer> -->
   </div>
 </template>
 
@@ -22,8 +17,7 @@ import Bolim from "../components/Bolimlar.vue";
 import Maxsulot from "../components/Maxsulot.vue";
 import Carusel from "../components/Carusel.vue";
 import Mini from "../components/MiniCarusel.vue";
+// import Footer from "../components/footer.vue";
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
