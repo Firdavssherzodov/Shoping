@@ -33,7 +33,7 @@
           <p class="px-2 mx-2 w-6 font-sans">{{ data.count }}</p>
           <span class="rounded border border-color1/100 w-6 h-6">
             <i
-              class="fa-solid fa-plus text-color1 cursor-pointer p-1 cursor-pointer"
+              class="fa-solid fa-plus text-color1 cursor-pointer p-1 "
             ></i>
           </span>
         </div>
