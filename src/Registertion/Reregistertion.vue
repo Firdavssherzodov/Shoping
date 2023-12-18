@@ -109,7 +109,3 @@
   transition: background-color 0.3s ease;
 }
 
-.form button:hover {
-  background-color: #005ce6;
-}
-</style>
