@@ -2,14 +2,17 @@
   <div class="sm:w-[80%] w-full m-auto sm:block hidden">
     <fwb-navbar>
       <template #logo>
+        <router-link to="/">
         <fwb-navbar-logo
           alt="Jalolxon Market logo"
           image-url="/images/header.icons.png"
           link="#"
           class="text-color1 relative font-sans"
         >
+        
           Jalolxon Market
         </fwb-navbar-logo>
+      </router-link>
       </template>
       <template #default="{ isShowMenu }">
         <fwb-navbar-collapse :is-show-menu="isShowMenu" class="pe-32">
