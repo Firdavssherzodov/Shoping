@@ -3,7 +3,7 @@
 
   <Header1 />
 
-  <p class="text-center text-black py-5 font-medium font-sans">Savat</p>
+  <p class="text-center text-black pt-5 font-medium font-sans">Savat</p>
 
   <div
     class="md:w-8/12 w-full h-full md:flex flex-wrap block md:ml-[23rem] m-auto pt-4 pb-36"
