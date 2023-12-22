@@ -2,15 +2,10 @@
   <div>
     <Header1></Header1>
     <Search></Search>
-    <Carusel></Carusel>
+    <!-- <Carusel></Carusel> -->
     <Bolim></Bolim>
     <Mini></Mini>
     <Maxsulot> </Maxsulot>
-
-    <Mini></Mini>
-    
-    <Maxsulot> </Maxsulot>
-
   </div>
 </template>
 

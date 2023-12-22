@@ -17,7 +17,7 @@ const router = createRouter({
     {
       path: "/user",
       name: "user",
-      component: () => import("../user/User.vue"),
+      component: () => import("../User/User.vue"),
     },
     {
       path: "/search",
@@ -30,10 +30,15 @@ const router = createRouter({
       component: () => import("../QoshimchaPage.vue/Like.vue"),
     },
     {
-      path:'/registration',
-      name:'registration',
-      component:()=>import('../Registertion/Reregistertion.vue')
-    }
+      path: "/registration",
+      name: "registration",
+      component: () => import("../Registertion/Reregistertion.vue"),
+    },
+    {
+      path: "/AdminHome",
+      name: "admin",
+      component: () => import("../Admin/Admin.vue"),
+    },
   ],
 });
 

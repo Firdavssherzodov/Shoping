@@ -12,9 +12,9 @@
     >
       <template #item="slotProps, index">
         <div
-          class="md:w-[80%] w-[95%]  h-72 m-1 text-center py-5 px-3 rounded-xl shadow-lg shadow-color2-500/50 relative hover:opacity-75 cursor-pointer"
+          class="md:w-[80%] w-[95%] h-72 m-1 text-center py-5 px-3 rounded-xl shadow-lg shadow-color2-500/50 relative hover:opacity-75 cursor-pointer"
         >
-          <div class="pb-3 w-full rounded-x ">
+          <div class="pb-3 w-full rounded-x">
             <i
               :class="[
                 activeIndexes.includes(index) ? 'text-[red]' : 'text-gray-400',

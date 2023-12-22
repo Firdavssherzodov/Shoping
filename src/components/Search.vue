@@ -26,25 +26,32 @@
         </svg>
       </template>
       <template #suffix>
-        <fwb-button>Search</fwb-button>
+        <span @click="">
+          <fwb-button>Search</fwb-button>
+        </span>
       </template>
     </fwb-input>
   </div>
 </template>
 <script setup>
 import { products } from "../user/store/userStore";
-import { ref, watchEffect } from "vue";
+import { ref, computed } from "vue";
 
 import { FwbButton, FwbInput } from "flowbite-vue";
+
 const product_list = products();
-let Search = ref("");
 let data2 = JSON.parse(JSON.stringify(product_list.srt));
 
-watchEffect(() => {
-  let Data1 = data2.filter((list) => {
-    return list.title.toUpperCase().includes(Search.value.toUpperCase());
+let Search = ref("");
+
+let findSearch = () => {
+  return computed(() => {
+    return data2.filter((list) => {
+      return list.title.toUpperCase().includes(Search.value.toUpperCase());
+    });
   });
-});
+};
+console.log(findSearch);
 </script>
 
 <style scoped>
