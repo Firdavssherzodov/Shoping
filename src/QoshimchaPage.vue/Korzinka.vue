@@ -75,7 +75,6 @@ let srt = ref([]);
 onMounted(() => {
   srt.value = [];
   srt.value = JSON.parse(localStorage.getItem("savat"));
-console.log(srt.value);
   // if (!!srt.value) {
   //   if (!!srt.value)
   //     srt.value.forEach((el) => {

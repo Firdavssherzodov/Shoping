@@ -3,7 +3,7 @@
     class="sm:w-2/4 w-11/12 m-auto sm:mt-4 mt-5 focus:relative focus:z-[9999999]"
   >
     <fwb-input
-      v-model="Search"
+      v-model="product_list.Search"
       placeholder=" search query"
       size="lg"
       class="rounded-xl sm:py-3 py-[0.8rem] sm:my-[0.30rem] my-[0.28rem] border-color1 text-gray-500 font-sans"
@@ -35,23 +35,11 @@
 </template>
 <script setup>
 import { products } from "../user/store/userStore";
-import { ref, computed } from "vue";
+import { ref, computed, watchEffect } from "vue";
 
 import { FwbButton, FwbInput } from "flowbite-vue";
 
 const product_list = products();
-let data2 = JSON.parse(JSON.stringify(product_list.srt));
-
-let Search = ref("");
-
-let findSearch = () => {
-  return computed(() => {
-    return data2.filter((list) => {
-      return list.title.toUpperCase().includes(Search.value.toUpperCase());
-    });
-  });
-};
-console.log(findSearch);
 </script>
 
 <style scoped>

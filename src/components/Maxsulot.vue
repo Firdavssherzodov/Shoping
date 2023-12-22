@@ -8,7 +8,7 @@
       >
         <div
           class="kard sm:m-3 sm:w-[30%] sm:h-[40%] md:h-[40%] md:w-[15%] w-[45%] md:m-3 m-2 rounded-xl hover:shadow-xl shadow-color1-500/50 cursor-pointer"
-          v-for="(data, index) in listProducts.srt"
+          v-for="(data, index) in listProducts.findSearch"
           :key="data.id"
         >
           <!-- {{ activeIndexes }} -->
