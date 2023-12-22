@@ -6,16 +6,16 @@
   <p class="text-center text-black pt-5 font-medium font-sans">Savat</p>
 
   <div
-    class="md:w-8/12 w-full h-full md:flex flex-wrap block md:ml-[23rem] m-auto pt-4 pb-36"
+    class="md:w-8/12 w-full h-full md:flex flex-wrap block md:ml-[23rem] m-auto pt-4 pb-36 "
   >
     <div
-      class="kard border md:m-3 m-auto mt-2.5 rounded-xl md:w-96 w-11/12 md:h-36 h-32 shadow-lg shadow-color1-500/50 hover:opacity-75 "
+      class="kard border md:m-3 m-auto mt-2.5 rounded-xl md:w-96 w-11/12 md:h-36   shadow-lg shadow-color1-500/50 hover:opacity-75 "
       v-for="(data, index) in srt"
       :key="data"
     >
       <div class="flex">
         <img :src="data.image" alt="inkas" class="m-5 mx-7 w-1/5 md:h-20 h-20" />
-        <p class="py-6 text-[13px] w-2/4 font-sans">{{ data.title }}</p>
+        <p class="py-6 text-[13px] w-2/4 h-[5.5rem] overflow-y-hidden font-sans">{{ data.title }}</p>
         <i
           class="fa-solid fa-trash-can md:text-xl text-lg py-3 md:ml-6 ml-2  text-red-600 cursor-pointer"
           @click="Delete(index)"
