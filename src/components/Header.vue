@@ -3,30 +3,39 @@
     <fwb-navbar>
       <template #logo>
         <router-link to="/">
-        <fwb-navbar-logo
-          alt="Jalolxon Market logo"
-          image-url="/images/header.icons.png"
-          link="#"
-          class="text-color1 relative font-sans"
-        >
-        
-          Jalolxon Market
-        </fwb-navbar-logo>
-      </router-link>
+          <fwb-navbar-logo
+            alt="Jalolxon Market logo"
+            image-url="../../images/header.icons.png"
+            link="#"
+            class="text-color1 relative font-sans"
+          >
+            Jalolxon Market
+          </fwb-navbar-logo>
+        </router-link>
       </template>
       <template #default="{ isShowMenu }">
         <fwb-navbar-collapse :is-show-menu="isShowMenu" class="pe-32">
-          <fwb-navbar-link link="/" class="font-sans"> Bosh sahifa </fwb-navbar-link>
-          <fwb-navbar-link link="/search" class="font-sans"> Katalog </fwb-navbar-link>
-          <fwb-navbar-link link="/korzinka" class="font-sans"> Savat </fwb-navbar-link>
-          <fwb-navbar-link link="/user" class="font-sans"> Kabinet </fwb-navbar-link>
+          <fwb-navbar-link link="/" class="font-sans">
+            Bosh sahifa
+          </fwb-navbar-link>
+          <fwb-navbar-link link="/search" class="font-sans">
+            Katalog
+          </fwb-navbar-link>
+          <fwb-navbar-link link="/korzinka" class="font-sans">
+            Savat
+          </fwb-navbar-link>
+          <fwb-navbar-link link="/user" class="font-sans">
+            Kabinet
+          </fwb-navbar-link>
         </fwb-navbar-collapse>
       </template>
       <template #right-side>
-        <fwb-button class="mr-2 font-normal font-sans" outline> Log in </fwb-button>
+        <fwb-button class="mr-2 font-normal font-sans" outline>
+          Log in
+        </fwb-button>
         <router-link to="/registration">
-        <fwb-button class="font-bold font-sans" > Sigin up </fwb-button>
-      </router-link>
+          <fwb-button class="font-bold font-sans"> Sigin up </fwb-button>
+        </router-link>
       </template>
     </fwb-navbar>
   </div>
@@ -38,15 +47,14 @@
       <div class="relative">
         <a href="#" class="pi pi-home text-xl text-gray-500"></a>
 
-        <p class="text-[11px] absolute left-[-1rem] z-30 font-sans">Bosh/sahifa</p>
+        <p class="text-[11px] absolute left-[-1rem] z-30 font-sans">
+          Bosh/sahifa
+        </p>
       </div>
     </router-link>
     <router-link to="/search">
       <div class="relative">
-        <a
-          href="#"
-          class="pi pi-search text-xl text-gray-500"
-        ></a>
+        <a href="#" class="pi pi-search text-xl text-gray-500"></a>
         <p class="text-[11px] absolute left-[-0.6rem] font-sans">Katalog</p>
       </div>
     </router-link>
@@ -114,6 +122,4 @@ onMounted(async () => {
   margin: 0px !important;
   justify-content: center;
 }
-
-
 </style>

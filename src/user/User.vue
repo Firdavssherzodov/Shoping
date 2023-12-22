@@ -5,7 +5,7 @@
     <div class="userHeader md:rounded-xl rounded-none w-full h-[20%] flex rounded-b-none">
       <!-- userAvater -->
       <div class="p-5">
-        <fwb-avatar rounded size="lg" />
+        <fwb-avatar rounded size="lg"/>
       </div>
       <!-- userAvater -->
       <!-- userHeaderBody -->

@@ -127,7 +127,6 @@ function AddShop(idw) {
     severity: "success",
     summary: "Maxsulot savatda",
     detail: "",
-    group: "pt",
     life: 1000,
   });
 }
