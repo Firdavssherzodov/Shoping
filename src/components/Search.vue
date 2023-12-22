@@ -36,9 +36,7 @@ import { products } from "../user/store/userStore";
 import { ref, watchEffect } from "vue";
 
 import { FwbButton, FwbInput } from "flowbite-vue";
-
 const product_list = products();
-
 let Search = ref("");
 let data2 = JSON.parse(JSON.stringify(product_list.srt));
 
@@ -46,9 +44,7 @@ watchEffect(() => {
   let Data1 = data2.filter((list) => {
     return list.title.toUpperCase().includes(Search.value.toUpperCase());
   });
-  product_list.srt = { ...Data1 };
 });
-
 </script>
 
 <style scoped>
