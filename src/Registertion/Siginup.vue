@@ -1,14 +1,15 @@
 <template>
+   <Header1></Header1>
   <router-link to="/">
     <i
-      class="fa-solid fa-arrow-left md:ml-[25rem] ml-6 md:mt-20 mt-10 cursor-pointer md:text-3xl text-xl"
+      class="fa-solid fa-arrow-left md:ml-[25rem] ml-6 md:mt-10 mt-10 cursor-pointer md:text-2xl text-xl"
     >
       O r q a g a</i
     >
   </router-link>
   <div>
     <!-- ui verse -->
-    <div class="form-box m-auto md:my-28 my-20">
+    <div class="form-box m-auto md:my-2 my-20">
       <form class="form">
         <span class="title font-sans">Ro'yxatdan o'tish</span>
         <span class="subtitle font-sans">Telfon raqamingiz bilan bepul hisob yarating.</span>
@@ -20,7 +21,7 @@
         <button class="font-sans">Ro'yxatdan o'tish</button>
       </form>
       <div class="form-section font-sans">
-        <p>Hisobingiz bormi? <a href="" >Kirish</a></p>
+        <p>Hisobingiz bormi? <router-link to="/Login">Kirish</router-link></p>
       </div>
     </div>
     <!-- ui verse -->
@@ -28,6 +29,7 @@
 </template>
 
 <script setup>
+  import Header1 from '../components/Header.vue'
 
 
 </script>

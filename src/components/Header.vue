@@ -30,11 +30,13 @@
         </fwb-navbar-collapse>
       </template>
       <template #right-side>
-        <fwb-button class="mr-2 font-normal font-sans" outline>
-          Log in
-        </fwb-button>
-        <router-link to="/registration">
-          <fwb-button class="font-bold font-sans"> Sigin up </fwb-button>
+        <router-link to="/Login">
+          <fwb-button class="mr-2 font-normal font-sans" outline>
+            Kirish
+          </fwb-button>
+        </router-link>
+        <router-link to="/Siginup">
+          <fwb-button class="font-bold font-sans"> Ro'yxatdan o'tish</fwb-button>
         </router-link>
       </template>
     </fwb-navbar>

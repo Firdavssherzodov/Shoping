@@ -92,7 +92,7 @@ let message = ref("");
 function Clickcheck() {
   check.value == true;
 }
-
+    
  
 
 function UpdateProduct() {

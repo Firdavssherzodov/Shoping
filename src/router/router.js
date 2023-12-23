@@ -30,9 +30,14 @@ const router = createRouter({
       component: () => import("../QoshimchaPage.vue/Like.vue"),
     },
     {
-      path: "/registration",
+      path: "/Siginup",
       name: "registration",
-      component: () => import("../Registertion/Reregistertion.vue"),
+      component: () => import("../Registertion/Siginup.vue"),
+    },
+    {
+      path:'/Login',
+      name:'Login',
+      component:() =>import('../Registertion/Login.vue')
     },
     {
       path: "/AdminHome",
