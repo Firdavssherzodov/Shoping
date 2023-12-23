@@ -40,11 +40,12 @@
             </fwb-rating>
             <fwb-button
               color="green"
-              class="rounded-lg my-2.5 sm:ml-24 md:ml-24 ml-[37%]"
+              class="rounded-lg my-2.5 sm:ml-24 md:ml-24 ml-[25%]"
               outline
             >
               <i class="pi pi-upload text-sm"></i
             ></fwb-button>
+
             <fwb-button
               color="red"
               class="rounded-lg my-2.5 ml-5"
