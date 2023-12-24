@@ -17,7 +17,7 @@ const router = createRouter({
     {
       path: "/user",
       name: "user",
-      component: () => import("../User/User.vue"),
+      component: () => import("../User/user.vue"),
     },
     {
       path: "/search",

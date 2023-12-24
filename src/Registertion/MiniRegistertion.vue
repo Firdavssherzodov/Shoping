@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto ml-[11.5rem]">
+  <div class="mx-auto ml-[8rem]">
     <router-link to="/Login">
       <fwb-button class="mr-2 font-normal font-sans" outline>
         Kirish

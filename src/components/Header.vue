@@ -22,7 +22,7 @@
             Katalog
           </fwb-navbar-link>
           <fwb-navbar-link link="/korzinka" class="font-sans">
-            Savat
+            Savat 
           </fwb-navbar-link>
           <fwb-navbar-link link="/user" class="font-sans">
             Kabinet
