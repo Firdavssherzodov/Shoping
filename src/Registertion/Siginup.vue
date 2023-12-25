@@ -1,5 +1,5 @@
 <template>
-   <Header1></Header1>
+  <Header1></Header1>
   <router-link to="/">
     <i
       class="fa-solid fa-arrow-left md:ml-[25rem] ml-6 md:mt-10 mt-10 cursor-pointer md:text-2xl text-xl"
@@ -12,11 +12,17 @@
     <div class="form-box m-auto md:my-2 my-20">
       <form class="form">
         <span class="title font-sans">Ro'yxatdan o'tish</span>
-        <span class="subtitle font-sans">Telfon raqamingiz bilan bepul hisob yarating.</span>
+        <span class="subtitle font-sans"
+          >Telfon raqamingiz bilan bepul hisob yarating.</span
+        >
         <div class="form-container font-sans">
           <input type="text" class="input" placeholder="Toliq ismingiz" />
           <input type="email" class="input" placeholder="Telfon raqamingiz" />
-          <input type="password" class="input" placeholder="O'zingiz uchun tahallus" />
+          <input
+            type="password"
+            class="input"
+            placeholder="O'zingiz uchun tahallus"
+          />
         </div>
         <button class="font-sans">Ro'yxatdan o'tish</button>
       </form>
@@ -29,9 +35,7 @@
 </template>
 
 <script setup>
-  import Header1 from '../components/Header.vue'
-
-
+import Header1 from "../components/Header.vue";
 </script>
 
 <style lang="scss" scoped>

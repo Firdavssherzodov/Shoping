@@ -12,12 +12,9 @@ export default {
         color1:'#1A56DB',
         color2: 'rgb(20, 164, 77)',
       },
-      // screens: {
-      //   sm: '480px',
-      //   md: '768px',
-      //   lg: '976px',
-      //   xl: '1440px',
-      // },
+      screens: {
+        xs :'250px',
+      },
     },
   },
   plugins: [require("flowbite/plugin")],
