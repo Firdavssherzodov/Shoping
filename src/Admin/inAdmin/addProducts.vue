@@ -1,5 +1,5 @@
 <template>
-    <Toast position="top-center" />
+  <Toast position="top-center" />
   <header1></header1>
   <p class="text-center font-sans text-xl py-5">Yangi mahsulot qo'shish</p>
   <div class="w-full h-full">
@@ -69,9 +69,9 @@ import { FwbInput } from "flowbite-vue";
 import { FwbSelect } from "flowbite-vue";
 import { FwbTextarea } from "flowbite-vue";
 import { FwbButton } from "flowbite-vue";
-import { useToast } from 'primevue/usetoast';
+import { useToast } from "primevue/usetoast";
 
-import Toast from 'primevue/toast';
+import Toast from "primevue/toast";
 
 const toast = useToast();
 
@@ -92,17 +92,18 @@ let message = ref("");
 function Clickcheck() {
   check.value == true;
 }
-    
- 
 
 function UpdateProduct() {
   if (check.value == false) {
     check.value;
   }
 
-
-  toast.add({ severity: 'success', summary: `Yangi mahsulot qo'shildi`, detail: 'Loading', life: 3000 });
-
+  toast.add({
+    severity: "success",
+    summary: `Yangi mahsulot qo'shildi`,
+    detail: "Loading",
+    life: 3000,
+  });
 }
 </script>
 

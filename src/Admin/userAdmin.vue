@@ -22,7 +22,7 @@
 
 <script setup>
 import header1 from "../components/Header.vue";
-import inSaid from "../Admin/inSaidMaxsulot.vue";
+import inSaid from "../Admin/inAdmin/inSaidMaxsulot.vue";
 </script>
 
 <style lang="scss" scoped></style>

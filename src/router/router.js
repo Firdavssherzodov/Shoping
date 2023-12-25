@@ -47,7 +47,7 @@ const router = createRouter({
     {
       path: "/addProduct",
       name: "addProduct",
-      component: () => import("../admin/addProducts.vue"),
+      component: () => import("../admin/inAdmin/addProducts.vue"),
     },
   ],
 });
