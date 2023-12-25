@@ -56,7 +56,7 @@ import axios from "axios";
 import Xadaer from "../components/Header.vue";
 import Toast from "primevue/toast";
 import { useToast } from "primevue/usetoast";
-import { products } from "../user/store/userStore";
+import { products } from "../userStore/userStore.js";
 
 const toast = useToast();
 let Likes = ref([]);
