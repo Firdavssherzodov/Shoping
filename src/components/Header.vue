@@ -76,7 +76,7 @@
         <p class="text-[11px] absolute left-[-1rem] font-sans">Saralangan</p>
       </div>
     </router-link>
-    <router-link to="/user">
+    <router-link to="/users">
       <div class="relative">
         <a href="#" class="pi pi-user text-xl text-gray-500"></a>
         <p class="text-[11px] absolute left-[-0.6rem] font-sans">Kabinet</p>

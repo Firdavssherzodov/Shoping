@@ -15,9 +15,9 @@ const router = createRouter({
       component: () => import("../QoshimchaPage.vue/Korzinka.vue"),
     },
     {
-      path: "/user",
+      path: "/users",
       name: "user",
-      component: () => import("../User/user.vue"),
+      component: () => import("../User/Users.vue"),
     },
     {
       path: "/search",
@@ -35,9 +35,9 @@ const router = createRouter({
       component: () => import("../Registertion/Siginup.vue"),
     },
     {
-      path:'/Login',
-      name:'Login',
-      component:() =>import('../Registertion/Login.vue')
+      path: "/Login",
+      name: "Login",
+      component: () => import("../Registertion/Login.vue"),
     },
     {
       path: "/AdminHome",
