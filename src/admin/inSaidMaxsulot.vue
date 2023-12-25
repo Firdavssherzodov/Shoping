@@ -73,7 +73,7 @@ import { FwbSpinner } from "flowbite-vue";
 import { FwbPagination } from "flowbite-vue";
 import axios from "axios";
 import { ref, onMounted } from "vue";
-import { products } from "../../userStore/userStore";
+import { products } from "../userStore/userStore.js";
 import Toast from "primevue/toast";
 import { useToast } from "primevue/usetoast";
 const toast = useToast();

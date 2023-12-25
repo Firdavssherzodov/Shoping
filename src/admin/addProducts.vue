@@ -62,7 +62,7 @@
 </template>
 
 <script setup>
-import header1 from "../../components/Header.vue";
+import header1 from "../components/Header.vue";
 import { ref } from "vue";
 import { FwbFileInput } from "flowbite-vue";
 import { FwbInput } from "flowbite-vue";

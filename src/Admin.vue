@@ -21,8 +21,8 @@
 </template>
 
 <script setup>
-import header1 from "../components/Header.vue";
-import inSaid1 from "../admin/inAdmin/inSaidMaxsulot.vue"
+import header1 from "./components/Header.vue";
+import inSaid1 from "./admin/inSaidMaxsulot.vue"
 
 </script>
 
