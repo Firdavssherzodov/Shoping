@@ -40,9 +40,9 @@ const router = createRouter({
       component: () => import("../Registertion/Login.vue"),
     },
     {
-      path: "/AdminHome",
+      path: "/adminHome",
       name: "admin",
-      component: () => import("../admin/adminin.vue"),
+      component: () => import("../admin/useAdmin.vue"),
     },
     {
       path: "/addProduct",

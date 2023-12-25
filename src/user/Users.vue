@@ -30,7 +30,7 @@
       <i class="pi pi-chevron-right pe-4"></i>
     </div>
     <!--  -->
-    <router-link to="/AdminHome">
+    <router-link to="/adminHome">
       <div
         class="xs:flex justify-between py-4 items-center active:bg-slate-200 rounded-xl w- m-1 mt-1. cursor-pointer hover:bg-slate-200 ">
         <i class="pi pi-plus text-black ps-4 md:text-lg text-lg">
