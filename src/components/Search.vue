@@ -34,8 +34,7 @@
   </div>
 </template>
 <script setup>
-import { products } from "../user/store/userStore";
-import { ref, computed, watchEffect } from "vue";
+import { products } from "../userStore/userStore.js";
 
 import { FwbButton, FwbInput } from "flowbite-vue";
 

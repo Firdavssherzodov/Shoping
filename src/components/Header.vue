@@ -24,7 +24,7 @@
           <fwb-navbar-link link="/korzinka" class="font-sans">
             Savat 
           </fwb-navbar-link>
-          <fwb-navbar-link link="/user" class="font-sans">
+          <fwb-navbar-link link="/users" class="font-sans">
             Kabinet
           </fwb-navbar-link>
         </fwb-navbar-collapse>

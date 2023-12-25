@@ -72,7 +72,7 @@ import { useToast } from "primevue/usetoast";
 const toast = useToast();
 import { ref, onMounted } from "vue";
 import axios from "axios";
-import { products } from "../user/store/userStore";
+import { products } from "../userStore/userStore.js";
 const listProducts = products();
 
 onMounted(() => {

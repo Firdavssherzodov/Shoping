@@ -32,7 +32,7 @@
 </template>
 
 <script setup>
-import { products } from "../user/store/userStore";
+import { products } from "../userStore/userStore.js";
 const ProductsList = products();
 
 function Sort(value) {
