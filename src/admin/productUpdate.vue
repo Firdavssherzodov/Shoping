@@ -48,8 +48,8 @@
           >Hammasi to'g'riliga ishonch hosil qiling</label
         >
         <!-- Sndbutton -->
-        <fwb-button size="md " class="font-sans" type="submit"
-          >Yuklash</fwb-button
+        <fwb-button size="md" class="font-sans" color="green" type="submit"
+          >Yangilash</fwb-button
         >
       </form>
     </div>
