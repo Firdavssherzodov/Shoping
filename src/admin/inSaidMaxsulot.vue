@@ -70,7 +70,6 @@
 import { FwbRating } from "flowbite-vue";
 import { FwbButton } from "flowbite-vue";
 import { FwbSpinner } from "flowbite-vue";
-import { FwbPagination } from "flowbite-vue";
 import axios from "axios";
 import { ref, onMounted } from "vue";
 import { products } from "../userStore/userStore.js";
