@@ -2,7 +2,7 @@
   <Toast position="top-center" />
   <header1></header1>
 
-  <p class="text-center font-sans text-xl py-5">Mahsulot yangilash</p>
+  <p class="text-center font-sans text-xl py-6">Mahsulotni yangilash</p>
   <div class="w-full h-full">
     <div class="m-auto md:w-2/5 w-[95%] h-full md:pb-10 pb-20 relative">
       <form @submit.prevent="">
