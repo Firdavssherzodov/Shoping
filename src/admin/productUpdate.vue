@@ -5,8 +5,12 @@
   <p class="text-center font-sans text-xl py-6">Mahsulotni yangilash</p>
   <div class="w-full h-full">
     <div class="m-auto md:w-2/5 w-[95%] h-full md:pb-10 pb-20 relative">
-      <form @submit.prevent="">
-       <img :src="image" alt="Loading" class=" md:w-60 w-48 m-auto md:h-56 h-52 mb-2">
+      <form @submit.prevent="UpdateProduct()">
+        <img
+          :src="image"
+          alt="Loading"
+          class="md:w-60 w-48 m-auto md:h-56 h-52 mb-2"
+        />
         <!-- Mahsulot nomi -->
         <fwb-input
           v-model="name"
@@ -62,8 +66,8 @@ import { useRoute } from "vue-router";
 
 let router = useRoute();
 import header1 from "../components/Header.vue";
-import { ref,onMounted } from "vue";
-import { FwbFileInput } from "flowbite-vue";
+import { ref, onMounted } from "vue";
+
 import { FwbInput } from "flowbite-vue";
 import { FwbSelect } from "flowbite-vue";
 import { FwbTextarea } from "flowbite-vue";
@@ -89,25 +93,29 @@ let type = ref("");
 let counter = ref("");
 let message = ref("");
 
+onMounted(() => {
+    getProduct(router.params.id);
+});
 
-onMounted(()=>{
-    UpdateProduct(router.params.id);
-
-})
-
-
-
-function UpdateProduct(idw) {
+function getProduct(idw) {
   console.log(idw);
   axios.get(`https://fakestoreapi.com/products/${idw}`).then((resp) => {
     console.log(resp.data);
-    (name.value = resp.data.title), 
-    (image.value = resp.data.image),
-    (message.value = resp.data.description),
-    (counter.value = resp.data.price);
-    
+    (name.value = resp.data.title),
+      (image.value = resp.data.image),
+      (message.value = resp.data.description),
+      (counter.value = resp.data.price);
   });
 }
+function UpdateProduct(){
+    toast.add({
+    severity: "success",
+    summary: ` Mahsulot Yangilandi`,
+    detail: "Loading",
+    life: 3000,
+  });
+}
+
 </script>
 
 <style lang="scss" scoped>
