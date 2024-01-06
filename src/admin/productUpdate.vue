@@ -42,6 +42,7 @@
         <input
           type="checkbox"
           v-model="check"
+          required
           class="my-4 mx-1 w-5 h-5 font-sans rounded-[0.25rem] cursor-pointer"
         />
         <label class="font-sans px-2 text-sm font-semibold"
