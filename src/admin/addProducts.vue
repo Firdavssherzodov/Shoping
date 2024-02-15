@@ -2,8 +2,16 @@
   <Toast position="top-center" />
   <header1></header1>
   <p class="text-center font-sans text-xl py-5">Yangi mahsulot qo'shish</p>
+
   <div class="w-full h-full">
     <div class="m-auto md:w-2/5 w-[95%] h-full md:pb-10 pb-20 relative">
+      <router-link to="/adminHome">
+        <span class="inline-block pb-5 font-sans px-4">
+          <i class="fa-solid fa-arrow-left"></i>
+          Orqaga
+        </span>
+      </router-link>
+
       <form @submit.prevent="UpdateProduct()">
         <fwb-file-input v-model="image" dropzone class="mb-3" />
         <!-- Mahsulot nomi -->

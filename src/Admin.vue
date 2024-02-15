@@ -8,11 +8,11 @@
 
     <router-link to="/addProduct">
       <span
-        class="lg:w-[9%] border flex justify-between items-center py-4 rounded-xl cursor-pointer hover:bg-slate-200 absolute md:left-[80%] left-[55%] md:bottom-1 hover:text-color1"
+        class="lg:w-[9%] border flex justify-between items-center py-[0.800rem] rounded-xl cursor-pointer hover:bg-slate-200 absolute md:left-[80%] left-[54%] md:bottom-3 hover:text-color1"
       >
-        <i class="px-1 pi pi-plus"></i>
+        <i class="px-1 pi pi-plus text-sm"></i>
         <p class="text-sm font-sans">Yangi mahsulot</p>
-        <i class="px-1.5\ pi pi-chevron-right pe-4"></i>
+        <i class="px-1.5 text-sm pi pi-chevron-right pe-4"></i>
       </span>
     </router-link>
   </div>

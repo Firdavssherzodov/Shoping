@@ -1,13 +1,11 @@
 <template>
   <div class="md:hidden block m-auto pt-6">
-    <MiniRegistertion></MiniRegistertion>
-
-
+    <!-- <MiniRegistertion></MiniRegistertion> -->
   </div>
   <div>
     <Header1></Header1>
     <Search></Search>
-
+    <Carusel />
     <Bolim></Bolim>
     <Mini></Mini>
     <Maxsulot> </Maxsulot>

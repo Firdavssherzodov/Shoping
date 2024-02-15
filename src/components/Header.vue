@@ -22,7 +22,7 @@
             Katalog
           </fwb-navbar-link>
           <fwb-navbar-link link="/korzinka" class="font-sans">
-            Savat 
+            Savat
           </fwb-navbar-link>
           <fwb-navbar-link link="/users" class="font-sans">
             Kabinet
@@ -36,7 +36,9 @@
           </fwb-button>
         </router-link>
         <router-link to="/Siginup">
-          <fwb-button class="font-bold font-sans"> Ro'yxatdan o'tish</fwb-button>
+          <fwb-button class="font-bold font-sans">
+            Ro'yxatdan o'tish</fwb-button
+          >
         </router-link>
       </template>
     </fwb-navbar>

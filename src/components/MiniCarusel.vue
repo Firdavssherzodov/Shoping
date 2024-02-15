@@ -7,7 +7,7 @@
       :numVisible="6"
       :numScroll="1"
       :responsiveOptions="responsiveOptions"
-      :autoplayInterval="4000"
+      :autoplayInterval="7000"
       class="ps-38"
     >
       <template #item="slotProps, index">

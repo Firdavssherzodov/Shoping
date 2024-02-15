@@ -2,14 +2,21 @@
   <Toast position="top-center" />
   <header1></header1>
 
-  <p class="text-center font-sans text-xl py-6">Mahsulotni yangilash</p>
+  <p class="text-center font-sans text-xl py-6 ">Mahsulotni yangilash</p>
+
   <div class="w-full h-full">
     <div class="m-auto md:w-2/5 w-[95%] h-full md:pb-10 pb-20 relative">
+      <router-link to="/adminHome">
+  <span class="inline-block pb-7 font-sans px-4">
+    <i class="fa-solid fa-arrow-left "></i>
+    Orqaga
+  </span>
+</router-link>
       <form @submit.prevent="UpdateProduct()">
         <img
           :src="image"
           alt="Loading"
-          class="md:w-60 w-48 m-auto md:h-56 h-52 mb-2"
+          class="md:w-60 w-48 m-auto md:h-64 h-52 mb-2"
         />
         <!-- Mahsulot nomi -->
         <fwb-input
